@@ -52,7 +52,7 @@ web/sites/*/services*.yml
 # Sites that do not have any Composer-managed custom modules may
 # delete all of the `modules/custom` lines below.
 # ------------------------------------------------------------------
-/web/modules/custom/*
+#/web/modules/custom/*
 #!/web/modules/custom/module_in_repo
 
 
