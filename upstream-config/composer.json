@@ -1,5 +1,5 @@
 {
-    "name": "pantheon-upstreams/upstream-configuration",
+    "name": "pantheon-upstreams/upstream-config",
     "type": "project",
     "repositories": [
         {
