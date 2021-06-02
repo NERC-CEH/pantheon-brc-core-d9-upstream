@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f7b4c1a05fad332e21f0a529f4b92675",
+    "content-hash": "0f95edc7b7d3d7084c0e7d06eefd71d7",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -2391,6 +2391,57 @@
             "homepage": "http://drupal.org/project/address",
             "support": {
                 "source": "https://git.drupalcode.org/project/address"
+            }
+        },
+        {
+            "name": "drupal/address_map_link",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/address_map_link.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/address_map_link-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "788bc567b14537d83f871d51b707fd97e3f88cd1"
+            },
+            "require": {
+                "drupal/address": "^1.0",
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1607722672",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Snyder",
+                    "homepage": "https://www.drupal.org/u/chrissnyder",
+                    "email": "chris@chrissnyder.org",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Provides a link to an external mapping site for an address field.",
+            "homepage": "https://www.drupal.org/project/address_map_link",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/address_map_link",
+                "issues": "https://www.drupal.org/project/issues/address_map_link"
             }
         },
         {
@@ -5006,6 +5057,60 @@
             }
         },
         {
+            "name": "drupal/exclude_node_title",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/exclude_node_title.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/exclude_node_title-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "c7bda0086adfe5b090fc1ee8bc166f9d456d62d6"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1614965953",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Neslee Canil Pinto",
+                    "homepage": "https://www.drupal.org/u/neslee-canil-pinto",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "fizk",
+                    "homepage": "https://www.drupal.org/user/473174"
+                },
+                {
+                    "name": "gabrielu",
+                    "homepage": "https://www.drupal.org/user/279352"
+                }
+            ],
+            "description": "Provides the option of excluding node title(s) from display by individual node, node bundle, and view mode.",
+            "homepage": "https://www.drupal.org/project/exclude_node_title",
+            "support": {
+                "source": "https://git.drupalcode.org/project/exclude_node_title",
+                "issues": "https://www.drupal.org/project/issues/exclude_node_title"
+            }
+        },
+        {
             "name": "drupal/feeds",
             "version": "3.0.0-alpha10",
             "source": {
@@ -5111,6 +5216,56 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/feeds",
                 "issues": "https://www.drupal.org/project/issues/feeds"
+            }
+        },
+        {
+            "name": "drupal/field_display_label",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/field_display_label.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/field_display_label-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "3e6c18fedd78d1723fea394e231b140f323f6584"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1614966206",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Neslee Canil Pinto",
+                    "homepage": "https://www.drupal.org/u/neslee-canil-pinto",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Plazik",
+                    "homepage": "https://www.drupal.org/user/982724"
+                }
+            ],
+            "description": "Defines a label for fields that is used for displaying content which can be different than the form label.",
+            "homepage": "https://www.drupal.org/project/field_display_label",
+            "support": {
+                "source": "https://git.drupalcode.org/project/field_display_label",
+                "issues": "https://www.drupal.org/project/issues/field_display_label"
             }
         },
         {
@@ -6666,17 +6821,17 @@
         },
         {
             "name": "drupal/responsive_tables_filter",
-            "version": "1.7.0",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/responsive_tables_filter.git",
-                "reference": "8.x-1.7"
+                "reference": "8.x-1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/responsive_tables_filter-8.x-1.7.zip",
-                "reference": "8.x-1.7",
-                "shasum": "760a812849e3f8b0556b1402f16670c8b34a5b69"
+                "url": "https://ftp.drupal.org/files/projects/responsive_tables_filter-8.x-1.8.zip",
+                "reference": "8.x-1.8",
+                "shasum": "a59f1b4516f2c81d94902bb557d49794afe68681"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -6684,8 +6839,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.7",
-                    "datestamp": "1611852305",
+                    "version": "8.x-1.8",
+                    "datestamp": "1622553635",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
