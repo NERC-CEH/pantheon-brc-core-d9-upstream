@@ -1,0 +1,21 @@
+# Schema for the configuration files of the Menu Item Visibility module.
+
+menu_item_visibility.settings:
+  type: config_object
+  label: 'Automated cron settings'
+  mapping:
+    mlid:
+      type: sequence
+      label: 'Plugin ID of menu item'
+      sequence:
+        type: mapping
+        mapping:
+          roles:
+            type: sequence
+            label: 'Visibility roles'
+            sequence:
+              type: string
+              label: 'Role name'
+          access_check:
+            type: boolean
+            label: 'Access check status'

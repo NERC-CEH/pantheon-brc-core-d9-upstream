@@ -1,0 +1,158 @@
+<?php
+
+/**
+ * @file
+ * Allows restricting access to menu items and menu path per role.
+ */
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function menu_item_visibility_form_menu_link_content_menu_link_content_form_alter(array &$form, FormStateInterface $form_state) {
+  $config = \Drupal::config('menu_item_visibility.settings');
+
+  // Visibility settings.
+  $form['visibility_title'] = [
+    '#type' => 'item',
+    '#title' => t('Visibility settings'),
+  ];
+
+  // Get the Plugin ID of menu item.
+  $menu_link = $form_state->getFormObject()->getEntity();
+
+  /** @var \Drupal\Core\Menu\MenuLinkInterface $menu_link */
+  $mlid = $menu_link->getPluginId();
+
+  // Per-role visibility.
+  $form['visibility']['role'] = [
+    '#type' => 'fieldset',
+    '#title' => t('Roles'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+    '#group' => 'visibility',
+    '#weight' => 10,
+ ];
+
+  $form['visibility']['role']['roles'] = [
+    '#type' => 'checkboxes',
+    '#title' => t('Show menu link for specific roles'),
+    '#options' => user_role_names(),
+    '#description' => t('Show this menu link only for the selected role(s). If you select no roles, the menu link will be visible to all users.'),
+  ];
+
+  $roles_default = $config->get('mlid.' . $mlid . '.roles');
+
+  if (is_array($roles_default) && count($roles_default) > 0) {
+    $form['visibility']['role']['roles']['#default_value'] = $roles_default;
+  }
+
+  $form['visibility']['role']['access_check'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Path Access'),
+    '#return_value' => 1,
+    '#default_value' => $config->get('mlid.' . $mlid . '.access_check'),
+    '#description' => t('Controls whether the menu path should be accessible or not(only applicable for node links)'),
+  );
+
+  $form['actions']['submit']['#submit'][] = 'menu_item_visibility_submit_handler';
+}
+
+/**
+ * Submit function for menu add / edit form.
+ */
+function menu_item_visibility_submit_handler(array &$form, FormStateInterface $form_state) {
+  $config = \Drupal::configFactory()->getEditable('menu_item_visibility.settings');
+
+  /** @var \Drupal\Core\Menu\MenuLinkInterface $menu_link */
+  $menu_link = $form_state->getFormObject()->getEntity();
+  $menu_id = $menu_link->getPluginId();
+  $rids = array_keys(array_filter($form_state->getValue('roles')));
+  $access_check = $form_state->getValue('access_check');
+
+  $config
+    ->set('mlid.' . $menu_id . '.roles', $rids)
+    ->set('mlid.' . $menu_id . '.access_check', $access_check)
+    ->save();
+}
+
+/**
+ * Implements hook_preprocess_menu().
+ */
+function menu_item_visibility_preprocess_menu(&$variables) {
+  $items = $variables['items'];
+  $accessible_items = array();
+  foreach ($items as $key => &$item) {
+    // Enable recursive parsing.
+    if (!empty($item['below'])) {
+      $below = ['items' => $item['below']];
+      menu_item_visibility_preprocess_menu($below);
+      $item['below'] = $below['items'];
+    }
+
+    $user_role_visibility = menu_item_visibility_check($key);
+    if (!$user_role_visibility) {
+      continue;
+    }
+    else {
+      $accessible_items[$key] = $item;
+    }
+  }
+  $variables['items'] = $accessible_items;
+}
+
+/**
+ * Implements hook_node_access().
+ */
+function menu_item_visibility_node_access(NodeInterface $node, $op, AccountInterface $account) {
+  $config = \Drupal::config('menu_item_visibility.settings');
+
+  $mlid_list = $config->get('mlid');
+  if (!empty($mlid_list)) {
+    $mlid_list = array_keys(array_filter($mlid_list, function ($value) {
+      return !empty($value['access_check']);
+    }));
+  }
+
+  if (!empty($mlid_list)) {
+    foreach ($mlid_list as $value) {
+      $check_result = \Drupal::database()
+        ->select('menu_tree', 'mtr')
+        ->fields('mtr', array('route_param_key'))
+        ->condition('id', $value, '=')
+        ->execute()
+        ->fetchAssoc();
+
+      $visiblity = menu_item_visibility_check($value);
+      if (!empty($check_result)) {
+        $param_key = $check_result['route_param_key'];
+        $params = explode("=", $param_key);
+      }
+
+      if (isset($params) && $node->id() == $params[1] && !$visiblity) {
+        return AccessResult::forbidden();
+      }
+    }
+  }
+
+  return AccessResult::neutral()->setCacheMaxAge(0);
+}
+
+/**
+ * Helper function to check the role access for menu items.
+ */
+function menu_item_visibility_check($rid) {
+  $role_array = \Drupal::config('menu_item_visibility.settings')->get('mlid.' . $rid . '.roles');
+  $user_roles = \Drupal::currentUser()->getRoles();
+
+  if (!empty($role_array)) {
+    return !empty(array_intersect($role_array, $user_roles));
+  }
+
+  // No roles were selected; visible to all roles.
+  return TRUE;
+}

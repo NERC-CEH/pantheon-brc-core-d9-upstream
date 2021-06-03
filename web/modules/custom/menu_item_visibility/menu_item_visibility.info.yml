@@ -1,0 +1,14 @@
+name: Menu Item Visibility
+description: 'Controls the visibility of the menus for user roles.'
+# core: 8.x
+type: module
+
+dependencies:
+  - drupal:menu_ui
+
+# Information added by Drupal.org packaging script on 2018-09-26
+core: 8.x
+core_version_requirement: ^8 || ^9
+version: '8.x-1.x-dev'
+project: 'menu_item_visibility'
+datestamp: 1537993383
