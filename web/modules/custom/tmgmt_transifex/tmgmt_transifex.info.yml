@@ -1,0 +1,13 @@
+name: Translation Transifex
+type: module
+description: 'A connector integrating Translation Management Toolkit with Transifex LMS.'
+package: 'Translation Management'
+core_version_requirement: ^8.8 || ^9
+configure: entity.tmgmt_translator.collection
+dependencies:
+  - tmgmt:tmgmt
+
+# Information added by Drupal.org packaging script on 2021-01-20
+version: '8.x-1.4'
+project: 'tmgmt_transifex'
+datestamp: 1611154317

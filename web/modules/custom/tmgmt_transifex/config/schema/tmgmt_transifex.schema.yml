@@ -1,0 +1,21 @@
+tmgmt.translator.settings.transifex:
+  type: tmgmt.translator_base
+  mapping:
+    auto_accept:
+      type: boolean
+      label: Automatically accept
+    description:
+      type: string
+      label: 'Transifex Drupal connector'
+    api:
+      type: string
+      label: 'Transifex API'
+    tx:
+      type: string
+      label: 'Transifex webhook secret'
+    project:
+      type: string
+      label: 'Transifex project'
+    onlyreviewed: 
+      type: boolean
+      label: 'Only pull reviewed translations'
