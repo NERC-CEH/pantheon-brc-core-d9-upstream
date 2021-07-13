@@ -1,0 +1,4 @@
+languageicons.settings:
+  route_name: languageicons.settings
+  title: Icons
+  weight: 10

@@ -32,7 +32,7 @@
         "drupal/bootstrap_quicktabs": "1.0-alpha4",
         "drupal/bootstrap_styles": "^1.0",
         "drupal/calendar": "^1.0@alpha",
-        "drupal/captcha": "^1.1",
+        "drupal/captcha": "^1.2",
         "drupal/chosen": "^3.0",
         "drupal/colorbox": "^1.7",
         "drupal/colorbox_inline": "^1.2",
@@ -45,10 +45,9 @@
         "drupal/commerce_variation_add_to_cart": "^1.5",
         "drupal/consumers": "^1.11",
         "drupal/ctools": "^3.7",
-        "drupal/devel": "^4.1",
         "drupal/disable_user_login_and_registration": "^1.1",
         "drupal/draggableviews": "^2.0",
-        "drupal/ds": "^3.12",
+        "drupal/ds": "^3.13",
         "drupal/editor_advanced_link": "^2.0",
         "drupal/entity": "^1.2",
         "drupal/entity_embed": "^1.1",
@@ -74,7 +73,6 @@
         "drupal/jquery_ui_droppable": "^1.2",
         "drupal/jquery_ui_tabs": "^1.1",
         "drupal/lang_dropdown": "^2.0@beta",
-        "drupal/languageicons": "^1.0@beta",
         "drupal/layout_builder_blocks": "^1.0",
         "drupal/legal": "^2.0",
         "drupal/libraries": "^3.0@beta",
@@ -173,5 +171,9 @@
         "platform": {
             "php": "7.4"
         }
+    },
+    "require-dev": {
+        "drupal/devel": "^4.1",
+        "kint-php/kint": "^3.3"
     }
 }

@@ -1,0 +1,7 @@
+show_node: true
+show_block: true
+placement: before
+size: 16x12
+# The path of the folder containing the flags depends on where the module is
+# installed. It is set in languageicons_install().
+path:

@@ -1,0 +1,125 @@
+<?php
+
+/**
+ * @file
+ * Main functions and hook implementations for the Language Icons module.
+ *
+ * This is a spin off from the Internationalization (i18n) package.
+ */
+
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_theme().
+ */
+function languageicons_theme() {
+  return [
+    'languageicons_link_content' => [
+      'variables' => [
+        'language' => NULL,
+        'separator' => ' ',
+        'text' => NULL,
+        'title' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_help().
+ *
+ * @todo The @handbook link needs to change to a module specific one.
+ */
+function languageicons_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.languageicons':
+      $output = '<p>' . t('This module manages language icons for multilingual sites:') . '</p>';
+      $output .= '<ul>';
+      $output .= '<li>' . t('Automatically adds icons to language links.') . '</li>';
+      $output .= '<li>' . t('Provides related theme functions.') . '</li>';
+      $output .= '</ul>';
+      $output .= '<p>' . t('For more information, please see <a href="@handbook">the online handbook section</a>.', array('@handbook' => 'http://drupal.org/node/133977')) . '</p>';
+      return $output;
+    case 'admin/config/regional/language/icons':
+      $output = '<p>' . t('To enable multilingual support for specific content types go to <a href="@configure_content_types">configure content types</a>.', array('@configure_content_types' => Url::fromRoute('entity.node_type.collection'))) . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_language_switch_links_alter().
+ *
+ * Adds language icons to language switcher block links.
+ *
+ * @todo Figure out a way to either ignore node links or specifically target
+ *   them here. See http://drupal.org/node/1005144 for more info.
+ */
+function languageicons_language_switch_links_alter(array &$links, $type, $path) {
+  if (\Drupal::config('languageicons.settings')->get('show_block') || \Drupal::config('languageicons.settings')->get('show_node')) {
+    foreach (array_keys($links) as $langcode) {
+      if (!isset($links[$langcode]['language'])) {
+        $links[$langcode]['language'] = \Drupal::languageManager()->getLanguage($langcode);
+      }
+      languageicons_link_add($links[$langcode]);
+    }
+  }
+}
+
+/**
+ * Add language icon to link.
+ *
+ * The language icon may be a different language as the destination page, can be
+ * passed in 'language_icon'.
+ */
+function languageicons_link_add(&$link, $title = NULL) {
+  $link['title'] = [
+    '#theme' => 'languageicons_link_content',
+    '#language' => isset($link['language_icon']) ? $link['language_icon'] : $link['language'],
+    '#text' => $link['title'],
+    '#title' => $title ? $title : $link['title'],
+  ];
+
+  $link['html'] = TRUE;
+}
+
+/**
+ * Prepares variables for rendering the content of a language link.
+ *
+ * Default template: languageicons-link-content.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - language: The language.
+ *   - separator: The separator between icon and link text.
+ *   - text: The text shown in the link.
+ *   - title: The image title for the icon.
+ *
+ * @throws \Exception
+ *   Thrown when the path to the language icon images is not set.
+ */
+function template_preprocess_languageicons_link_content(&$variables) {
+  /** @var \Drupal\language\Entity\ConfigurableLanguage $language */
+  $language = $variables['language'];
+  $title = $variables['title'] ? $variables['title'] : $language->getName();
+  $size = \Drupal::config('languageicons.settings')->get('size');
+  list($width, $height) = explode('x', $size);
+
+  if ($path = \Drupal::config('languageicons.settings')->get('path')) {
+    $variables['icon'] = [
+      '#theme' => 'image',
+      '#uri' => str_replace('*', $language->getId(), Html::escape($path)),
+      '#alt' => $title,
+      '#title' => $title,
+      '#width' => $width,
+      '#height' => $height,
+      '#attributes' => ['class' => ['language-icon']],
+    ];
+  }
+  else {
+    throw new \Exception('Path to language icons is not defined.');
+  }
+
+  $variables['placement'] = \Drupal::config('languageicons.settings')->get('placement');
+}

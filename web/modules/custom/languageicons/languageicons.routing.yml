@@ -1,0 +1,7 @@
+languageicons.settings:
+  path: /admin/config/regional/language/icons
+  defaults:
+    _title: Icons
+    _form: \Drupal\languageicons\Form\LanguageiconsAdminSettings
+  requirements:
+    _permission: 'administer languages'

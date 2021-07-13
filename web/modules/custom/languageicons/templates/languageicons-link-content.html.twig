@@ -1,0 +1,9 @@
+{% if placement == 'before' %}
+    {{ icon }}{{ separator }}{{ text }}
+{% endif %}
+{% if placement == 'after' %}
+    {{ text }}{{ separator }}{{ icon }}
+{% endif %}
+{% if placement == 'replace' %}
+    {{ icon }}
+{% endif %}

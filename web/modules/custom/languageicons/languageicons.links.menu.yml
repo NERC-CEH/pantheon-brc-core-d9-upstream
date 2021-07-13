@@ -1,0 +1,5 @@
+languageicons.admin_form:
+  title: 'Language icons'
+  description: 'Configure the Language Icons module.'
+  route_name: languageicons.settings
+  parent: system.admin_config_regional

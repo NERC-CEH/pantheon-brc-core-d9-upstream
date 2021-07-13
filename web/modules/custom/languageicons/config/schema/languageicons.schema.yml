@@ -1,0 +1,16 @@
+languageicons.settings:
+  type: config_object
+  label: Language Icons settings
+  mapping:
+    show_node:
+      type: boolean
+      label: Show the icons on a node
+    show_block:
+      type: boolean
+      label: Show the icons on the language switcher block
+    placement:
+      type: string
+    size:
+      type: string
+    path:
+      type: string
