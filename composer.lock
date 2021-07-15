@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1228e767d0beabeb311f7afe41e32a37",
+    "content-hash": "38a7bd71c5a3a3b80a7d9741edb0c5c4",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -3127,6 +3127,66 @@
             }
         },
         {
+            "name": "drupal/collapsiblock",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/collapsiblock.git",
+                "reference": "3.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/collapsiblock-3.0.0.zip",
+                "reference": "3.0.0",
+                "shasum": "49fb169ad62d061b15c868a036ebc38b48906299"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.0.0",
+                    "datestamp": "1599195573",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Darvanen",
+                    "homepage": "https://www.drupal.org/user/1068770"
+                },
+                {
+                    "name": "gagarine",
+                    "homepage": "https://www.drupal.org/user/162439"
+                },
+                {
+                    "name": "j0rd",
+                    "homepage": "https://www.drupal.org/user/61506"
+                },
+                {
+                    "name": "nedjo",
+                    "homepage": "https://www.drupal.org/user/4481"
+                },
+                {
+                    "name": "sonvir249",
+                    "homepage": "https://www.drupal.org/user/3225171"
+                }
+            ],
+            "description": "Makes individual blocks collapsible.",
+            "homepage": "https://www.drupal.org/project/collapsiblock",
+            "support": {
+                "source": "https://git.drupalcode.org/project/collapsiblock"
+            }
+        },
+        {
             "name": "drupal/colorbox",
             "version": "1.7.0",
             "source": {
@@ -6110,6 +6170,55 @@
             }
         },
         {
+            "name": "drupal/insert_view_adv",
+            "version": "2.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/insert_view_adv.git",
+                "reference": "2.0.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/insert_view_adv-2.0.0-alpha1.zip",
+                "reference": "2.0.0-alpha1",
+                "shasum": "308c4b462ad6e94c1ec983dd2ac6f5248ddb338c"
+            },
+            "require": {
+                "drupal/core": "^8.8.0 || ^9"
+            },
+            "require-dev": {
+                "drupal/bueditor": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0-alpha1",
+                    "datestamp": "1613757890",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Artem Dmitriiev (a.dmitriiev)",
+                    "homepage": "https://www.drupal.org/u/a.dmitriiev",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Allows to include the views displays into WYSIWYG editors.",
+            "homepage": "https://www.drupal.org/project/insert_view_adv",
+            "support": {
+                "source": "https://git.drupalcode.org/project/insert_view_adv",
+                "issues": "https://drupal.org/project/issues/insert_view_adv"
+            }
+        },
+        {
             "name": "drupal/job_scheduler",
             "version": "3.1.0",
             "source": {
@@ -7662,6 +7771,50 @@
             "homepage": "http://drupal.org/project/profile",
             "support": {
                 "source": "https://git.drupalcode.org/project/profile"
+            }
+        },
+        {
+            "name": "drupal/quick_node_block",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/quick_node_block.git",
+                "reference": "8.x-1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/quick_node_block-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "8ac55c0cd378e3d341c7b84a3a475f4ecd23514f"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.3",
+                    "datestamp": "1617822621",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "saesa",
+                    "homepage": "https://www.drupal.org/user/3561094"
+                }
+            ],
+            "description": "Add node and his display in a block",
+            "homepage": "https://www.drupal.org/project/quick_node_block",
+            "support": {
+                "source": "https://git.drupalcode.org/project/quick_node_block"
             }
         },
         {
@@ -9923,6 +10076,67 @@
                 "issues": "https://www.drupal.org/project/issues/webform?version=8.x",
                 "docs": "https://www.drupal.org/docs/8/modules/webform",
                 "forum": "https://drupal.stackexchange.com/questions/tagged/webform"
+            }
+        },
+        {
+            "name": "drupal/webform_views",
+            "version": "5.0.0-alpha8",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/webform_views.git",
+                "reference": "8.x-5.0-alpha8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/webform_views-8.x-5.0-alpha8.zip",
+                "reference": "8.x-5.0-alpha8",
+                "shasum": "110cf10ed151c1954fe4b7fee5c4f5fb9b81f99b"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9",
+                "drupal/webform": "^6"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-5.0-alpha8",
+                    "datestamp": "1594941454",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "acbramley",
+                    "homepage": "https://www.drupal.org/user/1036766"
+                },
+                {
+                    "name": "bucefal91",
+                    "homepage": "https://www.drupal.org/user/504128"
+                },
+                {
+                    "name": "jrockowitz",
+                    "homepage": "https://www.drupal.org/user/371407"
+                },
+                {
+                    "name": "matio89",
+                    "homepage": "https://www.drupal.org/user/2320090"
+                },
+                {
+                    "name": "ws.agency",
+                    "homepage": "https://www.drupal.org/user/2851415"
+                }
+            ],
+            "description": "Webform integration with views.",
+            "homepage": "https://www.drupal.org/project/webform_views",
+            "support": {
+                "source": "https://git.drupalcode.org/project/webform_views"
             }
         },
         {
@@ -16173,7 +16387,8 @@
         "drupal/roleassign": 10,
         "drupal/shs": 15,
         "drupal/synonyms": 10,
-        "drupal/views_field_view": 10
+        "drupal/views_field_view": 10,
+        "drupal/webform_views": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
