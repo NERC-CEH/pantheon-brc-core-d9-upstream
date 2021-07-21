@@ -3,7 +3,7 @@ type: module
 description: 'A connector integrating Translation Management Toolkit with Transifex LMS.'
 package: 'Translation Management'
 core: 8.x
-core_version_requirement: ^8.8 || ^9
+core_version_requirement: ^8 || ^9
 configure: entity.tmgmt_translator.collection
 dependencies:
   - tmgmt:tmgmt
