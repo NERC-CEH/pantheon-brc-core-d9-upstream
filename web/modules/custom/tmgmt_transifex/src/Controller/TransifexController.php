@@ -61,10 +61,17 @@ class TransifexController extends ControllerBase
         if ($sig == $webhook_sig) {
             $event = $webhook['event'];
             $resource = $webhook['resource'];
-            $language = $webhook['language'];
+            $remote_mappings = $translator->getRemoteLanguagesMappings();
+
+            if (in_array($webhook['language'], $remote_mappings)) {
+                $local_language = array_search($webhook['language'], $remote_mappings);
+                $dp_language = $local_language;
+            } else {
+                $dp_language = $webhook['language'];
+            }
 
             \Drupal::logger('tmgmt_transifex')->info(
-                'Received ' . $event . ' webhook for resource:' . $resource . ' and language: ' . $language
+                'Received ' . $event . ' webhook for resource:' . $resource . ' and language: ' . $dp_language
             );
             if ($translator->getPlugin()->shouldWebhookUpdateTranslations(
                 $translator, $webhook
@@ -72,7 +79,7 @@ class TransifexController extends ControllerBase
                 $translator->getPlugin()->updateJobWithTranslations(
                     $translator,
                     $resource,
-                    $language,
+                    $dp_language,
                     false
                 );
             }

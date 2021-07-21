@@ -14,7 +14,7 @@ Drupal users do the following:
 
 * From inside this repo add a drupal origin like so:
 ```
-  git remote add drupal transifex@git.drupal.org:project/tmgmt_transifex.git
+  git remote add drupal git@git.drupal.org:project/tmgmt_transifex.git
 ```
 
 * Checkout the 8.x-1.x branch
@@ -30,7 +30,7 @@ Drupal users do the following:
 ```
 * Go to https://www.drupal.org/project/tmgmt_transifex, login and click edit
 * Go to the releases tab and click on ```Add new release``` and publish your new version
-
+* Tick the option ```This release will not be covered for security advisories``` and then press ```next```
 
 ## Installation and configuration
 ### Installing TMGMT

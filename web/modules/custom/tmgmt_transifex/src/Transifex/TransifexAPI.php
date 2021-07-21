@@ -12,6 +12,10 @@ use Drupal\tmgmt\TranslatorInterface;
 * The class get all information about the Transifex project and its API settings, the
 * moment it gets inittiated.
 */
+
+const ENDPOINT_URL = 'https://www.transifex.com/api/2/'; # for production
+//const ENDPOINT_URL = 'http://nginx:8000/api/2/'; # for local
+
 class TransifexApi
 {
     const METADATA_NAME = "version";
@@ -39,7 +43,7 @@ class TransifexApi
     {
         $data_string = json_encode($data);
         $url = join('', array(
-           'https://www.transifex.com/api/2/',
+            ENDPOINT_URL,
             $url
         ));
         $agent = array(
@@ -106,13 +110,13 @@ class TransifexApi
     * Get stats about a Transifex resource
     *
     * @param string $slug The resource's slug
-    * @param string $lang_code The langage code to get stats for
+    * @param string $tx_language The langage code to get stats for
     *
     * @return mixed
     */
-    public function getStats($slug, $lang_code)
+    public function getStats($slug, $tx_language)
     {
-        $url = 'resource/' . $slug . '/stats/' . $lang_code . '/';
+        $url = 'resource/' . $slug . '/stats/' . $tx_language . '/';
         return json_decode($this->doRequestToProject('GET', $url));
     }
 
@@ -120,13 +124,13 @@ class TransifexApi
     * Get translations for a given Transifex resource
     *
     * @param $slug The resource's slug
-    * @param $lang$ The langage code to get translations for
+    * @param $tx_language$ The langage code to get translations for
     *
     * @return mixed
     */
-    public function getTranslations($slug, $lang)
+    public function getTranslations($slug, $tx_language)
     {
-        $url = 'resource/' . $slug . "/" . "translation/" . $lang . '/';
+        $url = 'resource/' . $slug . "/" . "translation/" . $tx_language . '/';
         return json_decode($this->doRequestToProject('GET', $url));
     }
 
@@ -217,7 +221,7 @@ class TransifexApi
         }
         return $ret;
     }
-  
+
     /**
     * Return information about a Transifex project
     *
@@ -229,10 +233,10 @@ class TransifexApi
         $request = $this->doRequestToProject('GET', '');
         return json_decode($request);
     }
-    
-    public function getRemoteTranslations($translator, $resource, $language)
+
+    public function getRemoteTranslations($translator, $resource, $tx_language)
     {
-        $content = $this->getTranslations($resource, $language)->content;
+        $content = $this->getTranslations($resource, $tx_language)->content;
         return Helpers::parseRemoteTranslations($content);
     }
 }

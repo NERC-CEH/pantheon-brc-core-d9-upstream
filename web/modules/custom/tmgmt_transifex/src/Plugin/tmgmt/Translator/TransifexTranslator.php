@@ -173,16 +173,16 @@ class TransifexTranslator extends TranslatorPluginBase implements ContainerFacto
     */
     public function checkForTranslations(JobInterface $job)
     {
+        $dp_language = $job->getTargetLanguage()->getId();
         $translator = $job->getTranslator();
-        $language = $translator->mapToRemoteLanguage($job->getTargetLanguage()->getId());
         $tx = new TransifexApi($translator);
         foreach ($job->getItems() as $tjiid => $job_item) {
             $target_resource = Helpers::slugForItem($job_item);
             if ($this->shouldManualUpdateTranslations(
-                $translator, $target_resource, $language
+                $translator, $target_resource, $dp_language
             )){
                 $this->updateJobWithTranslations(
-                    $translator, $target_resource, $language, false
+                    $translator, $target_resource, $dp_language, false
                 );
             }
         }
@@ -231,19 +231,24 @@ class TransifexTranslator extends TranslatorPluginBase implements ContainerFacto
             }
             $job->submitted($job_count . ' translation job(s) have been submitted or updated to Transifex.');
 
-            # See if we need to accept translations immediately
-            if ($this->shouldManualUpdateTranslations(
-                $translator, $slug, $job->getTargetLanguage()->getId()
-            )) {
-                drupal_set_message(
-                    'Job ' . $slug . ' -> ' . $job->getRemoteTargetLanguage() . ' already has translations, fetching'
-                );
-                $this->updateJobWithTranslations(
-                    $translator,
-                    $slug,
-                    $job->getTargetLanguage()->getId(),
-                    false
-                );
+            # After job is submitted check for translations because this resets the status of the job
+            foreach ($job->getItems() as $job_item) {
+                $slug = Helpers::slugForItem($job_item);
+
+                # See if we need to accept translations immediately
+                if ($this->shouldManualUpdateTranslations(
+                    $translator, $slug, $job->getTargetLanguage()->getId()
+                )) {
+                    drupal_set_message(
+                        'Job ' . $slug . ' -> ' . $job->getRemoteTargetLanguage() . ' already has translations, fetching'
+                    );
+                    $this->updateJobWithTranslations(
+                        $translator,
+                        $slug,
+                        $job->getTargetLanguage()->getId(),
+                        false
+                    );
+                }
             }
         } catch (TMGMTException $e) {
             \Drupal::logger('tmgmt_transifex')->error($e);
@@ -296,19 +301,20 @@ class TransifexTranslator extends TranslatorPluginBase implements ContainerFacto
 
     /**
     * Check if the manual sync should trigger updates in the tmgmt job.
-    * This is depended both on the resource/language stats and the
+    * This is depended both on the resource/language stats and the 
     * settings on the tmgmt_transifex plugin level
     *
     * @param TranslatorInterface $translator
     * @param string $resource Resource's slug
-    * @param string $language Language's code
+    * @param string $dp_language Language's code as in drupal
     *
     * @return boolean
     */
-    public function shouldManualUpdateTranslations($translator, $resource, $language)
+    public function shouldManualUpdateTranslations($translator, $resource, $dp_language)
     {
+        $tx_language = $translator->mapToRemoteLanguage($dp_language);
         $tx = new TransifexApi($translator);
-        $stats = $tx->getStats($resource, $language);
+        $stats = $tx->getStats($resource, $tx_language);
         if (!$stats) {
             drupal_set_message('Missing resource with slug: ' . $resource);
             return false;
@@ -343,10 +349,11 @@ class TransifexTranslator extends TranslatorPluginBase implements ContainerFacto
     *
     * @return array|null
     */
-    public function updateJobWithTranslations($translator, $resource, $language, $clean)
+    public function updateJobWithTranslations($translator, $resource, $dp_language, $clean)
     {
         $tx = new TransifexApi($translator);
-        $translations = $tx->getRemoteTranslations($translator, $resource, $language);
+        $tx_language = $translator->mapToRemoteLanguage($dp_language);
+        $translations = $tx->getRemoteTranslations($translator, $resource, $tx_language);
         // Transifex slug has the format 'txdrupal_nodeId_itemType'. We need to extract the nodeId
         // to match it with the appropriate node.
         $nodeInfo = Helpers::nodeInfoFromSlug($resource);
@@ -363,8 +370,8 @@ class TransifexTranslator extends TranslatorPluginBase implements ContainerFacto
             $tjid = $match[1];
 
             $job = Job::load(intval($tjid));
-            if ($job && $translator->mapToRemoteLanguage($job->getTargetLanguage()->getId()) == $language) {
-                \Drupal::logger('tmgmt_transifex')->info('Applying ' . $language . ' translations for job with id: ' . $tjid);
+            if ($job && $job->getTargetLanguage()->getId() == $dp_language) {
+                \Drupal::logger('tmgmt_transifex')->info('Applying ' . $dp_language . ' translations for job with id: ' . $tjid);
                 foreach ($job->getItems() as $tjiid => $job_item) {
                     // Check if node id and node item type match
                     if ($job_item->getItemId() == $nodeInfo['nodeId'] &&

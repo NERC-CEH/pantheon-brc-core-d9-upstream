@@ -151,6 +151,26 @@ class Sentence
         return str_replace($character, $replace, html_entity_decode($string, ENT_QUOTES, "UTF-8"));
     }
     /**
+     * Checks if punctuation character must create a new line.
+     * This must happen only if it is followed by a new line or a space.
+     *
+     * @param array $chars
+     * @param string $char
+     * @param int $index
+     * @return boolean
+     */
+    private function mustCreateNewline($chars, $char, $index)
+    {
+        if(in_array($char, $this->terminals)){
+            if(isset($chars[$index + 1])){
+                if ($chars[$index + 1] == ' ' || $chars[$index + 1] == '\r\n'){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    /**
     * Splits an array of lines by (consecutive sequences of)
     * terminals, keeping terminals.
     *
@@ -168,15 +188,13 @@ class Sentence
     {
         $parts = array();
         $chars = preg_split('//u', $line, -1, PREG_SPLIT_NO_EMPTY); // This is UTF8 multibyte safe!
-        $is_terminal = in_array($chars[0], $this->terminals);
         $part = '';
         foreach ($chars as $index => $char) {
-            if (in_array($char, $this->terminals) !== $is_terminal) {
+            $part .= $char;
+            if(self::mustCreateNewline($chars, $char, $index)){
                 $parts[] = $part;
                 $part = '';
-                $is_terminal = !$is_terminal;
             }
-            $part .= $char;
         }
         if (!empty($part)) {
             $parts[] = $part;

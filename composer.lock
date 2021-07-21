@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c1d52d9ffb15f12045f1078809d3baa0",
+    "content-hash": "3167c2f729b18d1ad8ce1b85e0bc580c",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -4168,16 +4168,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "9.2.1",
+            "version": "9.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "20eb99aa59a265d22a21a4d6fde70901c3b5a37c"
+                "reference": "08ad826a9ccd193e9a2e717f75c9f6fac3274a79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/20eb99aa59a265d22a21a4d6fde70901c3b5a37c",
-                "reference": "20eb99aa59a265d22a21a4d6fde70901c3b5a37c",
+                "url": "https://api.github.com/repos/drupal/core/zipball/08ad826a9ccd193e9a2e717f75c9f6fac3274a79",
+                "reference": "08ad826a9ccd193e9a2e717f75c9f6fac3274a79",
                 "shasum": ""
             },
             "require": {
@@ -4203,7 +4203,7 @@
                 "laminas/laminas-diactoros": "^2.1",
                 "laminas/laminas-feed": "^2.12",
                 "masterminds/html5": "^2.1",
-                "pear/archive_tar": "^1.4.12",
+                "pear/archive_tar": "^1.4.14",
                 "php": ">=7.3.0",
                 "psr/log": "^1.0",
                 "stack/builder": "^1.0",
@@ -4416,22 +4416,22 @@
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
             "support": {
-                "source": "https://github.com/drupal/core/tree/9.2.1"
+                "source": "https://github.com/drupal/core/tree/9.2.2"
             },
-            "time": "2021-07-07T13:04:41+00:00"
+            "time": "2021-07-20T21:42:48+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
-            "version": "9.2.1",
+            "version": "9.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-composer-scaffold.git",
-                "reference": "7b125516d6568b888945ee03ac2636dcced76e8d"
+                "reference": "e146f2d0bab60c798c7cc91eae79f25c43a96899"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-composer-scaffold/zipball/7b125516d6568b888945ee03ac2636dcced76e8d",
-                "reference": "7b125516d6568b888945ee03ac2636dcced76e8d",
+                "url": "https://api.github.com/repos/drupal/core-composer-scaffold/zipball/e146f2d0bab60c798c7cc91eae79f25c43a96899",
+                "reference": "e146f2d0bab60c798c7cc91eae79f25c43a96899",
                 "shasum": ""
             },
             "require": {
@@ -4466,22 +4466,22 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-composer-scaffold/tree/9.2.1"
+                "source": "https://github.com/drupal/core-composer-scaffold/tree/9.2.2"
             },
-            "time": "2020-08-07T22:30:13+00:00"
+            "time": "2021-07-10T22:39:33+00:00"
         },
         {
             "name": "drupal/core-recommended",
-            "version": "9.2.1",
+            "version": "9.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-recommended.git",
-                "reference": "f043a94e9a8aa60016974d60648508258a51bf86"
+                "reference": "06a84abc067304e9280fde292a382ca6bce82ee1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/f043a94e9a8aa60016974d60648508258a51bf86",
-                "reference": "f043a94e9a8aa60016974d60648508258a51bf86",
+                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/06a84abc067304e9280fde292a382ca6bce82ee1",
+                "reference": "06a84abc067304e9280fde292a382ca6bce82ee1",
                 "shasum": ""
             },
             "require": {
@@ -4490,7 +4490,7 @@
                 "doctrine/annotations": "1.13.1",
                 "doctrine/lexer": "1.2.1",
                 "doctrine/reflection": "1.2.2",
-                "drupal/core": "9.2.1",
+                "drupal/core": "9.2.2",
                 "egulias/email-validator": "2.1.25",
                 "guzzlehttp/guzzle": "6.5.5",
                 "guzzlehttp/promises": "1.4.1",
@@ -4501,7 +4501,7 @@
                 "laminas/laminas-stdlib": "3.3.1",
                 "laminas/laminas-zendframework-bridge": "1.2.0",
                 "masterminds/html5": "2.7.4",
-                "pear/archive_tar": "1.4.13",
+                "pear/archive_tar": "1.4.14",
                 "pear/console_getopt": "v1.4.3",
                 "pear/pear-core-minimal": "v1.10.10",
                 "pear/pear_exception": "v1.0.2",
@@ -4553,9 +4553,9 @@
             ],
             "description": "Locked core dependencies; require this project INSTEAD OF drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-recommended/tree/9.2.1"
+                "source": "https://github.com/drupal/core-recommended/tree/9.2.2"
             },
-            "time": "2021-07-07T13:04:41+00:00"
+            "time": "2021-07-20T21:42:48+00:00"
         },
         {
             "name": "drupal/csv_serialization",
@@ -7987,17 +7987,17 @@
         },
         {
             "name": "drupal/quicktabs",
-            "version": "3.0.0-alpha4",
+            "version": "3.0.0-alpha5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/quicktabs.git",
-                "reference": "8.x-3.0-alpha4"
+                "reference": "8.x-3.0-alpha5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/quicktabs-8.x-3.0-alpha4.zip",
-                "reference": "8.x-3.0-alpha4",
-                "shasum": "6f95444322a8950f9d2f1083cde7b92babe07146"
+                "url": "https://ftp.drupal.org/files/projects/quicktabs-8.x-3.0-alpha5.zip",
+                "reference": "8.x-3.0-alpha5",
+                "shasum": "992bde8fef2d9e9932c25d629595e141acc7fd56"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9",
@@ -8011,8 +8011,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.0-alpha4",
-                    "datestamp": "1608312818",
+                    "version": "8.x-3.0-alpha5",
+                    "datestamp": "1626816407",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -9781,17 +9781,17 @@
         },
         {
             "name": "drupal/views_bootstrap",
-            "version": "3.6.0",
+            "version": "3.7.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_bootstrap.git",
-                "reference": "8.x-3.6"
+                "reference": "8.x-3.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_bootstrap-8.x-3.6.zip",
-                "reference": "8.x-3.6",
-                "shasum": "a189b506f1bbd3de472311f24a596e841ba4fc15"
+                "url": "https://ftp.drupal.org/files/projects/views_bootstrap-8.x-3.7.zip",
+                "reference": "8.x-3.7",
+                "shasum": "4cb9eb5738a50c71636d442a97681342e86a94c0"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -9799,8 +9799,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.6",
-                    "datestamp": "1614207426",
+                    "version": "8.x-3.7",
+                    "datestamp": "1626202107",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -12138,16 +12138,16 @@
         },
         {
             "name": "pear/archive_tar",
-            "version": "1.4.13",
+            "version": "1.4.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear/Archive_Tar.git",
-                "reference": "2b87b41178cc6d4ad3cba678a46a1cae49786011"
+                "reference": "4d761c5334c790e45ef3245f0864b8955c562caa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/Archive_Tar/zipball/2b87b41178cc6d4ad3cba678a46a1cae49786011",
-                "reference": "2b87b41178cc6d4ad3cba678a46a1cae49786011",
+                "url": "https://api.github.com/repos/pear/Archive_Tar/zipball/4d761c5334c790e45ef3245f0864b8955c562caa",
+                "reference": "4d761c5334c790e45ef3245f0864b8955c562caa",
                 "shasum": ""
             },
             "require": {
@@ -12214,7 +12214,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-02-16T10:50:50+00:00"
+            "time": "2021-07-20T13:53:39+00:00"
         },
         {
             "name": "pear/console_getopt",
@@ -15904,24 +15904,23 @@
     "packages-dev": [
         {
             "name": "doctrine/cache",
-            "version": "1.11.3",
+            "version": "1.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "3bb5588cec00a0268829cc4a518490df6741af9d"
+                "reference": "4cf401d14df219fa6f38b671f5493449151c9ad8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/3bb5588cec00a0268829cc4a518490df6741af9d",
-                "reference": "3bb5588cec00a0268829cc4a518490df6741af9d",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/4cf401d14df219fa6f38b671f5493449151c9ad8",
+                "reference": "4cf401d14df219fa6f38b671f5493449151c9ad8",
                 "shasum": ""
             },
             "require": {
                 "php": "~7.1 || ^8.0"
             },
             "conflict": {
-                "doctrine/common": ">2.2,<2.4",
-                "psr/cache": ">=3"
+                "doctrine/common": ">2.2,<2.4"
             },
             "require-dev": {
                 "alcaeus/mongo-php-adapter": "^1.1",
@@ -15930,8 +15929,9 @@
                 "mongodb/mongodb": "^1.1",
                 "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
                 "predis/predis": "~1.0",
-                "psr/cache": "^1.0 || ^2.0",
-                "symfony/cache": "^4.4 || ^5.2"
+                "psr/cache": "^1.0 || ^2.0 || ^3.0",
+                "symfony/cache": "^4.4 || ^5.2 || ^6.0@dev",
+                "symfony/var-exporter": "^4.4 || ^5.2 || ^6.0@dev"
             },
             "suggest": {
                 "alcaeus/mongo-php-adapter": "Required to use legacy MongoDB driver"
@@ -15983,7 +15983,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/cache/issues",
-                "source": "https://github.com/doctrine/cache/tree/1.11.3"
+                "source": "https://github.com/doctrine/cache/tree/1.12.1"
             },
             "funding": [
                 {
@@ -15999,7 +15999,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-05-25T09:01:55+00:00"
+            "time": "2021-07-17T14:39:21+00:00"
         },
         {
             "name": "doctrine/common",
@@ -16552,6 +16552,7 @@
         "drupal/menu_breadcrumb": 20,
         "drupal/notify": 20,
         "drupal/pathologic": 15,
+        "drupal/quicktabs": 15,
         "drupal/roleassign": 10,
         "drupal/shs": 15,
         "drupal/synonyms": 10,

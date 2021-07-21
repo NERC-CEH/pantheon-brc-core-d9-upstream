@@ -7,7 +7,7 @@ use Drupal\tmgmt\JobInterface;
 * Class that holds helper functions
 *
 * Currently it includes functions that have do with slug creation, parsing and handling
-* HTML from / to strings. 
+* HTML from / to strings.
 */
 class Helpers
 {
@@ -43,17 +43,13 @@ class Helpers
            do with the same node (for example translating both the copy and the link title), the
            two resources will have the same slug and overwrite one the other. For this reason
            we need to add another parameter to the slug to distinguish two jobs -- the
-           item type. 
+           item type.
         */
-        return join(
-            '_',
-            array($prefix, str_replace(':', '_', $job_item->getItemId() . "_" . 
-                  $job_item->getItemType()
-              )
-            )
-        );
+        $slug = $prefix . '_' . $job_item->getItemId() . "_" . $job_item->getItemType();
+        $slug = str_replace(':', '_', $slug);
+        return $slug;
     }
-    
+
     /**
     * Extract the node id and item type from the Transifex slug
     *
@@ -106,6 +102,7 @@ class Helpers
         $translation_payload = array();
         $ignore_keys_array = Helpers::getKeysToIgnore();
         foreach ($job_item->getData() as $fieldName => $value) {
+            list($context, $comment) = Helpers::get_context_and_comment($job_item, $fieldName);
 
             // Ignore any keys that we don't care about translating
             if (in_array($fieldName, $ignore_keys_array)) {
@@ -117,7 +114,9 @@ class Helpers
                     if (in_array($value[$propCount]['format']['#text'], array('full_html', 'filtered_html'))) {
                         $translation_payload[] = array(
                             'key' => $fieldName . '_' . $propCount,
-                            'value' => $value[$propCount]['value']['#text']
+                            'value' => $value[$propCount]['value']['#text'],
+                            'context' => $context,
+                            'developer_comment' => $comment
                         );
                     } elseif (Helpers::isPathKey($fieldName)) {
                         /*
@@ -128,18 +127,24 @@ class Helpers
                         // Create a string about the URL alias
                         $translation_payload[] = array(
                             'key' => $fieldName . '_' . $propCount . '_alias',
-                            'value' => $Sentence->split($value[$propCount]['alias']['#text'])
+                            'value' => $Sentence->split($value[$propCount]['alias']['#text']),
+                            'context' => $context,
+                            'developer_comment' => $comment
                         );
                         // Create a string about the URL langcode
                         $translation_payload[] = array(
                             'key' => $fieldName . '_' . $propCount . '_langcode',
-                            'value' => $Sentence->split($value[$propCount]['langcode']['#text'])
+                            'value' => $Sentence->split($value[$propCount]['langcode']['#text']),
+                            'context' => $context,
+                            'developer_comment' => $comment
                         );
                     } else {
                         $Sentence	= new Sentence;
                         $translation_payload[] = array(
                             'key' => $fieldName . '_' . $propCount,
-                            'value' => $Sentence->split($value[$propCount]['value']['#text'])
+                            'value' => $Sentence->split($value[$propCount]['value']['#text']),
+                            'context' => $context,
+                            'developer_comment' => $comment
                         );
                     }
                     $propCount++;
@@ -155,20 +160,24 @@ class Helpers
                 if ($value['#text'] != strip_tags($value['#text'])) {
                     $translation_payload[] = array(
                         'key' => $fieldName,
-                        'value' => html_entity_decode($value['#text'])
+                        'value' => html_entity_decode($value['#text']),
+                        'context' => $context,
+                        'developer_comment' => $comment
                     );
                 } else {
                     $Sentence = new Sentence;
                     $translation_payload[] = [
                         'key' => $fieldName,
-                        'value' => $Sentence->split($value['#text'])
+                        'value' => $Sentence->split($value['#text']),
+                        'context' => $context,
+                        'developer_comment' => $comment
                     ];
                 }
             }
         }
         return $translation_payload;
     }
-  
+
     /**
     * Check if a given key is matches the path node
     *
@@ -201,16 +210,26 @@ class Helpers
             array_column($strings, 'key')
         );
         if ($title_index) {
-            $html .= Helpers::renderHTML('title_field_0', $strings[$title_index]['value']);
+            $html .= Helpers::renderHTML(
+                'title_field_0',
+                $strings[$title_index]['value'],
+                $strings[$title_index]['context'],
+                $strings[$title_index]['developer_comment']
+            );
             unset($strings[$title_index]);
         }
         // Get the rest
         foreach ($strings as $string) {
-            $html .= Helpers::renderHTML($string['key'], $string['value']);
+            $html .= Helpers::renderHTML(
+                $string['key'],
+                $string['value'],
+                $string['context'],
+                $string['developer_comment']
+            );
         }
         return $html;
     }
-  
+
     /**
     * Return an array of keys to ignore when extracting strings for a node
     *
@@ -250,19 +269,36 @@ class Helpers
     * @param string $text
     * @return string The <div> HTML element.
     */
-    public static function renderHTML($label, $text)
+    public static function renderHTML($label, $text, $context, $developer_comment)
     {
         if (!is_array($text)) {
-            return "<div class=\"tx_string\" id=\"" . $label . "\">" . $text . "</div>";
-        } else {
-            $ret = "<div class=\"tx_string\" id=\"" . $label . "\">";
-            foreach ($text as $sentence) {
-                $ret .= "<div class=\"tx_string_sentence\">" . nl2br($sentence) . "</div>";
+            $result = "<div class=\"tx_string\" id=\"" . $label . "\"";
+            if ($context) {
+              $result = $result . " tx-context=\"" . $context . "\"";
             }
-            return $ret . "</div>";
+            if ($developer_comment) {
+              $result = $result . " tx-comment=\"" . $developer_comment . "\"";
+            }
+            $result = $result . ">" . $text . "</div>";
+            return $result;
+
+          } else {
+            $result = "<div class=\"tx_string\" id=\"" . $label . "\"";
+            if ($context) {
+              $result = $result . " tx-context=\"" . $context . "\"";
+            }
+            if ($developer_comment) {
+              $result = $result . " tx-comment=\"" . $developer_comment . "\"";
+            }
+            $result = $result . ">";
+
+            foreach ($text as $sentence) {
+              $result .= "<div class=\"tx_string_sentence\">" . nl2br($sentence) . '</div>';
+            }
+            return $result . "</div>";
         }
     }
-  
+
     /**
     * Given HTML content taken from Transifex, extract and return an array of translations
     *
@@ -272,7 +308,9 @@ class Helpers
     public static function parseRemoteTranslations($content)
     {
         $doc = new \DOMDocument();
-        $doc->loadHTML(mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8'));
+        $doc->loadHTML(mb_convert_encoding(
+            Helpers::escape_brackets($content), 'HTML-ENTITIES', 'UTF-8'
+          ));
         $xpath = new \DOMXPath($doc);
 
         $translations = [];
@@ -287,6 +325,7 @@ class Helpers
             } else {
                 $tr = join(' ', $sentences);
             }
+            $tr = Helpers::unescape_brackets($tr);
             $key = $translation->getAttribute('id');
             $split = explode('_', $key);
             $propCount = array_pop($split);
@@ -320,5 +359,99 @@ class Helpers
             }
         }
         return $translations;
+    }
+
+    protected static function escape_brackets($content) {
+        $result = str_replace('[', '__TX_OPENING_SQUARE_BRACKET__', $content);
+        $result = str_replace(']', '__TX_CLOSING_SQUARE_BRACKET__', $result);
+        return $result;
+    }
+
+    protected static function unescape_brackets($content) {
+        $result = str_replace('__TX_OPENING_SQUARE_BRACKET__', '[', $content);
+        $result = str_replace('__TX_CLOSING_SQUARE_BRACKET__', ']', $result);
+        return $result;
+    }
+
+    protected static function get_context_and_comment($job_item, $fieldName) {
+        if ($job_item->plugin == 'locale') {
+            $locale_object = Helpers::getLocaleObject($job_item);
+            return array($locale_object->context, $locale_object->location);
+        } elseif ($job_item->plugin == 'i18n_string') {
+            list(, $type, $object_id) = explode(':', $job_item->item_id, 3);
+            $wrapper = tmgmt_i18n_string_get_wrapper(
+                $job_item->item_type,
+                (object) array('type' => $type, 'objectid' => $object_id)
+            );
+            $i18n_strings = $wrapper->get_strings();
+            $i18n_string = NULL;
+            foreach ($i18n_strings as $key => $value) {
+                if ($key == $fieldName) {
+                    $i18n_string = $value;
+                    break;
+                }
+            }
+            return array($i18n_string->context, $i18n_string->location);
+        } else {
+            return array('', '');
+        }
+    }
+
+    protected static function getLocaleObject(TMGMTJobItem $job_item) {
+        # Copied from tmgmt/sources/locale/tmgmt_locale.plugin.inc
+        $locale_lid = $job_item->item_id;
+
+        // Check existence of assigned lid.
+        $exists = db_query("SELECT COUNT(lid) FROM {locales_source} WHERE lid = :lid", array(':lid' => $locale_lid))->fetchField();
+        if (!$exists) {
+            throw new TMGMTException(t('Unable to load locale with id %id', array('%id' => $job_item->item_id)));
+        }
+
+        // This is necessary as the method is also used in the getLabel() callback
+        // and for that case the job is not available in the cart.
+        if (!empty($job_item->tjid)) {
+            $source_language = $job_item->getJob()->source_language;
+        }
+        else {
+            $source_language = $job_item->getSourceLangCode();
+        }
+
+        if ($source_language == 'en') {
+            $query = db_select('locales_source', 'ls');
+            $query
+                ->fields('ls')
+                ->condition('ls.lid', $locale_lid);
+            $locale_object = $query
+                ->execute()
+                ->fetchObject();
+
+            $locale_object->language = 'en';
+
+            if (empty($locale_object)) {
+                return null;
+            }
+
+            $locale_object->origin = 'source';
+        }
+        else {
+            $query = db_select('locales_target', 'lt');
+            $query->join('locales_source', 'ls', 'ls.lid = lt.lid');
+            $query
+                ->fields('lt')
+                ->fields('ls')
+                ->condition('lt.lid', $locale_lid)
+                ->condition('lt.language', $source_language);
+            $locale_object = $query
+                ->execute()
+                ->fetchObject();
+
+            if (empty($locale_object)) {
+                return null;
+            }
+
+            $locale_object->origin = 'target';
+        }
+
+        return $locale_object;
     }
 }
