@@ -80,3 +80,35 @@ oauth2_token.user_debug:
   options:
     _auth: ['oauth2']
     no_cache: TRUE
+
+simple_oauth.userinfo:
+  path: '/oauth/userinfo'
+  defaults:
+    _controller: Drupal\simple_oauth\Controller\UserInfo::handle
+    _title: 'OpenID Connect User Info'
+  methods: [GET, POST]
+  requirements:
+    _role: 'authenticated'
+  options:
+    _auth: ['oauth2']
+simple_oauth.jwks:
+  path: '/oauth/jwks'
+  defaults:
+    _controller: Drupal\simple_oauth\Controller\Jwks::handle
+    _title: 'OpenID Connect Key Store Info (JSON)'
+  methods: [GET]
+  requirements:
+    _role: 'authenticated'
+  options:
+    _auth: ['oauth2']
+
+simple_oauth.settings.openid_connect:
+  path: '/admin/config/people/simple_oauth/openid-connect'
+  defaults:
+    _form: '\Drupal\simple_oauth\Form\OpenIdConnectSettingsForm'
+    _title: 'OpenID Connect'
+  requirements:
+    _permission: 'administer simple_oauth entities'
+  options:
+    _admin_route: TRUE
+  base_route: oauth2_token.settings

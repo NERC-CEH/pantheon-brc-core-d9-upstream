@@ -51,7 +51,7 @@ class Oauth2Token extends ControllerBase {
           'uuid' => $body['client_id'],
         ]);
       if (empty($client_drupal_entities)) {
-        return OAuthServerException::invalidClient()
+        return OAuthServerException::invalidClient($request)
           ->generateHttpResponse(new Response());
       }
       $client_drupal_entity = reset($client_drupal_entities);

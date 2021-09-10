@@ -219,15 +219,15 @@ function simple_oauth_consumers_list_alter(&$data, $context) {
   }
   elseif ($context['type'] === 'row') {
     $entity = $context['entity'];
+    $data['redirect'] = NULL;
+    if ($redirect_url = $context['entity']->get('redirect')->value) {
+      $data['redirect'] = Link::fromTextAndUrl($redirect_url, Url::fromUri($redirect_url));
+    }
     $data['scopes'] = [
       'data' => ['#theme' => 'item_list', '#items' => []],
     ];
     foreach ($entity->get('roles')->getValue() as $role) {
       $data['scopes']['data']['#items'][] = $role['target_id'];
-    }
-    $data['redirect'] = NULL;
-    if ($redirect_url = $context['entity']->get('redirect')->value) {
-      $data['redirect'] = Link::fromTextAndUrl($redirect_url, Url::fromUri($redirect_url));
     }
   }
 }

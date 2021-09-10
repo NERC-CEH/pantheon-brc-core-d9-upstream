@@ -7,6 +7,7 @@ use Drupal\Component\Plugin\Exception\PluginNotFoundException;
 use Drupal\consumers\Entity\Consumer;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Config\ImmutableConfig;
+use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Plugin\DefaultPluginManager;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
@@ -69,6 +70,13 @@ class Oauth2GrantManager extends DefaultPluginManager implements Oauth2GrantMana
    * @var \League\OAuth2\Server\AuthorizationServer
    */
   protected $server;
+
+  /**
+   * The file system.
+   *
+   * @var \Drupal\Core\File\FileSystemInterface
+   */
+  protected $fileSystem;
 
   /**
    * Constructor for Oauth2GrantManager objects.
@@ -146,7 +154,7 @@ class Oauth2GrantManager extends DefaultPluginManager implements Oauth2GrantMana
         $this->clientRepository,
         $this->accessTokenRepository,
         $this->scopeRepository,
-        realpath($this->privateKeyPath),
+        $this->fileSystem()->realpath($this->privateKeyPath),
         Core::ourSubstr($salt, 0, 32),
         $this->responseType
       );
@@ -156,8 +164,8 @@ class Oauth2GrantManager extends DefaultPluginManager implements Oauth2GrantMana
     if ($client && ($grant instanceof AuthCodeGrant)) {
       $client_has_pkce_enabled = $client->hasField('pkce')
         && $client->get('pkce')->first()->value;
-      if($client_has_pkce_enabled){
-        $grant->enableCodeExchangeProof();
+      if(!$client_has_pkce_enabled){
+        $grant->disableRequireCodeChallengeForPublicClients();
       }
     }
     // Enable the grant on the server with a token TTL of X hours.
@@ -185,6 +193,19 @@ class Oauth2GrantManager extends DefaultPluginManager implements Oauth2GrantMana
     if (!file_exists($this->publicKeyPath) || !file_exists($this->privateKeyPath)) {
       throw OAuthServerException::serverError(sprintf('You need to set the OAuth2 secret and private keys.'));
     }
+  }
+
+  /**
+   * Lazy loads the file system.
+   *
+   * @return \Drupal\Core\File\FileSystemInterface
+   *   The file system service.
+   */
+  protected function fileSystem(): FileSystemInterface {
+    if (!isset($this->fileSystem)) {
+      $this->fileSystem = \Drupal::service('file_system');
+    }
+    return $this->fileSystem;
   }
 
 }
