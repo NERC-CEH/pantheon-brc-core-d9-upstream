@@ -11,7 +11,7 @@ use Drush\Commands\DrushCommands;
 /**
  * Drush commands for Simple OAuth.
  */
-class SimpleOauthCommands extends DrushCommands {
+final class SimpleOauthCommands extends DrushCommands {
 
   /**
    * The key generator.

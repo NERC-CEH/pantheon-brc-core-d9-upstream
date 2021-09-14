@@ -54,9 +54,7 @@ class TokenAuthUser implements TokenAuthUserInterface {
       $this->subject = $this->consumer->get('user_id')->entity;
     }
     if (!$this->subject) {
-      $server_request = \Drupal::service('psr7.http_message_factory')
-        ->createRequest(\Drupal::request());
-      throw OAuthServerException::invalidClient($server_request);
+      throw OAuthServerException::invalidClient();
     }
     $this->token = $token;
   }
@@ -853,7 +851,7 @@ class TokenAuthUser implements TokenAuthUserInterface {
    * {@inheritdoc}
    */
   public function toUrl($rel = 'canonical', array $options = []) {
-    return $this->subject->toUrl($rel, $options);
+    $this->subject->toUrl($rel, $options);
   }
 
   /**

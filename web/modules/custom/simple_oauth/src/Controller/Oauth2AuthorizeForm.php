@@ -150,8 +150,7 @@ class Oauth2AuthorizeForm extends FormBase {
         'uuid' => $client_uuid,
       ]);
     if (empty($client_drupal_entities)) {
-      $server_request = $this->messageFactory->createRequest($request);
-      throw OAuthServerException::invalidClient($server_request);
+      throw OAuthServerException::invalidClient();
     }
     $client_drupal_entity = reset($client_drupal_entities);
     $this->server = $this

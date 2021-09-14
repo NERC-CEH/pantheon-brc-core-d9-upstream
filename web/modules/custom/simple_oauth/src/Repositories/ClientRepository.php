@@ -30,7 +30,7 @@ class ClientRepository implements ClientRepositoryInterface {
   /**
    * {@inheritdoc}
    */
-  public function getClientEntity($client_identifier) {
+  public function getClientEntity($client_identifier, $grant_type = NULL, $client_secret = NULL, $must_validate_secret = TRUE) {
     $client_drupal_entities = $this->entityTypeManager
       ->getStorage('consumer')
       ->loadByProperties(['uuid' => $client_identifier]);
@@ -42,28 +42,15 @@ class ClientRepository implements ClientRepositoryInterface {
     /** @var \Drupal\consumers\Entity\Consumer $client_drupal_entity */
     $client_drupal_entity = reset($client_drupal_entities);
 
-    return new ClientEntity($client_drupal_entity);
-  }
-
-  /**
-   * @{inheritdoc}
-   */
-  public function validateClient($client_identifier, $client_secret, $grant_type) {
-    $client_drupal_entities = $this->entityTypeManager
-      ->getStorage('consumer')
-      ->loadByProperties(['uuid' => $client_identifier]);
-
-    /** @var \Drupal\consumers\Entity\Consumer $client_drupal_entity */
-    $client_drupal_entity = reset($client_drupal_entities);
     $secret = $client_drupal_entity->get('secret')->value;
-
-    // @todo check the grant type?
-
-    if ($client_drupal_entity->get('confidential')->value) {
-      return $this->passwordChecker->check($client_secret, $secret);
+    if (
+      $must_validate_secret && $client_drupal_entity->get('confidential')->value &&
+      $this->passwordChecker->check($client_secret, $secret) === FALSE
+    ) {
+      return NULL;
     }
 
-    return FALSE;
+    return new ClientEntity($client_drupal_entity);
   }
 
 }

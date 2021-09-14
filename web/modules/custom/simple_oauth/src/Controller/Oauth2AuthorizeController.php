@@ -103,9 +103,8 @@ class Oauth2AuthorizeController extends ControllerBase {
    */
   public function authorize(Request $request) {
     $client_uuid = $request->get('client_id');
-    $server_request = $this->messageFactory->createRequest($request);
     if (empty($client_uuid)) {
-      return OAuthServerException::invalidClient($server_request)
+      return OAuthServerException::invalidClient()
         ->generateHttpResponse(new Response());
     }
     $consumer_storage = $this->entityTypeManager()->getStorage('consumer');
@@ -114,7 +113,7 @@ class Oauth2AuthorizeController extends ControllerBase {
         'uuid' => $client_uuid,
       ]);
     if (empty($client_drupal_entities)) {
-      return OAuthServerException::invalidClient($server_request)
+      return OAuthServerException::invalidClient()
         ->generateHttpResponse(new Response());
     }
 
@@ -153,7 +152,7 @@ class Oauth2AuthorizeController extends ControllerBase {
       }
       try {
         $server = $this->grantManager->getAuthorizationServer($grant_type, $client_drupal_entity);
-        $ps7_request = $server_request;
+        $ps7_request = $this->messageFactory->createRequest($request);
         $auth_request = $server->validateAuthorizationRequest($ps7_request);
       }
       catch (OAuthServerException $exception) {
