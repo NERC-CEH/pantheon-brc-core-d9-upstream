@@ -115,6 +115,7 @@
         "drupal/synonyms": "^2.0@beta",
         "drupal/taxonomy_manager": "^2.0",
         "drupal/tmgmt": "^1.12",
+        "drupal/tmgmt_transifex": "^2.0",
         "drupal/token": "^1.9",
         "drupal/token_filter": "^1.2",
         "drupal/user_csv_import": "^2.0",

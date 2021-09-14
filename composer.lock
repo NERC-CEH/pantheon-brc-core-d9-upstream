@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c33a62996df74796c5a7c0821cef7c58",
+    "content-hash": "5b390f2dc9e0ae56aa7701888359ba33",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -9307,6 +9307,63 @@
             "homepage": "https://www.drupal.org/project/tmgmt",
             "support": {
                 "source": "https://git.drupalcode.org/project/tmgmt"
+            }
+        },
+        {
+            "name": "drupal/tmgmt_transifex",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/tmgmt_transifex.git",
+                "reference": "2.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/tmgmt_transifex-2.0.1.zip",
+                "reference": "2.0.1",
+                "shasum": "0e4568c51d699051822b8d598cb592385d9901eb"
+            },
+            "require": {
+                "drupal/core": "^9",
+                "drupal/tmgmt": "*"
+            },
+            "type": "module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.1",
+                    "datestamp": "1631621031",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "ariskats",
+                    "homepage": "https://www.drupal.org/user/3673005"
+                },
+                {
+                    "name": "kbairak",
+                    "homepage": "https://www.drupal.org/user/3664526"
+                },
+                {
+                    "name": "kgian",
+                    "homepage": "https://www.drupal.org/user/3673848"
+                },
+                {
+                    "name": "transifex",
+                    "homepage": "https://www.drupal.org/user/3538840"
+                }
+            ],
+            "description": "A connector integrating Translation Management Toolkit with Transifex LMS.",
+            "homepage": "https://www.drupal.org/project/tmgmt_transifex",
+            "support": {
+                "source": "https://git.drupalcode.org/project/tmgmt_transifex"
             }
         },
         {
