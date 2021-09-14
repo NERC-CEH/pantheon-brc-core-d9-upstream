@@ -1,0 +1,6 @@
+{
+  "name": "tmgmt_transifex",
+  "type": "module",
+  "core": "9.x",
+  "core_version_requirement": "^9"
+}

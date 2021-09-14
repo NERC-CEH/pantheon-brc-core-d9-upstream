@@ -1,0 +1,6 @@
+tmgmt_transifex.callback:
+  path: '/tmgmt_transifex_callback'
+  defaults:
+    _controller: '\Drupal\tmgmt_transifex\Controller\TransifexController::callback'
+  requirements:
+    _access: 'TRUE'

@@ -1,0 +1,30 @@
+---
+
+version: "3.7"
+services:
+  drupal9:
+    build: .
+    ports:
+      - 5008:80
+    depends_on:
+      - mysql_drupal9
+    stdin_open: true
+    tty: true
+    volumes:
+      - '..:/opt/drupal/web/modules/tmgmt_transifex'
+      - './settings.php:/opt/drupal/web/sites/default/settings.php'
+      - './init.sh:/opt/drupal/init.sh'
+
+  mysql_drupal9:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: drupal
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+    restart: always
+    volumes:
+      - drupal9_data:/var/lib/mysql
+
+volumes:
+  drupal9_data:

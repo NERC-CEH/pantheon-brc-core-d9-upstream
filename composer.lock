@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b390f2dc9e0ae56aa7701888359ba33",
+    "content-hash": "c33a62996df74796c5a7c0821cef7c58",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -492,16 +492,16 @@
         },
         {
             "name": "composer/installers",
-            "version": "v1.11.0",
+            "version": "v1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "ae03311f45dfe194412081526be2e003960df74b"
+                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/ae03311f45dfe194412081526be2e003960df74b",
-                "reference": "ae03311f45dfe194412081526be2e003960df74b",
+                "url": "https://api.github.com/repos/composer/installers/zipball/d20a64ed3c94748397ff5973488761b22f6d3f19",
+                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19",
                 "shasum": ""
             },
             "require": {
@@ -600,6 +600,7 @@
                 "modx",
                 "moodle",
                 "osclass",
+                "pantheon",
                 "phpbb",
                 "piwik",
                 "ppi",
@@ -622,7 +623,7 @@
             ],
             "support": {
                 "issues": "https://github.com/composer/installers/issues",
-                "source": "https://github.com/composer/installers/tree/v1.11.0"
+                "source": "https://github.com/composer/installers/tree/v1.12.0"
             },
             "funding": [
                 {
@@ -638,7 +639,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-04-28T06:42:17+00:00"
+            "time": "2021-09-13T08:19:44+00:00"
         },
         {
             "name": "composer/semver",
@@ -9307,63 +9308,6 @@
             "homepage": "https://www.drupal.org/project/tmgmt",
             "support": {
                 "source": "https://git.drupalcode.org/project/tmgmt"
-            }
-        },
-        {
-            "name": "drupal/tmgmt_transifex",
-            "version": "2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/tmgmt_transifex.git",
-                "reference": "2.0.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/tmgmt_transifex-2.0.1.zip",
-                "reference": "2.0.1",
-                "shasum": "0e4568c51d699051822b8d598cb592385d9901eb"
-            },
-            "require": {
-                "drupal/core": "^9",
-                "drupal/tmgmt": "*"
-            },
-            "type": "module",
-            "extra": {
-                "drupal": {
-                    "version": "2.0.1",
-                    "datestamp": "1631621031",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "ariskats",
-                    "homepage": "https://www.drupal.org/user/3673005"
-                },
-                {
-                    "name": "kbairak",
-                    "homepage": "https://www.drupal.org/user/3664526"
-                },
-                {
-                    "name": "kgian",
-                    "homepage": "https://www.drupal.org/user/3673848"
-                },
-                {
-                    "name": "transifex",
-                    "homepage": "https://www.drupal.org/user/3538840"
-                }
-            ],
-            "description": "A connector integrating Translation Management Toolkit with Transifex LMS.",
-            "homepage": "https://www.drupal.org/project/tmgmt_transifex",
-            "support": {
-                "source": "https://git.drupalcode.org/project/tmgmt_transifex"
             }
         },
         {
