@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f69945e57912b73c7b96ae1a63966579",
+    "content-hash": "9912ae7660d58a74324d51754dc57049",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -5379,26 +5379,26 @@
         },
         {
             "name": "drupal/eu_cookie_compliance",
-            "version": "1.14.0",
+            "version": "1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/eu-cookie-compliance.git",
-                "reference": "8.x-1.14"
+                "reference": "8.x-1.16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/eu_cookie_compliance-8.x-1.14.zip",
-                "reference": "8.x-1.14",
-                "shasum": "37b7d8e33d5bc466272a288dbbb386d8702ed3c1"
+                "url": "https://ftp.drupal.org/files/projects/eu_cookie_compliance-8.x-1.16.zip",
+                "reference": "8.x-1.16",
+                "shasum": "13f8056534b82242cc0f8a7200e0c11b6da5c99f"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9"
+                "drupal/core": "^8.9 || ^9"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.14",
-                    "datestamp": "1606569775",
+                    "version": "8.x-1.16",
+                    "datestamp": "1632461967",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7578,6 +7578,50 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/menu_item_extras",
                 "issues": "https://www.drupal.org/project/issues/menu_item_extras"
+            }
+        },
+        {
+            "name": "drupal/menu_items_visibility",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/menu_items_visibility.git",
+                "reference": "1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/menu_items_visibility-1.0.0.zip",
+                "reference": "1.0.0",
+                "shasum": "6977e72c9f0296a13b2cec334ef30e26aef88bc3"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0",
+                    "datestamp": "1631778503",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Rajeshreeputra",
+                    "homepage": "https://www.drupal.org/user/3418561"
+                }
+            ],
+            "description": "Controls the visibility of the menus for user roles.",
+            "homepage": "https://www.drupal.org/project/menu_items_visibility",
+            "support": {
+                "source": "https://git.drupalcode.org/project/menu_items_visibility"
             }
         },
         {
@@ -9837,17 +9881,17 @@
         },
         {
             "name": "drupal/views_bootstrap",
-            "version": "3.7.0",
+            "version": "3.8.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_bootstrap.git",
-                "reference": "8.x-3.7"
+                "reference": "8.x-3.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_bootstrap-8.x-3.7.zip",
-                "reference": "8.x-3.7",
-                "shasum": "4cb9eb5738a50c71636d442a97681342e86a94c0"
+                "url": "https://ftp.drupal.org/files/projects/views_bootstrap-8.x-3.8.zip",
+                "reference": "8.x-3.8",
+                "shasum": "38fc40c698d06487306714abc548559e6e5ea7fd"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -9855,8 +9899,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.7",
-                    "datestamp": "1626202107",
+                    "version": "8.x-3.8",
+                    "datestamp": "1632494551",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
