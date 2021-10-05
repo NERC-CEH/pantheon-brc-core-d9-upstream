@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fba8c25c8c3fbf2f253f143a7ae943d9",
+    "content-hash": "a83d277899470ef3b661ddcf07b8fe46",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -5379,17 +5379,17 @@
         },
         {
             "name": "drupal/eu_cookie_compliance",
-            "version": "1.16.0",
+            "version": "1.18.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/eu-cookie-compliance.git",
-                "reference": "8.x-1.16"
+                "reference": "8.x-1.18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/eu_cookie_compliance-8.x-1.16.zip",
-                "reference": "8.x-1.16",
-                "shasum": "13f8056534b82242cc0f8a7200e0c11b6da5c99f"
+                "url": "https://ftp.drupal.org/files/projects/eu_cookie_compliance-8.x-1.18.zip",
+                "reference": "8.x-1.18",
+                "shasum": "dfcbd4de713313b75feeefa0878379743479204b"
             },
             "require": {
                 "drupal/core": "^8.9 || ^9"
@@ -5397,8 +5397,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.16",
-                    "datestamp": "1632461967",
+                    "version": "8.x-1.18",
+                    "datestamp": "1632895785",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7511,76 +7511,6 @@
             }
         },
         {
-            "name": "drupal/menu_item_extras",
-            "version": "2.16.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/menu_item_extras.git",
-                "reference": "8.x-2.16"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/menu_item_extras-8.x-2.16.zip",
-                "reference": "8.x-2.16",
-                "shasum": "4ec194392abd534b9e917a29612be5f80a7993a0"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-2.16",
-                    "datestamp": "1629830739",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                },
-                "drush": {
-                    "services": {
-                        "drush.services.yml": "^9"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Andriy Khomych",
-                    "homepage": "https://www.drupal.org/u/andriy-khomych",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Bogdan Hepting",
-                    "homepage": "https://www.drupal.org/u/bogdan-hepting",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Oleh Vehera",
-                    "homepage": "https://www.drupal.org/u/voleger",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Mykhailo Gurei",
-                    "homepage": "https://www.drupal.org/u/ozin",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "Provide an additional custom fields which can be used on Menu link",
-            "homepage": "https://www.drupal.org/project/menu_item_extras",
-            "keywords": [
-                "Drupal",
-                "Mega Menu"
-            ],
-            "support": {
-                "source": "https://git.drupalcode.org/project/menu_item_extras",
-                "issues": "https://www.drupal.org/project/issues/menu_item_extras"
-            }
-        },
-        {
             "name": "drupal/menu_items_visibility",
             "version": "1.0.0",
             "source": {
@@ -7686,6 +7616,60 @@
                 "source": "https://git.drupalcode.org/project/metatag",
                 "issues": "https://www.drupal.org/project/issues/metatag",
                 "docs": "https://www.drupal.org/docs/8/modules/metatag"
+            }
+        },
+        {
+            "name": "drupal/module_missing_message_fixer",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/module_missing_message_fixer.git",
+                "reference": "2.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/module_missing_message_fixer-2.0.2.zip",
+                "reference": "2.0.2",
+                "shasum": "b1602e19ccdcb11a89bcd994efdddfd5c7611057"
+            },
+            "require": {
+                "drupal/core": "~9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.2",
+                    "datestamp": "1597229325",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "John Ouellet",
+                    "homepage": "https://www.drupal.org/u/labboy0276",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This module displays a list of missing modules that appear on your site and lets you fix the entries",
+            "homepage": "https://www.drupal.org/project/module_missing_message_fixer",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/module_missing_message_fixer",
+                "issues": "https://www.drupal.org/project/issues/module_missing_message_fixer"
             }
         },
         {
