@@ -54,6 +54,7 @@
         "drupal/commerce_variation_add_to_cart": "^1.5",
         "drupal/consumers": "^1.11",
         "drupal/contact_storage": "^1.1",
+        "drupal/cshs": "^3.5",
         "drupal/ctools": "^3.7",
         "drupal/disable_user_login_and_registration": "^1.1",
         "drupal/draggableviews": "^2.0",
