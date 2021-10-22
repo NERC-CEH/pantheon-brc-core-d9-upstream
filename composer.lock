@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cdbc9ff2522e26f872868d9d7f5d22a9",
+    "content-hash": "db4599d5bb600b1426c82c32958cc644",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -5448,17 +5448,17 @@
         },
         {
             "name": "drupal/exclude_node_title",
-            "version": "1.2.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/exclude_node_title.git",
-                "reference": "8.x-1.2"
+                "reference": "8.x-1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/exclude_node_title-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "c7bda0086adfe5b090fc1ee8bc166f9d456d62d6"
+                "url": "https://ftp.drupal.org/files/projects/exclude_node_title-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "da96901e2baff9638b98575f2a9b161056a83689"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -5466,8 +5466,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.2",
-                    "datestamp": "1615218163",
+                    "version": "8.x-1.3",
+                    "datestamp": "1634750841",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8691,17 +8691,17 @@
         },
         {
             "name": "drupal/shs",
-            "version": "1.0.0-alpha5",
+            "version": "2.0.0-rc1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/shs.git",
-                "reference": "8.x-1.0-alpha5"
+                "reference": "2.0.0-rc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/shs-8.x-1.0-alpha5.zip",
-                "reference": "8.x-1.0-alpha5",
-                "shasum": "6c9004ca33eebe85fb7d1d0d4a6749cd1042ccf5"
+                "url": "https://ftp.drupal.org/files/projects/shs-2.0.0-rc1.zip",
+                "reference": "2.0.0-rc1",
+                "shasum": "1c3c1203fcf7e022858d240df7939a099258b401"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
@@ -8712,11 +8712,11 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-alpha5",
-                    "datestamp": "1598635902",
+                    "version": "2.0.0-rc1",
+                    "datestamp": "1633337808",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -16694,7 +16694,6 @@
         "drupal/pathologic": 15,
         "drupal/quicktabs": 15,
         "drupal/roleassign": 10,
-        "drupal/shs": 15,
         "drupal/synonyms": 10,
         "drupal/views_field_view": 10,
         "drupal/webform_views": 15
