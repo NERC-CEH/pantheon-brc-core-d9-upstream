@@ -62,6 +62,7 @@
         "drupal/disable_user_login_and_registration": "^1.1",
         "drupal/draggableviews": "^2.0",
         "drupal/ds": "^3.13",
+        "drupal/easy_install": "^10.5",
         "drupal/editor_advanced_link": "^2.0",
         "drupal/entity": "^1.2",
         "drupal/entity_embed": "^1.2",
