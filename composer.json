@@ -22,7 +22,7 @@
         "drupal/address_map_link": "^1.2",
         "drupal/addtoany": "^1.15",
         "drupal/admin_toolbar": "^3.0",
-        "drupal/antibot": "^1.4",
+        "drupal/antibot": "^1.5",
         "drupal/autofloat": "^1.1",
         "drupal/backup_migrate": "^5.0",
         "drupal/bibcite": "^2.0@beta",
