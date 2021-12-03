@@ -19,6 +19,7 @@
     ],
     "require": {
         "defuse/php-encryption": "2.3.1",
+        "drupal/acl": "1.0-beta1",
         "drupal/address_map_link": "^1.2",
         "drupal/addtoany": "^1.15",
         "drupal/admin_toolbar": "^3.0",
@@ -80,6 +81,7 @@
         "drupal/fixed_text_link_formatter": "1.x-dev",
         "drupal/fontawesome": "^2.19",
         "drupal/fontawesome_menu_icons": "^1.9",
+        "drupal/forum_access": "1.0.0-alpha3",
         "drupal/google_analytics": "^3.1",
         "drupal/gutenberg": "^2.2",
         "drupal/imce": "^2.4",
