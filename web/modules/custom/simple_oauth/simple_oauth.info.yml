@@ -9,7 +9,7 @@ dependencies:
   - drupal:serialization
   - consumers:consumers
 
-# Information added by Drupal.org packaging script on 2020-04-30
-version: '8.x-4.5'
+# Information added by Drupal.org packaging script on 2022-01-05
+version: '8.x-4.6'
 project: 'simple_oauth'
-datestamp: 1588250236
+datestamp: 1641363729

@@ -28,6 +28,9 @@ class ClientEntity implements ClientEntityInterface {
     if ($entity->hasField('redirect')) {
       $this->redirectUri = $entity->get('redirect')->value;
     }
+    if ($entity->hasField('confidential')) {
+      $this->isConfidential = (bool) $entity->get('confidential')->value;
+    }
   }
 
   /**

@@ -53,7 +53,7 @@ class RefreshTokenRepository implements RefreshTokenRepositoryInterface {
    * {@inheritdoc}
    */
   public function revokeRefreshToken($token_id) {
-    // $this->revoke($token_id);
+    //$this->revoke($token_id);
   }
 
   /**
