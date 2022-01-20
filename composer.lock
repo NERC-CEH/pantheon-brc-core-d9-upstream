@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bd1ab17a48804a4328bb04b9f6b27357",
+    "content-hash": "f53f65a83603dd4c17a831e6e74047f1",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -223,7 +223,7 @@
         },
         {
             "name": "audiolabs/bibtexparser",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/audiolabs/bibtexparser.git",
@@ -238,7 +238,6 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -266,7 +265,7 @@
             ],
             "support": {
                 "issues": "https://github.com/audiolabs/bibtexparser/issues",
-                "source": "https://github.com/audiolabs/bibtexparser/tree/1.0.0"
+                "source": "https://github.com/audiolabs/bibtexparser/tree/master"
             },
             "time": "2020-08-24T07:09:27+00:00"
         },
@@ -2389,22 +2388,22 @@
         },
         {
             "name": "drupal/bibcite",
-            "version": "2.0.0-beta1",
+            "version": "2.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/bibcite.git",
-                "reference": "2.0.0-beta1"
+                "reference": "2.0.0-beta2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bibcite-2.0.0-beta1.zip",
-                "reference": "2.0.0-beta1",
-                "shasum": "3864c4c1251e1d814edb0cd7797d6140433c35f8"
+                "url": "https://ftp.drupal.org/files/projects/bibcite-2.0.0-beta2.zip",
+                "reference": "2.0.0-beta2",
+                "shasum": "fc2d6850c18479c661df67b11d38c5fe42b83744"
             },
             "require": {
                 "academicpuma/citeproc-php": "~1.0",
                 "adci/full-name-parser": "^0.2.4",
-                "audiolabs/bibtexparser": "dev-master",
+                "audiolabs/bibtexparser": "^1.0",
                 "caseyamcl/php-marc21": "~1.0",
                 "drupal/core": "^8 || ^9",
                 "drupal/entity": "^1.0",
@@ -2426,8 +2425,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0-beta1",
-                    "datestamp": "1635231188",
+                    "version": "2.0.0-beta2",
+                    "datestamp": "1642044055",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -5634,17 +5633,17 @@
         },
         {
             "name": "drupal/entity_legal",
-            "version": "3.0.0-beta2",
+            "version": "3.0.0-beta3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/entity_legal.git",
-                "reference": "3.0.0-beta2"
+                "reference": "3.0.0-beta3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_legal-3.0.0-beta2.zip",
-                "reference": "3.0.0-beta2",
-                "shasum": "6cd0093f473ca68ff2d42cfcc4328b759ad657a2"
+                "url": "https://ftp.drupal.org/files/projects/entity_legal-3.0.0-beta3.zip",
+                "reference": "3.0.0-beta3",
+                "shasum": "9df7702a62f69666d496de68c8464c062560461b"
             },
             "require": {
                 "drupal/core": "^8 || ^9",
@@ -5653,8 +5652,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.0.0-beta2",
-                    "datestamp": "1616108598",
+                    "version": "3.0.0-beta3",
+                    "datestamp": "1639745474",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -8133,21 +8132,22 @@
         },
         {
             "name": "drupal/metatag",
-            "version": "1.16.0",
+            "version": "1.19.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/metatag.git",
-                "reference": "8.x-1.16"
+                "reference": "8.x-1.19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/metatag-8.x-1.16.zip",
-                "reference": "8.x-1.16",
-                "shasum": "1c0028f4ff4583dc6601035657dd631c351b290c"
+                "url": "https://ftp.drupal.org/files/projects/metatag-8.x-1.19.zip",
+                "reference": "8.x-1.19",
+                "shasum": "d70f59c034e971885ed4969a11bb392f6ab447ee"
             },
             "require": {
-                "drupal/core": "^8 || ^9",
-                "drupal/token": "^1.0"
+                "drupal/core": "^9",
+                "drupal/token": "^1.0",
+                "php": ">=7.0"
             },
             "require-dev": {
                 "drupal/devel": "^4.0",
@@ -8155,13 +8155,14 @@
                 "drupal/metatag_open_graph": "*",
                 "drupal/page_manager": "4.x-dev",
                 "drupal/panelizer": "4.x-dev",
-                "drupal/redirect": "1.x-dev"
+                "drupal/redirect": "1.x-dev",
+                "mpyw/phpunit-patch-serializable-comparison": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.16",
-                    "datestamp": "1615820867",
+                    "version": "8.x-1.19",
+                    "datestamp": "1641496014",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -17649,7 +17650,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/bibcite": 10,
         "drupal/calendar": 15,
         "drupal/commerce_paypal": 5,
         "drupal/commerce_product_tax": 5,
