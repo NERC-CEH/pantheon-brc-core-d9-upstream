@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "307f50e06fc7a64fc2aeb43cda877ab4",
+    "content-hash": "2b183d7a1dce95fa1f01455974fa6254",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -9079,17 +9079,17 @@
         },
         {
             "name": "drupal/responsivewrappers",
-            "version": "2.0.1",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/responsivewrappers.git",
-                "reference": "2.0.1"
+                "reference": "2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/responsivewrappers-2.0.1.zip",
-                "reference": "2.0.1",
-                "shasum": "8799e2de7424d70dce791b8bb86cd16fd2bcdd94"
+                "url": "https://ftp.drupal.org/files/projects/responsivewrappers-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "2bd71b77f052195aa9cbfac0de45b811c822542a"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -9097,8 +9097,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.1",
-                    "datestamp": "1643033709",
+                    "version": "2.0.0",
+                    "datestamp": "1622473547",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9289,17 +9289,17 @@
         },
         {
             "name": "drupal/search_api",
-            "version": "1.22.0",
+            "version": "1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/search_api.git",
-                "reference": "8.x-1.22"
+                "reference": "8.x-1.23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.22.zip",
-                "reference": "8.x-1.22",
-                "shasum": "bac5923161436830eecdf115ef0333b3b931657e"
+                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.23.zip",
+                "reference": "8.x-1.23",
+                "shasum": "7de5425bba5b8daa37e98d47b677459dfb1abbe7"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
@@ -9320,8 +9320,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.22",
-                    "datestamp": "1641998566",
+                    "version": "8.x-1.23",
+                    "datestamp": "1642935837",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
