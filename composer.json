@@ -106,6 +106,7 @@
         "drupal/login_destination": "^2.0@beta",
         "drupal/login_emailusername": "^1.2",
         "drupal/mailchimp": "^2.0",
+        "drupal/markup": "^1.0@beta",
         "drupal/masquerade": "^2.0@beta",
         "drupal/menu_breadcrumb": "1.x-dev",
         "drupal/menu_items_visibility": "^1.1",
