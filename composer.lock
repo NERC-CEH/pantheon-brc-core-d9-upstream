@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5339d85a6cd8a50312d2a739438d8f6d",
+    "content-hash": "db5b94b38a489dce630a9c319440caf4",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -3069,28 +3069,28 @@
         },
         {
             "name": "drupal/chosen",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/chosen.git",
-                "reference": "3.0.1"
+                "reference": "3.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/chosen-3.0.1.zip",
-                "reference": "3.0.1",
-                "shasum": "088cb5bfb3872e217cff5300bc5884e022bd08d4"
+                "url": "https://ftp.drupal.org/files/projects/chosen-3.0.2.zip",
+                "reference": "3.0.2",
+                "shasum": "fe0c9beeb160f986981c5487068db4926f076b0f"
             },
             "require": {
                 "drupal/chosen_lib": "*",
-                "drupal/core": "^8.8 || ^9",
+                "drupal/core": "^8.8 || ^9 || ^10",
                 "harvesthq/chosen": "^1.8.7"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.0.1",
-                    "datestamp": "1603473892",
+                    "version": "3.0.2",
+                    "datestamp": "1646557968",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3123,16 +3123,16 @@
                     "homepage": "https://www.drupal.org/user/502018"
                 },
                 {
-                    "name": "arshadcn",
-                    "homepage": "https://www.drupal.org/user/571032"
-                },
-                {
                     "name": "kalman.hosszu",
                     "homepage": "https://www.drupal.org/user/267481"
                 },
                 {
                     "name": "nagy.balint",
                     "homepage": "https://www.drupal.org/user/1763952"
+                },
+                {
+                    "name": "shadcn",
+                    "homepage": "https://www.drupal.org/user/571032"
                 },
                 {
                     "name": "supercabbageuk",
@@ -3152,17 +3152,17 @@
         },
         {
             "name": "drupal/chosen_lib",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "require": {
                 "drupal/chosen": "^3",
-                "drupal/core": "^8 || ^9",
+                "drupal/core": "^8.8 || ^9 || ^10",
                 "php": ">=5.6.0"
             },
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "3.0.1",
-                    "datestamp": "1603473892",
+                    "version": "3.0.2",
+                    "datestamp": "1646557968",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3170,7 +3170,7 @@
                 },
                 "drush": {
                     "services": {
-                        "drush.services.yml": "^9"
+                        "drush.services.yml": "^9 || ^10 || ^11"
                     }
                 }
             },
@@ -3200,16 +3200,16 @@
                     "homepage": "https://www.drupal.org/user/502018"
                 },
                 {
-                    "name": "arshadcn",
-                    "homepage": "https://www.drupal.org/user/571032"
-                },
-                {
                     "name": "kalman.hosszu",
                     "homepage": "https://www.drupal.org/user/267481"
                 },
                 {
                     "name": "nagy.balint",
                     "homepage": "https://www.drupal.org/user/1763952"
+                },
+                {
+                    "name": "shadcn",
+                    "homepage": "https://www.drupal.org/user/571032"
                 },
                 {
                     "name": "supercabbageuk",
@@ -4331,17 +4331,17 @@
         },
         {
             "name": "drupal/consumers",
-            "version": "1.11.0",
+            "version": "1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/consumers.git",
-                "reference": "8.x-1.11"
+                "reference": "8.x-1.12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/consumers-8.x-1.11.zip",
-                "reference": "8.x-1.11",
-                "shasum": "2f440f4f61d5a85575504612b6b52d1d54ecd22f"
+                "url": "https://ftp.drupal.org/files/projects/consumers-8.x-1.12.zip",
+                "reference": "8.x-1.12",
+                "shasum": "c81a7533d3892288becd780f598afbac4665014e"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -4349,8 +4349,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.11",
-                    "datestamp": "1585606458",
+                    "version": "8.x-1.12",
+                    "datestamp": "1646690558",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6518,6 +6518,69 @@
             }
         },
         {
+            "name": "drupal/geolocation",
+            "version": "3.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/geolocation.git",
+                "reference": "8.x-3.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/geolocation-8.x-3.7.zip",
+                "reference": "8.x-3.7",
+                "shasum": "796797ff4d3cc9d8b645bf2534d783d170ef77f5"
+            },
+            "require": {
+                "drupal/core": "^8.7.7 || ^9"
+            },
+            "require-dev": {
+                "drupal/address": "*",
+                "drupal/geofield": "*",
+                "drupal/geolocation_demo": "*",
+                "drupal/geolocation_geometry": "*",
+                "drupal/geolocation_geometry_data": "*",
+                "drupal/geolocation_google_maps": "*",
+                "drupal/geolocation_google_maps_demo": "*",
+                "drupal/geolocation_google_static_maps": "*",
+                "drupal/geolocation_leaflet": "*",
+                "drupal/search_api": "*",
+                "drupal/search_api_location": "*",
+                "drupal/search_api_location_views": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-3.7",
+                    "datestamp": "1623052750",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "derjochenmeyer",
+                    "homepage": "https://www.drupal.org/u/derjochenmeyer"
+                },
+                {
+                    "name": "cadamski",
+                    "homepage": "https://www.drupal.org/u/cadamski"
+                }
+            ],
+            "description": "Provides a simple geolocation Drupal field type to store and display location data (lat, lng).",
+            "homepage": "https://www.drupal.org/project/geolocation",
+            "support": {
+                "source": "https://git.drupal.org/project/geolocation.git",
+                "issues": "https://www.drupal.org/project/issues/geolocation"
+            }
+        },
+        {
             "name": "drupal/google_analytics",
             "version": "3.1.0",
             "source": {
@@ -8638,17 +8701,17 @@
         },
         {
             "name": "drupal/pathologic",
-            "version": "1.0.0-alpha2",
+            "version": "1.0.0-alpha3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/pathologic.git",
-                "reference": "8.x-1.0-alpha2"
+                "reference": "8.x-1.0-alpha3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/pathologic-8.x-1.0-alpha2.zip",
-                "reference": "8.x-1.0-alpha2",
-                "shasum": "5b1b6846ab72e24a90dcd4cafbe855fba069e56b"
+                "url": "https://ftp.drupal.org/files/projects/pathologic-8.x-1.0-alpha3.zip",
+                "reference": "8.x-1.0-alpha3",
+                "shasum": "efcbbaccc24168e2fb30eb441e99ce330bde3321"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -8656,8 +8719,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-alpha2",
-                    "datestamp": "1593911470",
+                    "version": "8.x-1.0-alpha3",
+                    "datestamp": "1646804076",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -9661,17 +9724,17 @@
         },
         {
             "name": "drupal/shs",
-            "version": "2.0.0-rc1",
+            "version": "2.0.0-rc3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/shs.git",
-                "reference": "2.0.0-rc1"
+                "reference": "2.0.0-rc3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/shs-2.0.0-rc1.zip",
-                "reference": "2.0.0-rc1",
-                "shasum": "1c3c1203fcf7e022858d240df7939a099258b401"
+                "url": "https://ftp.drupal.org/files/projects/shs-2.0.0-rc3.zip",
+                "reference": "2.0.0-rc3",
+                "shasum": "2ae30536905343332c4778fa6d59386cf4f9632f"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
@@ -9682,8 +9745,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0-rc1",
-                    "datestamp": "1633337808",
+                    "version": "2.0.0-rc3",
+                    "datestamp": "1646804408",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
@@ -10394,23 +10457,24 @@
         },
         {
             "name": "drupal/tmgmt",
-            "version": "1.12.0",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/tmgmt.git",
-                "reference": "8.x-1.12"
+                "reference": "8.x-1.13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/tmgmt-8.x-1.12.zip",
-                "reference": "8.x-1.12",
-                "shasum": "3dbc8f783d77a23bdbd95277884e5838b95d9938"
+                "url": "https://ftp.drupal.org/files/projects/tmgmt-8.x-1.13.zip",
+                "reference": "8.x-1.13",
+                "shasum": "6e59ed65335d450308158902ffcce6ccb626a4dd"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
             },
             "require-dev": {
                 "drupal/metatag": "1.x-dev",
+                "drupal/paragraphs": "1.x-dev",
                 "drupal/pathauto": "1.x-dev",
                 "drupal/tmgmt_content": "*",
                 "drupal/tmgmt_file": "*",
@@ -10422,8 +10486,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.12",
-                    "datestamp": "1612891039",
+                    "version": "8.x-1.13",
+                    "datestamp": "1646811201",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -11095,26 +11159,26 @@
         },
         {
             "name": "drupal/views_bootstrap",
-            "version": "3.8.0",
+            "version": "3.9.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_bootstrap.git",
-                "reference": "8.x-3.8"
+                "reference": "8.x-3.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_bootstrap-8.x-3.8.zip",
-                "reference": "8.x-3.8",
-                "shasum": "38fc40c698d06487306714abc548559e6e5ea7fd"
+                "url": "https://ftp.drupal.org/files/projects/views_bootstrap-8.x-3.9.zip",
+                "reference": "8.x-3.9",
+                "shasum": "6a122213f7d12cda2274af85ae1f3810b97d7402"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8 || ^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.8",
-                    "datestamp": "1632494551",
+                    "version": "8.x-3.9",
+                    "datestamp": "1645730265",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -18431,7 +18495,6 @@
         "drupal/masquerade": 10,
         "drupal/menu_breadcrumb": 20,
         "drupal/notify": 20,
-        "drupal/pathologic": 15,
         "drupal/quicktabs": 15,
         "drupal/roleassign": 10,
         "drupal/views_field_view": 10,
