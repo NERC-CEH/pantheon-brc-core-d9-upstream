@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "db5b94b38a489dce630a9c319440caf4",
+    "content-hash": "5563c60173746ef96218d0b914f80c0b",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -2542,6 +2542,63 @@
                 "source": "https://git.drupalcode.org/project/block_class",
                 "issues": "https://www.drupal.org/project/issues/block_class",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
+            "name": "drupal/blog",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/blog.git",
+                "reference": "3.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/blog-3.0.1.zip",
+                "reference": "3.0.1",
+                "shasum": "2e92a6d8c33a6c5f61ff3e05e869d35dab67039e"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.0.1",
+                    "datestamp": "1592611765",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Kurucz István",
+                    "homepage": "https://www.drupal.org/u/nevergone"
+                },
+                {
+                    "name": "David Norman",
+                    "homepage": "https://www.drupal.org/u/deekayen"
+                },
+                {
+                    "name": "Christopher Hall",
+                    "homepage": "https://www.drupal.org/u/chris_hall_hu_cheng"
+                },
+                {
+                    "name": "Dave Reid",
+                    "homepage": "https://www.drupal.org/u/dave-reid"
+                }
+            ],
+            "description": "Enables multi-user blogs.",
+            "homepage": "https://www.drupal.org/project/blog",
+            "support": {
+                "source": "https://git.drupalcode.org/project/blog",
+                "issues": "https://www.drupal.org/project/issues/blog"
             }
         },
         {
@@ -6353,17 +6410,17 @@
         },
         {
             "name": "drupal/fontawesome",
-            "version": "2.19.0",
+            "version": "2.20.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/fontawesome.git",
-                "reference": "8.x-2.19"
+                "reference": "8.x-2.20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/fontawesome-8.x-2.19.zip",
-                "reference": "8.x-2.19",
-                "shasum": "7b921a80f0811d8dcfb0c390157506cd5724a037"
+                "url": "https://ftp.drupal.org/files/projects/fontawesome-8.x-2.20.zip",
+                "reference": "8.x-2.20",
+                "shasum": "cf97301de4890a5088dac9d66c5814221022c325"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -6371,8 +6428,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.19",
-                    "datestamp": "1623794225",
+                    "version": "8.x-2.20",
+                    "datestamp": "1647454351",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -10536,6 +10593,67 @@
             "homepage": "https://www.drupal.org/project/tmgmt",
             "support": {
                 "source": "https://git.drupalcode.org/project/tmgmt"
+            }
+        },
+        {
+            "name": "drupal/tmgmt_transifex",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/tmgmt_transifex.git",
+                "reference": "2.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/tmgmt_transifex-2.0.2.zip",
+                "reference": "2.0.2",
+                "shasum": "5b7d505e1432f75b903ac20a23f4026c57796141"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9",
+                "drupal/tmgmt": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.2",
+                    "datestamp": "1646304327",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "ariskats",
+                    "homepage": "https://www.drupal.org/user/3673005"
+                },
+                {
+                    "name": "igavriiltx",
+                    "homepage": "https://www.drupal.org/user/3710434"
+                },
+                {
+                    "name": "kbairak",
+                    "homepage": "https://www.drupal.org/user/3664526"
+                },
+                {
+                    "name": "kgian",
+                    "homepage": "https://www.drupal.org/user/3673848"
+                },
+                {
+                    "name": "transifex",
+                    "homepage": "https://www.drupal.org/user/3538840"
+                }
+            ],
+            "description": "A connector integrating Translation Management Toolkit with Transifex LMS.",
+            "homepage": "https://www.drupal.org/project/tmgmt_transifex",
+            "support": {
+                "source": "https://git.drupalcode.org/project/tmgmt_transifex"
             }
         },
         {
