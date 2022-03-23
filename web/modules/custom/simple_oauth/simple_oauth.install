@@ -106,3 +106,13 @@ function simple_oauth_update_8404() {
     // If the field has been installed by a different module, don't interfere.
   }
 }
+
+/**
+ * Set default value for the flag to disable OpenID Connect.
+ */
+function simple_oauth_update_8501(&$sandbox) {
+  $config = \Drupal::configFactory()
+    ->getEditable('simple_oauth.settings');
+  $config->set('disable_openid_connect', FALSE);
+  $config->save();
+}

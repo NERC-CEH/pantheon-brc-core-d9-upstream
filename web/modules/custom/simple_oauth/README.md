@@ -50,6 +50,13 @@ Along with your access token, an authentication token is created. It's called th
 
 Then you will need to generate a new token from scratch. You can avoid this by refreshing your access token before your refresh token expires. This way you avoid the need to require the user to prove their identity to Drupal to create a new token. Another way to mitigate this is to use longer expiration times in your tokens. This will work, but the the recommendation is to refresh your token in time.
 
+### I'm seeing warnings about my private key file permissions. What should I do?
+
+The upstream OAuth library checks the private key's file permissions by default. This is suitable in certain server configurations, however in some modern environments (e.g., containerized workloads) where secrets are injected into the environment and owned by a user different from the web daemon's run-as user, this is a false-positive. In these scenarios, you can use the Settings API to set the value passed to `CryptKey::__construct()` for checking the file permission:
+
+In `settings.php`:
+```$settings['simple_oauth.key_permissions_check'] = FALSE;```
+
 ### Recommendation
 
 Check the official documentation on the [Bearer Token Usage](http://tools.ietf.org/html/rfc6750). And **turn on SSL!**.

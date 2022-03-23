@@ -50,3 +50,7 @@ simple_oauth.settings:
       type: boolean
       label: 'Enable the implicit grant?'
       description: 'Only use the implicit grant if you understand the security implications of using it.'
+    disable_openid_connect:
+      type: boolean
+      label: 'Disable OpenID Connect?'
+      description: 'OpenID Connect will be enabled, unless this flag is active.'

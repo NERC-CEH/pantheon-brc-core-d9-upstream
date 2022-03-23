@@ -24,7 +24,7 @@ class EntityCollectorTest extends UnitTestCase {
   public function testCollect() {
     list($expired_collector, $query,) = $this->buildProphecies();
     $query->condition('expire', 42, '<')->shouldBeCalledTimes(1);
-    $this->assertArrayEquals([1, 52], array_map(function ($entity) {
+    $this->assertEquals([1, 52], array_map(function ($entity) {
       return $entity->id();
     }, $expired_collector->collect()));
   }
@@ -38,7 +38,7 @@ class EntityCollectorTest extends UnitTestCase {
     $client->id()->willReturn(35);
     $query->condition('client', 35)->shouldBeCalledTimes(1);
     $tokens = $expired_collector->collectForClient($client->reveal());
-    $this->assertArrayEquals([1, 52], array_map(function ($entity) {
+    $this->assertEquals([1, 52], array_map(function ($entity) {
       return $entity->id();
     }, $tokens));
   }
@@ -57,7 +57,7 @@ class EntityCollectorTest extends UnitTestCase {
     ])->shouldBeCalledTimes(1);
     $token_query->condition('client', 6)->shouldBeCalledTimes(1);
     $tokens = $expired_collector->collectForAccount($account->reveal());
-    $this->assertArrayEquals([1, 52], array_map(function ($entity) {
+    $this->assertEquals([1, 52], array_map(function ($entity) {
       return $entity->id();
     }, $tokens));
   }

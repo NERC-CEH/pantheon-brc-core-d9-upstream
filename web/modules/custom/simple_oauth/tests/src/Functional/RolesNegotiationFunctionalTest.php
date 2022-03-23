@@ -19,7 +19,10 @@ class RolesNegotiationFunctionalTest extends BrowserTestBase {
   use RequestHelperTrait;
   use SimpleOauthTestTrait;
 
-  protected $defaultTheme = 'classy';
+  /**
+   * {@inheritdoc}
+   */
+  protected $defaultTheme = 'stark';
 
   /**
    * {@inheritdoc}

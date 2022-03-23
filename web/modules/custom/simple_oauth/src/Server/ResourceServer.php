@@ -3,6 +3,9 @@
 namespace Drupal\simple_oauth\Server;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\File\FileSystemInterface;
+use Drupal\Core\Site\Settings;
+use League\OAuth2\Server\CryptKey;
 use League\OAuth2\Server\Repositories\AccessTokenRepositoryInterface;
 use League\OAuth2\Server\ResourceServer as LeageResourceServer;
 use Symfony\Bridge\PsrHttpMessage\HttpFoundationFactoryInterface;
@@ -36,6 +39,13 @@ class ResourceServer implements ResourceServerInterface {
   protected $foundationFactory;
 
   /**
+   * The file system.
+   *
+   * @var \Drupal\Core\File\FileSystemInterface
+   */
+  protected $fileSystem;
+
+  /**
    * ResourceServer constructor.
    */
   public function __construct(
@@ -45,20 +55,40 @@ class ResourceServer implements ResourceServerInterface {
     HttpFoundationFactoryInterface $foundation_factory
   ) {
     try {
-      $public_key = $config_factory->get('simple_oauth.settings')->get('public_key');
-      $public_key_real = realpath($public_key);
+      $public_key = $config_factory->get('simple_oauth.settings')
+        ->get('public_key');
+      $public_key_real = $this->fileSystem()->realpath($public_key);
       if ($public_key && $public_key_real) {
+        // Initialize the crypto key, optionally disabling the permissions
+        // check.
+        $crypt_key = new CryptKey(
+          $public_key_real,
+          NULL,
+          Settings::get('simple_oauth.key_permissions_check', TRUE)
+        );
         $this->subject = new LeageResourceServer(
           $access_token_repository,
-          $public_key_real
+          $crypt_key
         );
       }
-    }
-    catch (\LogicException $exception) {
+    } catch (\LogicException $exception) {
       trigger_error($exception, E_USER_WARNING);
     }
     $this->messageFactory = $message_factory;
     $this->foundationFactory = $foundation_factory;
+  }
+
+  /**
+   * Lazy loads the file system.
+   *
+   * @return \Drupal\Core\File\FileSystemInterface
+   *   The file system service.
+   */
+  protected function fileSystem(): FileSystemInterface {
+    if (!isset($this->fileSystem)) {
+      $this->fileSystem = \Drupal::service('file_system');
+    }
+    return $this->fileSystem;
   }
 
   /**

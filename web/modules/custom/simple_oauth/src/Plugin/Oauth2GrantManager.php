@@ -7,11 +7,13 @@ use Drupal\Component\Plugin\Exception\PluginNotFoundException;
 use Drupal\consumers\Entity\Consumer;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Config\ImmutableConfig;
+use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Plugin\DefaultPluginManager;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Site\Settings;
 use League\OAuth2\Server\AuthorizationServer;
+use League\OAuth2\Server\CryptKey;
 use League\OAuth2\Server\Exception\OAuthServerException;
 use League\OAuth2\Server\Grant\AuthCodeGrant;
 use League\OAuth2\Server\Repositories\AccessTokenRepositoryInterface;
@@ -69,6 +71,13 @@ class Oauth2GrantManager extends DefaultPluginManager implements Oauth2GrantMana
    * @var \League\OAuth2\Server\AuthorizationServer
    */
   protected $server;
+
+  /**
+   * The file system.
+   *
+   * @var \Drupal\Core\File\FileSystemInterface
+   */
+  protected $fileSystem;
 
   /**
    * Constructor for Oauth2GrantManager objects.
@@ -141,12 +150,19 @@ class Oauth2GrantManager extends DefaultPluginManager implements Oauth2GrantMana
       throw OAuthServerException::serverError('Hash salt must be at least 32 characters long.');
     }
 
+    // Initialize the crypto key, optionally disabling the permissions check.
+    $crypt_key = new CryptKey(
+      $this->fileSystem()->realpath($this->privateKeyPath),
+      NULL,
+      Settings::get('simple_oauth.key_permissions_check', TRUE)
+    );
+
     if (empty($this->server)) {
       $this->server = new AuthorizationServer(
         $this->clientRepository,
         $this->accessTokenRepository,
         $this->scopeRepository,
-        realpath($this->privateKeyPath),
+        $crypt_key,
         Core::ourSubstr($salt, 0, 32),
         $this->responseType
       );
@@ -155,9 +171,9 @@ class Oauth2GrantManager extends DefaultPluginManager implements Oauth2GrantMana
     // Optionally enable PKCE.
     if ($client && ($grant instanceof AuthCodeGrant)) {
       $client_has_pkce_enabled = $client->hasField('pkce')
-        && $client->get('pkce')->first()->value;
-      if($client_has_pkce_enabled){
-        $grant->enableCodeExchangeProof();
+        && $client->get('pkce')->value;
+      if (!$client_has_pkce_enabled) {
+        $grant->disableRequireCodeChallengeForPublicClients();
       }
     }
     // Enable the grant on the server with a token TTL of X hours.
@@ -185,6 +201,19 @@ class Oauth2GrantManager extends DefaultPluginManager implements Oauth2GrantMana
     if (!file_exists($this->publicKeyPath) || !file_exists($this->privateKeyPath)) {
       throw OAuthServerException::serverError(sprintf('You need to set the OAuth2 secret and private keys.'));
     }
+  }
+
+  /**
+   * Lazy loads the file system.
+   *
+   * @return \Drupal\Core\File\FileSystemInterface
+   *   The file system service.
+   */
+  protected function fileSystem(): FileSystemInterface {
+    if (!isset($this->fileSystem)) {
+      $this->fileSystem = \Drupal::service('file_system');
+    }
+    return $this->fileSystem;
   }
 
 }

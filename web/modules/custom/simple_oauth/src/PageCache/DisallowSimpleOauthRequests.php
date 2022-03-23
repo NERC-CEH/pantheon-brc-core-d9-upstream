@@ -19,7 +19,7 @@ class DisallowSimpleOauthRequests implements SimpleOauthRequestPolicyInterface {
     // We have to perform also an exact match, as if no token is provided then
     // the LWS might be stripped, but we still have to detect this as OAuth2
     // authentication. See: https://www.ietf.org/rfc/rfc2616.txt
-    $auth_header = trim($request->headers->get('Authorization', '', TRUE));
+    $auth_header = trim($request->headers->get('Authorization') ?? '');
     return (strpos($auth_header, 'Bearer ') !== FALSE) || ($auth_header === 'Bearer');
   }
 

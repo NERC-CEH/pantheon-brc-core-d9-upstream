@@ -15,6 +15,11 @@ entity.oauth2_token.collection:
   base_route: oauth2_token.settings
   title: 'Tokens'
 
+entity.openid_connect.settings:
+  route_name: simple_oauth.settings.openid_connect
+  base_route: oauth2_token.settings
+  title: 'OpenID Connect'
+
 entity.oauth2_token.canonical:
   route_name: entity.oauth2_token.canonical
   base_route: entity.oauth2_token.canonical

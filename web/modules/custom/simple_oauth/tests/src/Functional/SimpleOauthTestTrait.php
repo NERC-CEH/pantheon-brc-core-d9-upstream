@@ -49,20 +49,17 @@ AwIDAQAB
    * Set up public and private keys.
    */
   public function setUpKeys() {
-    $public_key_path = 'private:///public.key';
-    $private_key_path = 'private:///private.key';
+    $public_key_path = 'private://public.key';
+    $private_key_path = 'private://private.key';
 
     file_put_contents($public_key_path, $this->publicKey);
     file_put_contents($private_key_path, $this->privateKey);
     chmod($public_key_path, 0660);
     chmod($private_key_path, 0660);
 
-    /** @var \Drupal\Core\File\FileSystemInterface $filesystem */
-    $filesystem = \Drupal::service('file_system');
-
     $settings = $this->config('simple_oauth.settings');
-    $settings->set('public_key', $filesystem->realpath($public_key_path));
-    $settings->set('private_key', $filesystem->realpath($private_key_path));
+    $settings->set('public_key', $public_key_path);
+    $settings->set('private_key',$private_key_path);
     $settings->save();
   }
 

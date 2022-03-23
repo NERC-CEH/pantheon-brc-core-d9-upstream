@@ -87,6 +87,9 @@ class AuthCodeFunctionalTest extends TokenBearerFunctionalTestBase {
       'response_type' => 'code',
       'client_id' => $this->client->uuid(),
       'client_secret' => $this->clientSecret,
+      'redirect_uri' => Url::fromRoute('oauth2_token.test_token', [], [
+        'absolute' => TRUE,
+      ])->toString(),
     ];
     // 1. Anonymous request invites the user to log in.
     $this->drupalGet($this->authorizeUrl->toString(), [
@@ -125,6 +128,9 @@ class AuthCodeFunctionalTest extends TokenBearerFunctionalTestBase {
       'response_type' => 'code',
       'client_id' => $this->client->uuid(),
       'client_secret' => $this->clientSecret,
+      'redirect_uri' => Url::fromRoute('oauth2_token.test_token', [], [
+        'absolute' => TRUE,
+      ])->toString(),
     ];
     // 1. Anonymous request invites the user to log in.
     $this->drupalGet($this->authorizeUrl->toString(), [
@@ -159,6 +165,9 @@ class AuthCodeFunctionalTest extends TokenBearerFunctionalTestBase {
       'response_type' => 'code',
       'client_id' => $this->client->uuid(),
       'client_secret' => $this->clientSecret,
+      'redirect_uri' => Url::fromRoute('oauth2_token.test_token', [], [
+        'absolute' => TRUE,
+      ])->toString(),
     ];
     // 1. Anonymous request invites the user to log in.
     $this->drupalGet($this->authorizeUrl->toString(), [
@@ -256,6 +265,9 @@ class AuthCodeFunctionalTest extends TokenBearerFunctionalTestBase {
       'client_id' => $this->client->uuid(),
       'code_challenge' => $code_challenge,
       'code_challenge_method' => 'S256',
+      'redirect_uri' => Url::fromRoute('oauth2_token.test_token', [], [
+        'absolute' => TRUE,
+      ])->toString(),
     ];
 
     // 1. Anonymous request redirect to log in.
