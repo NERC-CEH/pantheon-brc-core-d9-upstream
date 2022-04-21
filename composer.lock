@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e254ae9531b0af48b53c5549ec93e386",
+    "content-hash": "0e354f9645fe3563aaf46843241ee66e",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -3882,17 +3882,17 @@
         },
         {
             "name": "drupal/colorbox",
-            "version": "1.9.0",
+            "version": "1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/colorbox.git",
-                "reference": "8.x-1.9"
+                "reference": "8.x-1.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/colorbox-8.x-1.9.zip",
-                "reference": "8.x-1.9",
-                "shasum": "995aeb1d73e90785f6905800f38309e53b3d3d54"
+                "url": "https://ftp.drupal.org/files/projects/colorbox-8.x-1.10.zip",
+                "reference": "8.x-1.10",
+                "shasum": "af0eca9891e7134722ed785599e4476325cd1c29"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
@@ -3903,8 +3903,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.9",
-                    "datestamp": "1649687933",
+                    "version": "8.x-1.10",
+                    "datestamp": "1650376979",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4997,16 +4997,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "9.3.11",
+            "version": "9.3.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "b8978dd6a4639bdc0930a6eb7791afffcd931a1b"
+                "reference": "ed6af33093f66a9c5048d02f9f2c326ad0e7e90c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/b8978dd6a4639bdc0930a6eb7791afffcd931a1b",
-                "reference": "b8978dd6a4639bdc0930a6eb7791afffcd931a1b",
+                "url": "https://api.github.com/repos/drupal/core/zipball/ed6af33093f66a9c5048d02f9f2c326ad0e7e90c",
+                "reference": "ed6af33093f66a9c5048d02f9f2c326ad0e7e90c",
                 "shasum": ""
             },
             "require": {
@@ -5248,9 +5248,9 @@
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
             "support": {
-                "source": "https://github.com/drupal/core/tree/9.3.11"
+                "source": "https://github.com/drupal/core/tree/9.3.12"
             },
-            "time": "2022-04-14T00:39:08+00:00"
+            "time": "2022-04-20T14:25:27+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
@@ -5304,16 +5304,16 @@
         },
         {
             "name": "drupal/core-recommended",
-            "version": "9.3.11",
+            "version": "9.3.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-recommended.git",
-                "reference": "9454fd8bce0172964d132feea87123a70948b6ee"
+                "reference": "a8fa50016c1aa1eb7f4e54f590e6343d286c418f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/9454fd8bce0172964d132feea87123a70948b6ee",
-                "reference": "9454fd8bce0172964d132feea87123a70948b6ee",
+                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/a8fa50016c1aa1eb7f4e54f590e6343d286c418f",
+                "reference": "a8fa50016c1aa1eb7f4e54f590e6343d286c418f",
                 "shasum": ""
             },
             "require": {
@@ -5322,7 +5322,7 @@
                 "doctrine/annotations": "1.13.2",
                 "doctrine/lexer": "1.2.1",
                 "doctrine/reflection": "1.2.2",
-                "drupal/core": "9.3.11",
+                "drupal/core": "9.3.12",
                 "egulias/email-validator": "3.1.2",
                 "guzzlehttp/guzzle": "6.5.5",
                 "guzzlehttp/promises": "1.5.1",
@@ -5384,9 +5384,9 @@
             ],
             "description": "Locked core dependencies; require this project INSTEAD OF drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-recommended/tree/9.3.11"
+                "source": "https://github.com/drupal/core-recommended/tree/9.3.12"
             },
-            "time": "2022-04-14T00:39:08+00:00"
+            "time": "2022-04-20T14:25:27+00:00"
         },
         {
             "name": "drupal/cshs",
@@ -7281,17 +7281,17 @@
         },
         {
             "name": "drupal/gutenberg",
-            "version": "2.4.0",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/gutenberg.git",
-                "reference": "8.x-2.4"
+                "reference": "8.x-2.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/gutenberg-8.x-2.4.zip",
-                "reference": "8.x-2.4",
-                "shasum": "44b16076fb21ac3c5e71e4d91a9515055ab1dba0"
+                "url": "https://ftp.drupal.org/files/projects/gutenberg-8.x-2.5.zip",
+                "reference": "8.x-2.5",
+                "shasum": "e44241bd0aaf07216abd314da757fa2b0fa0b2ee"
             },
             "require": {
                 "drupal/core": "^8 || ^9",
@@ -7301,8 +7301,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.4",
-                    "datestamp": "1642702828",
+                    "version": "8.x-2.5",
+                    "datestamp": "1650411254",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7352,6 +7352,54 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/gutenberg",
                 "issues": "https://www.drupal.org/project/issues/gutenberg"
+            }
+        },
+        {
+            "name": "drupal/hierarchical_taxonomy_menu",
+            "version": "1.42.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/hierarchical_taxonomy_menu.git",
+                "reference": "8.x-1.42"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/hierarchical_taxonomy_menu-8.x-1.42.zip",
+                "reference": "8.x-1.42",
+                "shasum": "5870803d3bd20370a6436e4ae346a09fe24ba974"
+            },
+            "require": {
+                "drupal/core": "^8.6 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.42",
+                    "datestamp": "1605088405",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Goran Nikolovski",
+                    "homepage": "https://gorannikolovski.com",
+                    "email": "goran@gorannikolovski.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Create menus from taxonomy terms.",
+            "homepage": "https://www.drupal.org/project/hierarchical_taxonomy_menu",
+            "support": {
+                "source": "https://git.drupalcode.org/project/hierarchical_taxonomy_menu",
+                "issues": "https://www.drupal.org/project/issues/hierarchical_taxonomy_menu",
+                "email": "goran@gorannikolovski.com"
             }
         },
         {
