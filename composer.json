@@ -58,13 +58,14 @@
         "drupal/commerce_product": "^2.30",
         "drupal/commerce_product_tax": "^1.0@RC",
         "drupal/commerce_recurring": "^1.0@beta",
-        "drupal/commerce_shipping": "^2.3",
+        "drupal/commerce_shipping": "^2.4",
         "drupal/commerce_store": "^2.30",
         "drupal/commerce_tax": "^2.30",
         "drupal/commerce_variation_add_to_cart": "^1.5",
         "drupal/consumers": "^1.12",
         "drupal/contact_storage": "^1.1",
         "drupal/core-composer-scaffold": "^9.3",
+        "drupal/core-project-message": "^9.3",
         "drupal/core-recommended": "^9.3",
         "drupal/cshs": "^3.6",
         "drupal/css_editor": "^2.0",
@@ -131,6 +132,7 @@
         "drupal/pathologic": "1.0-alpha3",
         "drupal/permission_spreadsheet": "^1.1",
         "drupal/physical": "^1.1",
+        "drupal/profile": "^1.4",
         "drupal/quick_node_block": "^1.3",
         "drupal/quick_node_clone": "^1.15",
         "drupal/quicktabs": "^3.0@alpha",
@@ -151,7 +153,7 @@
         "drupal/smart_trim": "^1.3",
         "drupal/smtp": "^1.0",
         "drupal/social_media_links": "^2.8",
-        "drupal/spammaster": "^1.66",
+        "drupal/spammaster": "^1.67",
         "drupal/state_machine": "^1.6",
         "drupal/super_login": "^1.7",
         "drupal/superfish": "^1.4",
@@ -236,7 +238,8 @@
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
             "zaporylie/composer-drupal-optimizations": true,
-            "oomphinc/composer-installers-extender": true
+            "oomphinc/composer-installers-extender": true,
+            "drupal/core-project-message": true
         },
         "scripts": {
         "test": [
