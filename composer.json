@@ -98,6 +98,7 @@
         "drupal/google_analytics": "^4.0",
         "drupal/gutenberg": "^2.5",
         "drupal/hierarchical_taxonomy_menu": "^1.42",
+        "drupal/hierarchy_manager": "^3.2",
         "drupal/htmlmail": "3.0-alpha3",
         "drupal/imce": "^2.4",
         "drupal/inline_entity_form": "1.0-rc11",
