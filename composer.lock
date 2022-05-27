@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0601a935cd2d0fe8d4e97f3237ba080d",
+    "content-hash": "253adfe1b738db5c7ff45a1f0b55136f",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -1564,16 +1564,16 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "1.12.1",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "4cf401d14df219fa6f38b671f5493449151c9ad8"
+                "reference": "56cd022adb5514472cb144c087393c1821911d09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/4cf401d14df219fa6f38b671f5493449151c9ad8",
-                "reference": "4cf401d14df219fa6f38b671f5493449151c9ad8",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/56cd022adb5514472cb144c087393c1821911d09",
+                "reference": "56cd022adb5514472cb144c087393c1821911d09",
                 "shasum": ""
             },
             "require": {
@@ -1585,13 +1585,13 @@
             "require-dev": {
                 "alcaeus/mongo-php-adapter": "^1.1",
                 "cache/integration-tests": "dev-master",
-                "doctrine/coding-standard": "^8.0",
+                "doctrine/coding-standard": "^9",
                 "mongodb/mongodb": "^1.1",
-                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
                 "predis/predis": "~1.0",
                 "psr/cache": "^1.0 || ^2.0 || ^3.0",
-                "symfony/cache": "^4.4 || ^5.2 || ^6.0@dev",
-                "symfony/var-exporter": "^4.4 || ^5.2 || ^6.0@dev"
+                "symfony/cache": "^4.4 || ^5.4 || ^6",
+                "symfony/var-exporter": "^4.4 || ^5.4 || ^6"
             },
             "suggest": {
                 "alcaeus/mongo-php-adapter": "Required to use legacy MongoDB driver"
@@ -1643,7 +1643,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/cache/issues",
-                "source": "https://github.com/doctrine/cache/tree/1.12.1"
+                "source": "https://github.com/doctrine/cache/tree/1.13.0"
             },
             "funding": [
                 {
@@ -1659,7 +1659,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-07-17T14:39:21+00:00"
+            "time": "2022-05-20T20:06:54+00:00"
         },
         {
             "name": "doctrine/collections",
@@ -2566,27 +2566,28 @@
         },
         {
             "name": "drupal/address_map_link",
-            "version": "1.2.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/address_map_link.git",
-                "reference": "8.x-1.2"
+                "reference": "8.x-1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/address_map_link-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "788bc567b14537d83f871d51b707fd97e3f88cd1"
+                "url": "https://ftp.drupal.org/files/projects/address_map_link-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "d41578ec85f30ee95cf3facab699aa3cb1ebe7b0"
             },
             "require": {
                 "drupal/address": "^1.0",
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^9.2 || ^10",
+                "php": "^7.3 || ^8.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.2",
-                    "datestamp": "1607722672",
+                    "version": "8.x-1.3",
+                    "datestamp": "1652892670",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2595,7 +2596,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -2611,7 +2612,7 @@
                 "Drupal"
             ],
             "support": {
-                "source": "http://cgit.drupalcode.org/address_map_link",
+                "source": "https://cgit.drupalcode.org/address_map_link",
                 "issues": "https://www.drupal.org/project/issues/address_map_link"
             }
         },
@@ -5194,16 +5195,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "9.3.13",
+            "version": "9.3.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "02ba7a3a42612a04124ac5131df0726e1e5097c6"
+                "reference": "ea4c4780324c6ee6679823927e95601938d7f6a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/02ba7a3a42612a04124ac5131df0726e1e5097c6",
-                "reference": "02ba7a3a42612a04124ac5131df0726e1e5097c6",
+                "url": "https://api.github.com/repos/drupal/core/zipball/ea4c4780324c6ee6679823927e95601938d7f6a3",
+                "reference": "ea4c4780324c6ee6679823927e95601938d7f6a3",
                 "shasum": ""
             },
             "require": {
@@ -5225,7 +5226,7 @@
                 "ext-spl": "*",
                 "ext-tokenizer": "*",
                 "ext-xml": "*",
-                "guzzlehttp/guzzle": "^6.5.2",
+                "guzzlehttp/guzzle": "^6.5.6",
                 "laminas/laminas-diactoros": "^2.1",
                 "laminas/laminas-feed": "^2.12",
                 "masterminds/html5": "^2.1",
@@ -5445,13 +5446,13 @@
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
             "support": {
-                "source": "https://github.com/drupal/core/tree/9.3.13"
+                "source": "https://github.com/drupal/core/tree/9.3.14"
             },
-            "time": "2022-05-11T09:20:58+00:00"
+            "time": "2022-05-25T18:43:19+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
-            "version": "9.3.13",
+            "version": "9.3.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-composer-scaffold.git",
@@ -5495,13 +5496,13 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-composer-scaffold/tree/9.3.13"
+                "source": "https://github.com/drupal/core-composer-scaffold/tree/9.3.14"
             },
             "time": "2022-02-24T17:40:56+00:00"
         },
         {
             "name": "drupal/core-project-message",
-            "version": "9.3.13",
+            "version": "9.3.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-project-message.git",
@@ -5536,22 +5537,22 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-project-message/tree/9.3.13"
+                "source": "https://github.com/drupal/core-project-message/tree/9.3.14"
             },
             "time": "2022-02-24T17:40:56+00:00"
         },
         {
             "name": "drupal/core-recommended",
-            "version": "9.3.13",
+            "version": "9.3.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-recommended.git",
-                "reference": "0fe76c7af47fafcff37d8cb6053014e52e0f4a69"
+                "reference": "31f23ce0ae7cf3925f6fb6a3953762b259a0494e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/0fe76c7af47fafcff37d8cb6053014e52e0f4a69",
-                "reference": "0fe76c7af47fafcff37d8cb6053014e52e0f4a69",
+                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/31f23ce0ae7cf3925f6fb6a3953762b259a0494e",
+                "reference": "31f23ce0ae7cf3925f6fb6a3953762b259a0494e",
                 "shasum": ""
             },
             "require": {
@@ -5560,9 +5561,9 @@
                 "doctrine/annotations": "1.13.2",
                 "doctrine/lexer": "1.2.1",
                 "doctrine/reflection": "1.2.2",
-                "drupal/core": "9.3.13",
+                "drupal/core": "9.3.14",
                 "egulias/email-validator": "3.1.2",
-                "guzzlehttp/guzzle": "6.5.5",
+                "guzzlehttp/guzzle": "6.5.6",
                 "guzzlehttp/promises": "1.5.1",
                 "guzzlehttp/psr7": "1.8.5",
                 "laminas/laminas-diactoros": "2.8.0",
@@ -5622,9 +5623,9 @@
             ],
             "description": "Locked core dependencies; require this project INSTEAD OF drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-recommended/tree/9.3.13"
+                "source": "https://github.com/drupal/core-recommended/tree/9.3.14"
             },
-            "time": "2022-05-11T09:20:58+00:00"
+            "time": "2022-05-25T18:43:19+00:00"
         },
         {
             "name": "drupal/cshs",
@@ -6342,17 +6343,17 @@
         },
         {
             "name": "drupal/embed",
-            "version": "1.4.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/embed.git",
-                "reference": "8.x-1.4"
+                "reference": "8.x-1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/embed-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "09a2bda039bfbb3fff01c91964384bf3d924b8c5"
+                "url": "https://ftp.drupal.org/files/projects/embed-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "88a447329d16988459e82392443e96d441d651b2"
             },
             "require": {
                 "drupal/core": "^8.7.7 || ^9"
@@ -6360,8 +6361,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1590176831",
+                    "version": "8.x-1.5",
+                    "datestamp": "1653500382",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7544,17 +7545,17 @@
         },
         {
             "name": "drupal/geolocation",
-            "version": "3.9.0",
+            "version": "3.10.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/geolocation.git",
-                "reference": "8.x-3.9"
+                "reference": "8.x-3.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/geolocation-8.x-3.9.zip",
-                "reference": "8.x-3.9",
-                "shasum": "7f07bc53dfbb8d5e3404e369cff7caae814ea2e3"
+                "url": "https://ftp.drupal.org/files/projects/geolocation-8.x-3.10.zip",
+                "reference": "8.x-3.10",
+                "shasum": "686868c7a1bbccc24662e71a69efc9b6c90b18cf"
             },
             "require": {
                 "drupal/core": "^9.2",
@@ -7577,8 +7578,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.9",
-                    "datestamp": "1649862414",
+                    "version": "8.x-3.10",
+                    "datestamp": "1652946354",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9008,17 +9009,17 @@
         },
         {
             "name": "drupal/login_emailusername",
-            "version": "1.2.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/login_emailusername.git",
-                "reference": "8.x-1.2"
+                "reference": "2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/login_emailusername-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "188462f807e04d7913062e9415c3c2779e21a848"
+                "url": "https://ftp.drupal.org/files/projects/login_emailusername-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "81ac344143f0e1451626cffd5bc1127c2ceebc81"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
@@ -9026,8 +9027,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.2",
-                    "datestamp": "1604843985",
+                    "version": "2.0.0",
+                    "datestamp": "1653570775",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9039,7 +9040,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -13646,16 +13647,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.5.5",
+            "version": "6.5.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "9d4290de1cfd701f38099ef7e183b64b4b7b0c5e"
+                "reference": "f092dd734083473658de3ee4bef093ed77d2689c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/9d4290de1cfd701f38099ef7e183b64b4b7b0c5e",
-                "reference": "9d4290de1cfd701f38099ef7e183b64b4b7b0c5e",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/f092dd734083473658de3ee4bef093ed77d2689c",
+                "reference": "f092dd734083473658de3ee4bef093ed77d2689c",
                 "shasum": ""
             },
             "require": {
@@ -13693,9 +13694,39 @@
             ],
             "authors": [
                 {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+                },
+                {
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Jeremy Lindblom",
+                    "email": "jeremeamia@gmail.com",
+                    "homepage": "https://github.com/jeremeamia"
+                },
+                {
+                    "name": "George Mponos",
+                    "email": "gmponos@gmail.com",
+                    "homepage": "https://github.com/gmponos"
+                },
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com",
+                    "homepage": "https://github.com/Nyholm"
+                },
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com",
+                    "homepage": "https://github.com/sagikazarmark"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "email": "webmaster@tubo-world.de",
+                    "homepage": "https://github.com/Tobion"
                 }
             ],
             "description": "Guzzle is a PHP HTTP client library",
@@ -13711,9 +13742,23 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/6.5"
+                "source": "https://github.com/guzzle/guzzle/tree/6.5.6"
             },
-            "time": "2020-06-16T21:01:06+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/Nyholm",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/guzzlehttp/guzzle",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-05-25T13:19:12+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -15134,7 +15179,7 @@
         },
         {
             "name": "pantheon-upstreams/upstream-config",
-            "version": "dev-master",
+            "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "upstream-config",
