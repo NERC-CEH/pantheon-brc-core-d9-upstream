@@ -50,6 +50,7 @@
         "drupal/colorbutton": "^1.2",
         "drupal/commerce": "^2.30",
         "drupal/commerce_cart": "^2.30",
+        "drupal/commerce_claim_gift_aid": "^1.0@RC",
         "drupal/commerce_number_pattern": "^2.30",
         "drupal/commerce_order": "^2.30",
         "drupal/commerce_payment": "^2.30",

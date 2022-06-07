@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ff737f8d6a306dddf22c9c58b308df7",
+    "content-hash": "a1143dfec67e14b6580c7a40664f7b36",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -4389,6 +4389,60 @@
             "homepage": "https://www.drupal.org/project/commerce",
             "support": {
                 "source": "https://git.drupalcode.org/project/commerce"
+            }
+        },
+        {
+            "name": "drupal/commerce_claim_gift_aid",
+            "version": "1.0.0-rc3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/commerce_claim_gift_aid.git",
+                "reference": "8.x-1.0-rc3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/commerce_claim_gift_aid-8.x-1.0-rc3.zip",
+                "reference": "8.x-1.0-rc3",
+                "shasum": "32f77557f283018b8ca450583d15c7886a0a309c"
+            },
+            "require": {
+                "drupal/commerce": "~2.0",
+                "drupal/commerce_order": "*",
+                "drupal/core": "^8.7.7 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-rc3",
+                    "datestamp": "1590264263",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "jafacakes2011",
+                    "homepage": "https://www.drupal.org/user/3044837"
+                },
+                {
+                    "name": "jonathanshaw",
+                    "homepage": "https://www.drupal.org/user/3237629"
+                },
+                {
+                    "name": "tresti88",
+                    "homepage": "https://www.drupal.org/user/2849439"
+                }
+            ],
+            "description": "Allows shops to claim gift aid from eligible order items.",
+            "homepage": "https://www.drupal.org/project/commerce_claim_gift_aid",
+            "support": {
+                "source": "https://git.drupalcode.org/project/commerce_claim_gift_aid"
             }
         },
         {
@@ -19412,6 +19466,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/calendar": 15,
+        "drupal/commerce_claim_gift_aid": 5,
         "drupal/commerce_paypal": 5,
         "drupal/commerce_product_tax": 5,
         "drupal/commerce_recurring": 10,
