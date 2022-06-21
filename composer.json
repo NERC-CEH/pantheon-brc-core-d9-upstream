@@ -27,6 +27,7 @@
         "drupal/admin_toolbar": "^3.1",
         "drupal/advancedqueue": "1.0-rc3",
         "drupal/antibot": "^2.0",
+        "drupal/api_proxy": "^2.0",
         "drupal/autofloat": "^1.2",
         "drupal/backup_migrate": "^5.0",
         "drupal/bibcite": "2.0.0-beta2",
