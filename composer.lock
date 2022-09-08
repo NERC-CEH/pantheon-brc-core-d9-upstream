@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ea824a37438f25a6fb90e51ad5defe35",
+    "content-hash": "6d119747847a8907595789b6c0e6c1fe",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -10492,71 +10492,27 @@
             }
         },
         {
-            "name": "drupal/responsive_table_filter",
-            "version": "2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/responsive_table_filter.git",
-                "reference": "2.0.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/responsive_table_filter-2.0.1.zip",
-                "reference": "2.0.1",
-                "shasum": "3b1d914ef7eeeda67d0c83991fcb36762b147fe5"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.0.1",
-                    "datestamp": "1658699523",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "joelpittet",
-                    "homepage": "https://www.drupal.org/user/160302"
-                }
-            ],
-            "description": "Provides a text filter that wraps table tags with an figure element.",
-            "homepage": "https://www.drupal.org/project/responsive_table_filter",
-            "support": {
-                "source": "https://git.drupalcode.org/project/responsive_table_filter"
-            }
-        },
-        {
             "name": "drupal/responsive_tables_filter",
-            "version": "1.14.0",
+            "version": "1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/responsive_tables_filter.git",
-                "reference": "8.x-1.14"
+                "reference": "8.x-1.16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/responsive_tables_filter-8.x-1.14.zip",
-                "reference": "8.x-1.14",
-                "shasum": "e111c0adb7ba8c5aa52b150d0c68e23c6d9aa368"
+                "url": "https://ftp.drupal.org/files/projects/responsive_tables_filter-8.x-1.16.zip",
+                "reference": "8.x-1.16",
+                "shasum": "ddb820218f99a5e161c38a97ea2d8c7202007698"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10"
+                "drupal/core": "^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.14",
-                    "datestamp": "1658943979",
+                    "version": "8.x-1.16",
+                    "datestamp": "1661878044",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -12560,26 +12516,26 @@
         },
         {
             "name": "drupal/views_bootstrap",
-            "version": "5.4.0",
+            "version": "3.9.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_bootstrap.git",
-                "reference": "5.4.0"
+                "reference": "8.x-3.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_bootstrap-5.4.0.zip",
-                "reference": "5.4.0",
-                "shasum": "7793581fbd9c797aed6c12a6ee85dc87e79f7870"
+                "url": "https://ftp.drupal.org/files/projects/views_bootstrap-8.x-3.9.zip",
+                "reference": "8.x-3.9",
+                "shasum": "6a122213f7d12cda2274af85ae1f3810b97d7402"
             },
             "require": {
-                "drupal/core": "^9 || ^10"
+                "drupal/core": "^8 || ^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "5.4.0",
-                    "datestamp": "1658954222",
+                    "version": "8.x-3.9",
+                    "datestamp": "1645730265",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -12592,30 +12548,36 @@
             ],
             "authors": [
                 {
-                    "name": "aburrows",
-                    "homepage": "https://www.drupal.org/user/577844"
+                    "name": "Dmitry Demenchuk",
+                    "homepage": "https://www.drupal.org/u/mrded",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "ericpugh",
-                    "homepage": "https://www.drupal.org/user/130084"
+                    "name": "Alex Burrows",
+                    "homepage": "https://www.drupal.org/u/aburrows",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "ikeigenwijs",
-                    "homepage": "https://www.drupal.org/user/583238"
+                    "name": "Eric Pugh",
+                    "homepage": "https://www.drupal.org/u/ericpugh",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "mrded",
-                    "homepage": "https://www.drupal.org/user/556088"
+                    "name": "Bart Verheyde",
+                    "homepage": "https://www.drupal.org/u/ikeigenwijs",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "shelane",
-                    "homepage": "https://www.drupal.org/user/2674989"
+                    "name": "Shelane French",
+                    "homepage": "https://www.drupal.org/u/shelane",
+                    "role": "Maintainer"
                 }
             ],
-            "description": "Allows for different styles to be used in views to work with Bootstrap 4 components.",
+            "description": "Integrate the Bootstrap framework with Views.",
             "homepage": "https://www.drupal.org/project/views_bootstrap",
             "support": {
-                "source": "https://git.drupalcode.org/project/views_bootstrap"
+                "source": "https://git.drupalcode.org/project/views_bootstrap",
+                "issues": "https://www.drupal.org/project/issues/views_bootstrap"
             }
         },
         {
