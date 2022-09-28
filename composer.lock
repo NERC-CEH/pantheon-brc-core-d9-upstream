@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0024e4801615b644080d3655202e34f9",
+    "content-hash": "83d9da79d8ff8e161ef085c62a06bf5b",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -3170,17 +3170,17 @@
         },
         {
             "name": "drupal/block_class",
-            "version": "2.0.3",
+            "version": "2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/block_class.git",
-                "reference": "2.0.3"
+                "reference": "2.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/block_class-2.0.3.zip",
-                "reference": "2.0.3",
-                "shasum": "76cb0d6b44dc4a31fd5e758047a6a5ebd0111ccf"
+                "url": "https://ftp.drupal.org/files/projects/block_class-2.0.5.zip",
+                "reference": "2.0.5",
+                "shasum": "e70596776ead49596e99acb11fd61ff00416dc30"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10"
@@ -3188,8 +3188,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.3",
-                    "datestamp": "1661899678",
+                    "version": "2.0.5",
+                    "datestamp": "1664290365",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4331,27 +4331,28 @@
         },
         {
             "name": "drupal/colorbutton",
-            "version": "1.3.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/colorbutton.git",
-                "reference": "8.x-1.3"
+                "reference": "8.x-1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/colorbutton-8.x-1.3.zip",
-                "reference": "8.x-1.3",
-                "shasum": "1a3c8996b1db88e30a512d1a329e570160d783df"
+                "url": "https://ftp.drupal.org/files/projects/colorbutton-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "196e0a6d899d618f809104f285a5adce164aa89b"
             },
             "require": {
-                "drupal/core": "^8 || ^9",
+                "drupal/ckeditor": "*",
+                "drupal/core": "^9.3 || ^10",
                 "drupal/panelbutton": "^1.3"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.3",
-                    "datestamp": "1626792032",
+                    "version": "8.x-1.4",
+                    "datestamp": "1664278148",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4369,12 +4370,12 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "ddrozdik",
-                    "homepage": "https://www.drupal.org/user/574124"
-                },
-                {
                     "name": "kevinquillen",
                     "homepage": "https://www.drupal.org/user/317279"
+                },
+                {
+                    "name": "Krzysztof Domański",
+                    "homepage": "https://www.drupal.org/user/3572982"
                 }
             ],
             "description": "Adds the Color Button plugin to CKEditor.",
@@ -6092,17 +6093,17 @@
         },
         {
             "name": "drupal/devel",
-            "version": "5.0.0",
+            "version": "5.0.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/devel.git",
-                "reference": "5.0.0"
+                "reference": "5.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/devel-5.0.0.zip",
-                "reference": "5.0.0",
-                "shasum": "1e3aff2069d3ef6e697bab4d8538d79b9391d971"
+                "url": "https://ftp.drupal.org/files/projects/devel-5.0.2.zip",
+                "reference": "5.0.2",
+                "shasum": "9299d52d806897240fb5a57e66f12e09c4f00960"
             },
             "require": {
                 "doctrine/common": "^2.7",
@@ -6121,8 +6122,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "5.0.0",
-                    "datestamp": "1663880063",
+                    "version": "5.0.2",
+                    "datestamp": "1664317512",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8025,17 +8026,17 @@
         },
         {
             "name": "drupal/imce",
-            "version": "2.4.0",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/imce.git",
-                "reference": "8.x-2.4"
+                "reference": "8.x-2.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/imce-8.x-2.4.zip",
-                "reference": "8.x-2.4",
-                "shasum": "2797d6a669b739490edd00c753303cd9263f8dc3"
+                "url": "https://ftp.drupal.org/files/projects/imce-8.x-2.5.zip",
+                "reference": "8.x-2.5",
+                "shasum": "0326482a1d6cb5f52ed00473bc5693e192149fdb"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
@@ -8043,8 +8044,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.4",
-                    "datestamp": "1618251147",
+                    "version": "8.x-2.5",
+                    "datestamp": "1664293755",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9036,17 +9037,17 @@
         },
         {
             "name": "drupal/login_destination",
-            "version": "2.0.0-beta1",
+            "version": "2.0.0-beta4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/login_destination.git",
-                "reference": "8.x-2.0-beta1"
+                "reference": "8.x-2.0-beta4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/login_destination-8.x-2.0-beta1.zip",
-                "reference": "8.x-2.0-beta1",
-                "shasum": "4f4d72d55906052593c7687f608915964d365ed5"
+                "url": "https://ftp.drupal.org/files/projects/login_destination-8.x-2.0-beta4.zip",
+                "reference": "8.x-2.0-beta4",
+                "shasum": "509775133d77f1eddceb0d72fd33cb013c4bce5d"
             },
             "require": {
                 "drupal/core": "^8.7.10 || ^9"
@@ -9058,8 +9059,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.0-beta1",
-                    "datestamp": "1603488246",
+                    "version": "8.x-2.0-beta4",
+                    "datestamp": "1663930933",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -9072,16 +9073,14 @@
             ],
             "authors": [
                 {
-                    "name": "3CWebDev",
-                    "homepage": "https://www.drupal.org/user/61221"
+                    "name": "rsvelko",
+                    "homepage": "https://www.drupal.org/u/rsvelko",
+                    "role": "Creator, Maintainer"
                 },
                 {
-                    "name": "Oliver Huynh",
-                    "homepage": "https://www.drupal.org/user/243730"
-                },
-                {
-                    "name": "beautifulmind",
-                    "homepage": "https://www.drupal.org/user/219482"
+                    "name": "Other Contributors",
+                    "homepage": "https://www.drupal.org/node/69051/committers",
+                    "role": "Contributors"
                 },
                 {
                     "name": "ddrozdik",
@@ -9104,6 +9103,10 @@
                     "homepage": "https://www.drupal.org/user/23"
                 },
                 {
+                    "name": "Oliver Huynh",
+                    "homepage": "https://www.drupal.org/user/243730"
+                },
+                {
                     "name": "perennial.sky",
                     "homepage": "https://www.drupal.org/user/2622667"
                 },
@@ -9112,10 +9115,11 @@
                     "homepage": "https://www.drupal.org/user/337401"
                 }
             ],
-            "description": "The Login Destination module add possibility customize the destination that the user is redirected to after login.",
-            "homepage": "https://www.drupal.org/project/login_destination",
+            "description": "Customizes the destination the user is redirected to after login/logout/registration/one-time login.",
+            "homepage": "https://drupal.org/project/login_destination",
             "support": {
-                "source": "https://git.drupalcode.org/project/login_destination"
+                "source": "https://git.drupalcode.org/project/login_destination",
+                "issues": "https://drupal.org/project/issues/login_destination"
             }
         },
         {
@@ -9951,26 +9955,27 @@
         },
         {
             "name": "drupal/panelbutton",
-            "version": "1.4.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/panelbutton.git",
-                "reference": "8.x-1.4"
+                "reference": "8.x-1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/panelbutton-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "9e4b83af312607242dde0e095e80fb68264208a1"
+                "url": "https://ftp.drupal.org/files/projects/panelbutton-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "34a2607b27c3fd52826e306b60b97994ad1eff6f"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/ckeditor": "*",
+                "drupal/core": "^8 || ^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1626792838",
+                    "version": "8.x-1.5",
+                    "datestamp": "1664276757",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9988,12 +9993,12 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "ddrozdik",
-                    "homepage": "https://www.drupal.org/user/574124"
-                },
-                {
                     "name": "kevinquillen",
                     "homepage": "https://www.drupal.org/user/317279"
+                },
+                {
+                    "name": "Krzysztof Domański",
+                    "homepage": "https://www.drupal.org/user/3572982"
                 }
             ],
             "description": "Adds the Panel Button plugin to CKEditor. This plugin is a utility plugin that is required by certain user-facing CKEditor plugins.",
@@ -19593,7 +19598,6 @@
         "drupal/fixed_text_link_formatter": 20,
         "drupal/lang_dropdown": 10,
         "drupal/libraries": 10,
-        "drupal/login_destination": 10,
         "drupal/menu_breadcrumb": 20,
         "drupal/quicktabs": 15,
         "drupal/roleassign": 10,
