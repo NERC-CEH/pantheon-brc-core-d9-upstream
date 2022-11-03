@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c3579b62a73d1565773322ffc026b73",
+    "content-hash": "04f827e8b73ee6b8ee02e1e7a7f2a27f",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -6440,26 +6440,29 @@
         },
         {
             "name": "drupal/editor_advanced_link",
-            "version": "2.0.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/editor_advanced_link.git",
-                "reference": "2.0.0"
+                "reference": "2.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/editor_advanced_link-2.0.0.zip",
-                "reference": "2.0.0",
-                "shasum": "db9469ffc073ab0b350296c86069441882ba2147"
+                "url": "https://ftp.drupal.org/files/projects/editor_advanced_link-2.1.1.zip",
+                "reference": "2.1.1",
+                "shasum": "ba8f12aee9ac6c4d7b60ee916e7bd69e98c99d4a"
             },
             "require": {
-                "drupal/core": "^9.2"
+                "drupal/core": "^9.2 || ^10"
+            },
+            "require-dev": {
+                "drupal/ckeditor": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0",
-                    "datestamp": "1624528083",
+                    "version": "2.1.1",
+                    "datestamp": "1667462197",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6978,20 +6981,20 @@
         },
         {
             "name": "drupal/eva",
-            "version": "2.1.0",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/eva.git",
-                "reference": "8.x-2.1"
+                "reference": "3.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/eva-8.x-2.1.zip",
-                "reference": "8.x-2.1",
-                "shasum": "9fd3bed40ad1c05c05d32a90965ad45c30d2fb41"
+                "url": "https://ftp.drupal.org/files/projects/eva-3.0.0.zip",
+                "reference": "3.0.0",
+                "shasum": "51b56ed55ab6edb7376afc34c88825b6373d4a80"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8 || ^9 || ^10"
             },
             "suggest": {
                 "drupal/token": "Enable the argument token browser"
@@ -6999,8 +7002,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.1",
-                    "datestamp": "1591701896",
+                    "version": "3.0.0",
+                    "datestamp": "1667476964",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7013,12 +7016,12 @@
             ],
             "authors": [
                 {
-                    "name": "Crell",
-                    "homepage": "https://www.drupal.org/user/26398"
-                },
-                {
                     "name": "ahebrank",
                     "homepage": "https://www.drupal.org/user/3190515"
+                },
+                {
+                    "name": "Crell",
+                    "homepage": "https://www.drupal.org/user/26398"
                 },
                 {
                     "name": "eaton",
@@ -7431,29 +7434,26 @@
         },
         {
             "name": "drupal/field_group",
-            "version": "3.3.0",
+            "version": "3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/field_group.git",
-                "reference": "8.x-3.3"
+                "reference": "8.x-3.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/field_group-8.x-3.3.zip",
-                "reference": "8.x-3.3",
-                "shasum": "c7a423b1d7643ee40dd1543d72fa04e8ac1756e4"
+                "url": "https://ftp.drupal.org/files/projects/field_group-8.x-3.4.zip",
+                "reference": "8.x-3.4",
+                "shasum": "80b937e1a11f8b29c69d853fc4bf798c057c6f94"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9"
-            },
-            "require-dev": {
-                "drupal/jquery_ui_accordion": "^1.0"
+                "drupal/core": "^9.2 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.3",
-                    "datestamp": "1663516404",
+                    "version": "8.x-3.4",
+                    "datestamp": "1667241979",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -11438,20 +11438,20 @@
         },
         {
             "name": "drupal/smtp",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/smtp.git",
-                "reference": "8.x-1.1"
+                "reference": "8.x-1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/smtp-8.x-1.1.zip",
-                "reference": "8.x-1.1",
-                "shasum": "775de92ad19b531691b7e79c6f832416ae6ae892"
+                "url": "https://ftp.drupal.org/files/projects/smtp-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "10d302d4a90521d674bdd078da8aed886fa5ec41"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9",
+                "drupal/core": ">=8.9 <11",
                 "phpmailer/phpmailer": "^6.1.7"
             },
             "suggest": {
@@ -11460,8 +11460,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.1",
-                    "datestamp": "1660325085",
+                    "version": "8.x-1.2",
+                    "datestamp": "1667416337",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
