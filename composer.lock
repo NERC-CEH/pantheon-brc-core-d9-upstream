@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f35d394aee95de4b4ae50f56a7af2f2c",
+    "content-hash": "2645152b639f7a38c4eebbd1629d2a83",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -2790,17 +2790,17 @@
         },
         {
             "name": "drupal/advancedqueue",
-            "version": "1.0.0-rc5",
+            "version": "1.0.0-rc6",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/advancedqueue.git",
-                "reference": "8.x-1.0-rc5"
+                "reference": "8.x-1.0-rc6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/advancedqueue-8.x-1.0-rc5.zip",
-                "reference": "8.x-1.0-rc5",
-                "shasum": "65253881ca852f2a66ffa7ca0bd319c345a24f8c"
+                "url": "https://ftp.drupal.org/files/projects/advancedqueue-8.x-1.0-rc6.zip",
+                "reference": "8.x-1.0-rc6",
+                "shasum": "e642153a2b4094e73f86cb63c2a81966871714d4"
             },
             "require": {
                 "drupal/core": "^9.1 || ^10"
@@ -2808,8 +2808,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-rc5",
-                    "datestamp": "1667516944",
+                    "version": "8.x-1.0-rc6",
+                    "datestamp": "1667989296",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
@@ -4802,17 +4802,17 @@
         },
         {
             "name": "drupal/commerce_paypal",
-            "version": "1.2.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/commerce_paypal.git",
-                "reference": "8.x-1.2"
+                "reference": "8.x-1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/commerce_paypal-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "ea4235446d9b50d1db437feaf879a983753076a5"
+                "url": "https://ftp.drupal.org/files/projects/commerce_paypal-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "486b0a9e0beb90b765d30c984397cf514f982ae3"
             },
             "require": {
                 "drupal/commerce": "^2.19 || ^3",
@@ -4823,8 +4823,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.2",
-                    "datestamp": "1668502341",
+                    "version": "8.x-1.3",
+                    "datestamp": "1668697541",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5953,17 +5953,17 @@
         },
         {
             "name": "drupal/ctools",
-            "version": "4.0.2",
+            "version": "4.0.3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ctools.git",
-                "reference": "4.0.2"
+                "reference": "4.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ctools-4.0.2.zip",
-                "reference": "4.0.2",
-                "shasum": "c90325ce9a42add5ebce67a5506bbafc34edc242"
+                "url": "https://ftp.drupal.org/files/projects/ctools-4.0.3.zip",
+                "reference": "4.0.3",
+                "shasum": "4f389b14bd2120069386c2f28f8c4cd49bd2ebfc"
             },
             "require": {
                 "drupal/core": "^9.3 || ^10"
@@ -5971,8 +5971,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.0.2",
-                    "datestamp": "1668486570",
+                    "version": "4.0.3",
+                    "datestamp": "1668631947",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
