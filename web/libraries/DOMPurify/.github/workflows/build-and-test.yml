@@ -16,13 +16,13 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 15.x, 16.x, 17.x]
+        node-version: [14.x, 16.x, 17.x, 18.x]
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
@@ -33,11 +33,11 @@ jobs:
       - name: Lint
         run: npm run lint
       - name: Test
-        uses: GabrielBB/xvfb-action@v1.0
+        uses: GabrielBB/xvfb-action@v1.6
         with:
           run: npm run test:ci
         env:
-          TEST_BROWSERSTACK: ${{ startsWith(matrix.node-version, '17') }}
+          TEST_BROWSERSTACK: ${{ startsWith(matrix.node-version, '18') }}
           TEST_PROBE_ONLY: ${{ github.ref != 'refs/heads/main' }}
           BS_USERNAME: ${{ secrets.BS_USERNAME }}
           BS_ACCESSKEY: ${{ secrets.BS_ACCESSKEY }}

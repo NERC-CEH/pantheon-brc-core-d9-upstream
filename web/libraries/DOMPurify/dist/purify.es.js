@@ -1,4 +1,4 @@
-/*! @license DOMPurify 2.3.6 | (c) Cure53 and other contributors | Released under the Apache license 2.0 and Mozilla Public License 2.0 | github.com/cure53/DOMPurify/blob/2.3.6/LICENSE */
+/*! @license DOMPurify 2.4.1 | (c) Cure53 and other contributors | Released under the Apache license 2.0 and Mozilla Public License 2.0 | github.com/cure53/DOMPurify/blob/2.4.1/LICENSE */
 
 function _typeof(obj) {
   "@babel/helpers - typeof";
@@ -123,6 +123,7 @@ var arrayForEach = unapply(Array.prototype.forEach);
 var arrayPop = unapply(Array.prototype.pop);
 var arrayPush = unapply(Array.prototype.push);
 var stringToLowerCase = unapply(String.prototype.toLowerCase);
+var stringToString = unapply(String.prototype.toString);
 var stringMatch = unapply(String.prototype.match);
 var stringReplace = unapply(String.prototype.replace);
 var stringIndexOf = unapply(String.prototype.indexOf);
@@ -149,7 +150,9 @@ function unconstruct(func) {
 }
 /* Add properties to a lookup table */
 
-function addToSet(set, array) {
+function addToSet(set, array, transformCaseFunc) {
+  transformCaseFunc = transformCaseFunc ? transformCaseFunc : stringToLowerCase;
+
   if (setPrototypeOf) {
     // Make 'in' and truthy checks like Boolean(set.constructor)
     // independent of any properties defined on Object.prototype.
@@ -163,7 +166,7 @@ function addToSet(set, array) {
     var element = array[l];
 
     if (typeof element === 'string') {
-      var lcElement = stringToLowerCase(element);
+      var lcElement = transformCaseFunc(element);
 
       if (lcElement !== element) {
         // Config presets (e.g. tags.js, attrs.js) are immutable.
@@ -244,9 +247,10 @@ var svg = freeze(['accent-height', 'accumulate', 'additive', 'alignment-baseline
 var mathMl = freeze(['accent', 'accentunder', 'align', 'bevelled', 'close', 'columnsalign', 'columnlines', 'columnspan', 'denomalign', 'depth', 'dir', 'display', 'displaystyle', 'encoding', 'fence', 'frame', 'height', 'href', 'id', 'largeop', 'length', 'linethickness', 'lspace', 'lquote', 'mathbackground', 'mathcolor', 'mathsize', 'mathvariant', 'maxsize', 'minsize', 'movablelimits', 'notation', 'numalign', 'open', 'rowalign', 'rowlines', 'rowspacing', 'rowspan', 'rspace', 'rquote', 'scriptlevel', 'scriptminsize', 'scriptsizemultiplier', 'selection', 'separator', 'separators', 'stretchy', 'subscriptshift', 'supscriptshift', 'symmetric', 'voffset', 'width', 'xmlns']);
 var xml = freeze(['xlink:href', 'xml:id', 'xlink:title', 'xml:space', 'xmlns:xlink']);
 
-var MUSTACHE_EXPR = seal(/\{\{[\s\S]*|[\s\S]*\}\}/gm); // Specify template detection regex for SAFE_FOR_TEMPLATES mode
+var MUSTACHE_EXPR = seal(/\{\{[\w\W]*|[\w\W]*\}\}/gm); // Specify template detection regex for SAFE_FOR_TEMPLATES mode
 
-var ERB_EXPR = seal(/<%[\s\S]*|[\s\S]*%>/gm);
+var ERB_EXPR = seal(/<%[\w\W]*|[\w\W]*%>/gm);
+var TMPLIT_EXPR = seal(/\${[\w\W]*}/gm);
 var DATA_ATTR = seal(/^data-[\-\w.\u00B7-\uFFFF]/); // eslint-disable-line no-useless-escape
 
 var ARIA_ATTR = seal(/^aria-[\-\w]+$/); // eslint-disable-line no-useless-escape
@@ -292,6 +296,9 @@ var _createTrustedTypesPolicy = function _createTrustedTypesPolicy(trustedTypes,
     return trustedTypes.createPolicy(policyName, {
       createHTML: function createHTML(html) {
         return html;
+      },
+      createScriptURL: function createScriptURL(scriptUrl) {
+        return scriptUrl;
       }
     });
   } catch (_) {
@@ -315,7 +322,7 @@ function createDOMPurify() {
    */
 
 
-  DOMPurify.version = '2.3.6';
+  DOMPurify.version = '2.4.1';
   /**
    * Array of elements that DOMPurify removed during sanitation.
    * Empty if nothing was removed.
@@ -384,6 +391,7 @@ function createDOMPurify() {
   DOMPurify.isSupported = typeof getParentNode === 'function' && implementation && typeof implementation.createHTMLDocument !== 'undefined' && documentMode !== 9;
   var MUSTACHE_EXPR$1 = MUSTACHE_EXPR,
       ERB_EXPR$1 = ERB_EXPR,
+      TMPLIT_EXPR$1 = TMPLIT_EXPR,
       DATA_ATTR$1 = DATA_ATTR,
       ARIA_ATTR$1 = ARIA_ATTR,
       IS_SCRIPT_OR_DATA$1 = IS_SCRIPT_OR_DATA,
@@ -473,9 +481,27 @@ function createDOMPurify() {
    * case Trusted Types are not supported  */
 
   var RETURN_TRUSTED_TYPE = false;
-  /* Output should be free from DOM clobbering attacks? */
+  /* Output should be free from DOM clobbering attacks?
+   * This sanitizes markups named with colliding, clobberable built-in DOM APIs.
+   */
 
   var SANITIZE_DOM = true;
+  /* Achieve full DOM Clobbering protection by isolating the namespace of named
+   * properties and JS variables, mitigating attacks that abuse the HTML/DOM spec rules.
+   *
+   * HTML/DOM spec rules that enable DOM Clobbering:
+   *   - Named Access on Window (§7.3.3)
+   *   - DOM Tree Accessors (§3.1.5)
+   *   - Form Element Parent-Child Relations (§4.10.3)
+   *   - Iframe srcdoc / Nested WindowProxies (§4.8.5)
+   *   - HTMLCollection (§4.2.10.2)
+   *
+   * Namespace isolation is implemented by prefixing `id` and `name` attributes
+   * with a constant string, i.e., `user-content-`
+   */
+
+  var SANITIZE_NAMED_PROPS = false;
+  var SANITIZE_NAMED_PROPS_PREFIX = 'user-content-';
   /* Keep element content when removing element? */
 
   var KEEP_CONTENT = true;
@@ -505,6 +531,10 @@ function createDOMPurify() {
 
   var NAMESPACE = HTML_NAMESPACE;
   var IS_EMPTY_INPUT = false;
+  /* Allowed XHTML+XML namespaces */
+
+  var ALLOWED_NAMESPACES = null;
+  var DEFAULT_ALLOWED_NAMESPACES = addToSet({}, [MATHML_NAMESPACE, SVG_NAMESPACE, HTML_NAMESPACE], stringToString);
   /* Parsing of strict XHTML documents */
 
   var PARSER_MEDIA_TYPE;
@@ -545,15 +575,28 @@ function createDOMPurify() {
 
 
     cfg = clone(cfg);
+    PARSER_MEDIA_TYPE = // eslint-disable-next-line unicorn/prefer-includes
+    SUPPORTED_PARSER_MEDIA_TYPES.indexOf(cfg.PARSER_MEDIA_TYPE) === -1 ? PARSER_MEDIA_TYPE = DEFAULT_PARSER_MEDIA_TYPE : PARSER_MEDIA_TYPE = cfg.PARSER_MEDIA_TYPE; // HTML tags and attributes are not case-sensitive, converting to lowercase. Keeping XHTML as is.
+
+    transformCaseFunc = PARSER_MEDIA_TYPE === 'application/xhtml+xml' ? stringToString : stringToLowerCase;
     /* Set configuration parameters */
 
-    ALLOWED_TAGS = 'ALLOWED_TAGS' in cfg ? addToSet({}, cfg.ALLOWED_TAGS) : DEFAULT_ALLOWED_TAGS;
-    ALLOWED_ATTR = 'ALLOWED_ATTR' in cfg ? addToSet({}, cfg.ALLOWED_ATTR) : DEFAULT_ALLOWED_ATTR;
-    URI_SAFE_ATTRIBUTES = 'ADD_URI_SAFE_ATTR' in cfg ? addToSet(clone(DEFAULT_URI_SAFE_ATTRIBUTES), cfg.ADD_URI_SAFE_ATTR) : DEFAULT_URI_SAFE_ATTRIBUTES;
-    DATA_URI_TAGS = 'ADD_DATA_URI_TAGS' in cfg ? addToSet(clone(DEFAULT_DATA_URI_TAGS), cfg.ADD_DATA_URI_TAGS) : DEFAULT_DATA_URI_TAGS;
-    FORBID_CONTENTS = 'FORBID_CONTENTS' in cfg ? addToSet({}, cfg.FORBID_CONTENTS) : DEFAULT_FORBID_CONTENTS;
-    FORBID_TAGS = 'FORBID_TAGS' in cfg ? addToSet({}, cfg.FORBID_TAGS) : {};
-    FORBID_ATTR = 'FORBID_ATTR' in cfg ? addToSet({}, cfg.FORBID_ATTR) : {};
+    ALLOWED_TAGS = 'ALLOWED_TAGS' in cfg ? addToSet({}, cfg.ALLOWED_TAGS, transformCaseFunc) : DEFAULT_ALLOWED_TAGS;
+    ALLOWED_ATTR = 'ALLOWED_ATTR' in cfg ? addToSet({}, cfg.ALLOWED_ATTR, transformCaseFunc) : DEFAULT_ALLOWED_ATTR;
+    ALLOWED_NAMESPACES = 'ALLOWED_NAMESPACES' in cfg ? addToSet({}, cfg.ALLOWED_NAMESPACES, stringToString) : DEFAULT_ALLOWED_NAMESPACES;
+    URI_SAFE_ATTRIBUTES = 'ADD_URI_SAFE_ATTR' in cfg ? addToSet(clone(DEFAULT_URI_SAFE_ATTRIBUTES), // eslint-disable-line indent
+    cfg.ADD_URI_SAFE_ATTR, // eslint-disable-line indent
+    transformCaseFunc // eslint-disable-line indent
+    ) // eslint-disable-line indent
+    : DEFAULT_URI_SAFE_ATTRIBUTES;
+    DATA_URI_TAGS = 'ADD_DATA_URI_TAGS' in cfg ? addToSet(clone(DEFAULT_DATA_URI_TAGS), // eslint-disable-line indent
+    cfg.ADD_DATA_URI_TAGS, // eslint-disable-line indent
+    transformCaseFunc // eslint-disable-line indent
+    ) // eslint-disable-line indent
+    : DEFAULT_DATA_URI_TAGS;
+    FORBID_CONTENTS = 'FORBID_CONTENTS' in cfg ? addToSet({}, cfg.FORBID_CONTENTS, transformCaseFunc) : DEFAULT_FORBID_CONTENTS;
+    FORBID_TAGS = 'FORBID_TAGS' in cfg ? addToSet({}, cfg.FORBID_TAGS, transformCaseFunc) : {};
+    FORBID_ATTR = 'FORBID_ATTR' in cfg ? addToSet({}, cfg.FORBID_ATTR, transformCaseFunc) : {};
     USE_PROFILES = 'USE_PROFILES' in cfg ? cfg.USE_PROFILES : false;
     ALLOW_ARIA_ATTR = cfg.ALLOW_ARIA_ATTR !== false; // Default true
 
@@ -575,6 +618,8 @@ function createDOMPurify() {
 
     SANITIZE_DOM = cfg.SANITIZE_DOM !== false; // Default true
 
+    SANITIZE_NAMED_PROPS = cfg.SANITIZE_NAMED_PROPS || false; // Default false
+
     KEEP_CONTENT = cfg.KEEP_CONTENT !== false; // Default true
 
     IN_PLACE = cfg.IN_PLACE || false; // Default false
@@ -593,13 +638,6 @@ function createDOMPurify() {
     if (cfg.CUSTOM_ELEMENT_HANDLING && typeof cfg.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements === 'boolean') {
       CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements = cfg.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements;
     }
-
-    PARSER_MEDIA_TYPE = // eslint-disable-next-line unicorn/prefer-includes
-    SUPPORTED_PARSER_MEDIA_TYPES.indexOf(cfg.PARSER_MEDIA_TYPE) === -1 ? PARSER_MEDIA_TYPE = DEFAULT_PARSER_MEDIA_TYPE : PARSER_MEDIA_TYPE = cfg.PARSER_MEDIA_TYPE; // HTML tags and attributes are not case-sensitive, converting to lowercase. Keeping XHTML as is.
-
-    transformCaseFunc = PARSER_MEDIA_TYPE === 'application/xhtml+xml' ? function (x) {
-      return x;
-    } : stringToLowerCase;
 
     if (SAFE_FOR_TEMPLATES) {
       ALLOW_DATA_ATTR = false;
@@ -646,7 +684,7 @@ function createDOMPurify() {
         ALLOWED_TAGS = clone(ALLOWED_TAGS);
       }
 
-      addToSet(ALLOWED_TAGS, cfg.ADD_TAGS);
+      addToSet(ALLOWED_TAGS, cfg.ADD_TAGS, transformCaseFunc);
     }
 
     if (cfg.ADD_ATTR) {
@@ -654,11 +692,11 @@ function createDOMPurify() {
         ALLOWED_ATTR = clone(ALLOWED_ATTR);
       }
 
-      addToSet(ALLOWED_ATTR, cfg.ADD_ATTR);
+      addToSet(ALLOWED_ATTR, cfg.ADD_ATTR, transformCaseFunc);
     }
 
     if (cfg.ADD_URI_SAFE_ATTR) {
-      addToSet(URI_SAFE_ATTRIBUTES, cfg.ADD_URI_SAFE_ATTR);
+      addToSet(URI_SAFE_ATTRIBUTES, cfg.ADD_URI_SAFE_ATTR, transformCaseFunc);
     }
 
     if (cfg.FORBID_CONTENTS) {
@@ -666,7 +704,7 @@ function createDOMPurify() {
         FORBID_CONTENTS = clone(FORBID_CONTENTS);
       }
 
-      addToSet(FORBID_CONTENTS, cfg.FORBID_CONTENTS);
+      addToSet(FORBID_CONTENTS, cfg.FORBID_CONTENTS, transformCaseFunc);
     }
     /* Add #text in case KEEP_CONTENT is set to true */
 
@@ -698,7 +736,12 @@ function createDOMPurify() {
   };
 
   var MATHML_TEXT_INTEGRATION_POINTS = addToSet({}, ['mi', 'mo', 'mn', 'ms', 'mtext']);
-  var HTML_INTEGRATION_POINTS = addToSet({}, ['foreignobject', 'desc', 'title', 'annotation-xml']);
+  var HTML_INTEGRATION_POINTS = addToSet({}, ['foreignobject', 'desc', 'title', 'annotation-xml']); // Certain elements are allowed in both SVG and HTML
+  // namespace. We need to specify them explicitly
+  // so that they don't get erroneously deleted from
+  // HTML namespace.
+
+  var COMMON_SVG_AND_HTML_ELEMENTS = addToSet({}, ['title', 'style', 'font', 'a', 'script']);
   /* Keep track of all possible SVG and MathML tags
    * so that we can perform the namespace checks
    * correctly. */
@@ -723,7 +766,7 @@ function createDOMPurify() {
 
     if (!parent || !parent.tagName) {
       parent = {
-        namespaceURI: HTML_NAMESPACE,
+        namespaceURI: NAMESPACE,
         tagName: 'template'
       };
     }
@@ -731,13 +774,17 @@ function createDOMPurify() {
     var tagName = stringToLowerCase(element.tagName);
     var parentTagName = stringToLowerCase(parent.tagName);
 
+    if (!ALLOWED_NAMESPACES[element.namespaceURI]) {
+      return false;
+    }
+
     if (element.namespaceURI === SVG_NAMESPACE) {
       // The only way to switch from HTML namespace to SVG
       // is via <svg>. If it happens via any other tag, then
       // it should be killed.
       if (parent.namespaceURI === HTML_NAMESPACE) {
         return tagName === 'svg';
-      } // The only way to switch from MathML to SVG is via
+      } // The only way to switch from MathML to SVG is via`
       // svg if parent is either <annotation-xml> or MathML
       // text integration points.
 
@@ -780,19 +827,20 @@ function createDOMPurify() {
 
       if (parent.namespaceURI === MATHML_NAMESPACE && !MATHML_TEXT_INTEGRATION_POINTS[parentTagName]) {
         return false;
-      } // Certain elements are allowed in both SVG and HTML
-      // namespace. We need to specify them explicitly
-      // so that they don't get erronously deleted from
-      // HTML namespace.
-
-
-      var commonSvgAndHTMLElements = addToSet({}, ['title', 'style', 'font', 'a', 'script']); // We disallow tags that are specific for MathML
+      } // We disallow tags that are specific for MathML
       // or SVG and should never appear in HTML namespace
 
-      return !ALL_MATHML_TAGS[tagName] && (commonSvgAndHTMLElements[tagName] || !ALL_SVG_TAGS[tagName]);
+
+      return !ALL_MATHML_TAGS[tagName] && (COMMON_SVG_AND_HTML_ELEMENTS[tagName] || !ALL_SVG_TAGS[tagName]);
+    } // For XHTML and XML documents that support custom namespaces
+
+
+    if (PARSER_MEDIA_TYPE === 'application/xhtml+xml' && ALLOWED_NAMESPACES[element.namespaceURI]) {
+      return true;
     } // The code should never reach this place (this means
     // that the element somehow got namespace that is not
-    // HTML, SVG or MathML). Return false just in case.
+    // HTML, SVG, MathML or allowed via ALLOWED_NAMESPACES).
+    // Return false just in case.
 
 
     return false;
@@ -876,7 +924,7 @@ function createDOMPurify() {
       leadingWhitespace = matches && matches[0];
     }
 
-    if (PARSER_MEDIA_TYPE === 'application/xhtml+xml') {
+    if (PARSER_MEDIA_TYPE === 'application/xhtml+xml' && NAMESPACE === HTML_NAMESPACE) {
       // Root of XHTML doc must contain xmlns declaration (see https://www.w3.org/TR/xhtml1/normative.html#strict)
       dirty = '<html xmlns="http://www.w3.org/1999/xhtml"><head></head><body>' + dirty + '</body></html>';
     }
@@ -939,7 +987,7 @@ function createDOMPurify() {
 
 
   var _isClobbered = function _isClobbered(elm) {
-    return elm instanceof HTMLFormElement && (typeof elm.nodeName !== 'string' || typeof elm.textContent !== 'string' || typeof elm.removeChild !== 'function' || !(elm.attributes instanceof NamedNodeMap) || typeof elm.removeAttribute !== 'function' || typeof elm.setAttribute !== 'function' || typeof elm.namespaceURI !== 'string' || typeof elm.insertBefore !== 'function');
+    return elm instanceof HTMLFormElement && (typeof elm.nodeName !== 'string' || typeof elm.textContent !== 'string' || typeof elm.removeChild !== 'function' || !(elm.attributes instanceof NamedNodeMap) || typeof elm.removeAttribute !== 'function' || typeof elm.setAttribute !== 'function' || typeof elm.namespaceURI !== 'string' || typeof elm.insertBefore !== 'function' || typeof elm.hasChildNodes !== 'function');
   };
   /**
    * _isNode
@@ -999,7 +1047,7 @@ function createDOMPurify() {
     /* Check if tagname contains Unicode */
 
 
-    if (stringMatch(currentNode.nodeName, /[\u0080-\uFFFF]/)) {
+    if (regExpTest(/[\u0080-\uFFFF]/, currentNode.nodeName)) {
       _forceRemove(currentNode);
 
       return true;
@@ -1017,7 +1065,7 @@ function createDOMPurify() {
     /* Detect mXSS attempts abusing namespace confusion */
 
 
-    if (!_isNode(currentNode.firstElementChild) && (!_isNode(currentNode.content) || !_isNode(currentNode.content.firstElementChild)) && regExpTest(/<[/\w]/g, currentNode.innerHTML) && regExpTest(/<[/\w]/g, currentNode.textContent)) {
+    if (currentNode.hasChildNodes() && !_isNode(currentNode.firstElementChild) && (!_isNode(currentNode.content) || !_isNode(currentNode.content.firstElementChild)) && regExpTest(/<[/\w]/g, currentNode.innerHTML) && regExpTest(/<[/\w]/g, currentNode.textContent)) {
       _forceRemove(currentNode);
 
       return true;
@@ -1081,6 +1129,7 @@ function createDOMPurify() {
       content = currentNode.textContent;
       content = stringReplace(content, MUSTACHE_EXPR$1, ' ');
       content = stringReplace(content, ERB_EXPR$1, ' ');
+      content = stringReplace(content, TMPLIT_EXPR$1, ' ');
 
       if (currentNode.textContent !== content) {
         arrayPush(DOMPurify.removed, {
@@ -1229,6 +1278,7 @@ function createDOMPurify() {
       if (SAFE_FOR_TEMPLATES) {
         value = stringReplace(value, MUSTACHE_EXPR$1, ' ');
         value = stringReplace(value, ERB_EXPR$1, ' ');
+        value = stringReplace(value, TMPLIT_EXPR$1, ' ');
       }
       /* Is `value` valid for this attribute? */
 
@@ -1237,6 +1287,34 @@ function createDOMPurify() {
 
       if (!_isValidAttribute(lcTag, lcName, value)) {
         continue;
+      }
+      /* Full DOM Clobbering protection via namespace isolation,
+       * Prefix id and name attributes with `user-content-`
+       */
+
+
+      if (SANITIZE_NAMED_PROPS && (lcName === 'id' || lcName === 'name')) {
+        // Remove the attribute with this value
+        _removeAttribute(name, currentNode); // Prefix the value and later re-create the attribute with the sanitized value
+
+
+        value = SANITIZE_NAMED_PROPS_PREFIX + value;
+      }
+      /* Handle attributes that require Trusted Types */
+
+
+      if (trustedTypesPolicy && _typeof(trustedTypes) === 'object' && typeof trustedTypes.getAttributeType === 'function') {
+        if (namespaceURI) ; else {
+          switch (trustedTypes.getAttributeType(lcTag, lcName)) {
+            case 'TrustedHTML':
+              value = trustedTypesPolicy.createHTML(value);
+              break;
+
+            case 'TrustedScriptURL':
+              value = trustedTypesPolicy.createScriptURL(value);
+              break;
+          }
+        }
       }
       /* Handle invalid data-* attribute set by try-catching it */
 
@@ -1308,7 +1386,8 @@ function createDOMPurify() {
   // eslint-disable-next-line complexity
 
 
-  DOMPurify.sanitize = function (dirty, cfg) {
+  DOMPurify.sanitize = function (dirty) {
+    var cfg = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
     var body;
     var importedNode;
     var currentNode;
@@ -1495,6 +1574,7 @@ function createDOMPurify() {
     if (SAFE_FOR_TEMPLATES) {
       serializedHTML = stringReplace(serializedHTML, MUSTACHE_EXPR$1, ' ');
       serializedHTML = stringReplace(serializedHTML, ERB_EXPR$1, ' ');
+      serializedHTML = stringReplace(serializedHTML, TMPLIT_EXPR$1, ' ');
     }
 
     return trustedTypesPolicy && RETURN_TRUSTED_TYPE ? trustedTypesPolicy.createHTML(serializedHTML) : serializedHTML;
