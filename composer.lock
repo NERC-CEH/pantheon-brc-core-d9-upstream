@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "26d3fe68525d997b4cbbf7d0b7db097c",
+    "content-hash": "1ae4422e3fa12e4f0637d8d3d418184c",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -1938,16 +1938,16 @@
         },
         {
             "name": "doctrine/persistence",
-            "version": "3.1.3",
+            "version": "3.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/persistence.git",
-                "reference": "920da294b4bb0bb527f2a91ed60c18213435880f"
+                "reference": "8bf8ab15960787f1a49d405f6eb8c787b4841119"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/persistence/zipball/920da294b4bb0bb527f2a91ed60c18213435880f",
-                "reference": "920da294b4bb0bb527f2a91ed60c18213435880f",
+                "url": "https://api.github.com/repos/doctrine/persistence/zipball/8bf8ab15960787f1a49d405f6eb8c787b4841119",
+                "reference": "8bf8ab15960787f1a49d405f6eb8c787b4841119",
                 "shasum": ""
             },
             "require": {
@@ -2016,7 +2016,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/persistence/issues",
-                "source": "https://github.com/doctrine/persistence/tree/3.1.3"
+                "source": "https://github.com/doctrine/persistence/tree/3.1.4"
             },
             "funding": [
                 {
@@ -2032,7 +2032,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-01-19T13:39:42+00:00"
+            "time": "2023-02-03T11:13:07+00:00"
         },
         {
             "name": "doctrine/reflection",
@@ -3204,17 +3204,17 @@
         },
         {
             "name": "drupal/bootstrap",
-            "version": "3.25.0",
+            "version": "3.26.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/bootstrap.git",
-                "reference": "8.x-3.25"
+                "reference": "8.x-3.26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap-8.x-3.25.zip",
-                "reference": "8.x-3.25",
-                "shasum": "1334aad091973f53ddc4d7b426ee85e7428a3684"
+                "url": "https://ftp.drupal.org/files/projects/bootstrap-8.x-3.26.zip",
+                "reference": "8.x-3.26",
+                "shasum": "3d8fae75929ff3d8de52785fce71a236b0c4bc26"
             },
             "require": {
                 "drupal/core": "^9.3 || ^10"
@@ -3222,8 +3222,8 @@
             "type": "drupal-theme",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.25",
-                    "datestamp": "1654873483",
+                    "version": "8.x-3.26",
+                    "datestamp": "1676066874",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3995,17 +3995,17 @@
         },
         {
             "name": "drupal/clientside_validation",
-            "version": "4.0.1",
+            "version": "4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/clientside_validation.git",
-                "reference": "4.0.1"
+                "reference": "4.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/clientside_validation-4.0.1.zip",
-                "reference": "4.0.1",
-                "shasum": "e3ebc1c4114c4d5a448009cc26cda0a5fe5a45bb"
+                "url": "https://ftp.drupal.org/files/projects/clientside_validation-4.0.2.zip",
+                "reference": "4.0.2",
+                "shasum": "bfaf0fa81d645427c1b3ccfd2d5e493a10b7f483"
             },
             "require": {
                 "drupal/core": "^9.4 || ^10.0",
@@ -4018,8 +4018,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.0.1",
-                    "datestamp": "1674335685",
+                    "version": "4.0.2",
+                    "datestamp": "1676011269",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6110,6 +6110,59 @@
             "homepage": "https://www.drupal.org/project/disable_user_login_and_registration",
             "support": {
                 "source": "https://git.drupalcode.org/project/disable_user_login_and_registration"
+            }
+        },
+        {
+            "name": "drupal/domain_registration",
+            "version": "1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/domain_registration.git",
+                "reference": "8.x-1.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/domain_registration-8.x-1.7.zip",
+                "reference": "8.x-1.7",
+                "shasum": "15622ed65c024944d579c11ed0f1ec4b59a66373"
+            },
+            "require": {
+                "drupal/core": "^9.1 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.7",
+                    "datestamp": "1668444925",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "arvinsingla",
+                    "homepage": "https://www.drupal.org/user/61137"
+                },
+                {
+                    "name": "pcambra",
+                    "homepage": "https://www.drupal.org/user/122101"
+                }
+            ],
+            "description": "Module Allows or restricts registration on your site based on the persons email address domain.",
+            "homepage": "http://drupal.org/project/domain_registration",
+            "keywords": [
+                "Drupal",
+                "domain_registration"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/domain_registration",
+                "issues": "http://drupal.org/project/issues/domain_registration"
             }
         },
         {
@@ -9898,26 +9951,26 @@
         },
         {
             "name": "drupal/markup",
-            "version": "1.0.0-beta5",
+            "version": "2.0.0-beta6",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/markup.git",
-                "reference": "8.x-1.0-beta5"
+                "reference": "2.0.0-beta6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/markup-8.x-1.0-beta5.zip",
-                "reference": "8.x-1.0-beta5",
-                "shasum": "dcd4dc20d8ff45830dad9d4df9f75c7421df4d9e"
+                "url": "https://ftp.drupal.org/files/projects/markup-2.0.0-beta6.zip",
+                "reference": "2.0.0-beta6",
+                "shasum": "8f3b8e21814ee51776e757bc4d279483ee393b66"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8.9 || ^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-beta5",
-                    "datestamp": "1645738831",
+                    "version": "2.0.0-beta6",
+                    "datestamp": "1675927815",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -9934,10 +9987,6 @@
                     "homepage": "https://www.drupal.org/user/291091"
                 },
                 {
-                    "name": "Deciphered",
-                    "homepage": "https://www.drupal.org/user/103796"
-                },
-                {
                     "name": "bcostlow",
                     "homepage": "https://www.drupal.org/user/1340686"
                 },
@@ -9946,8 +9995,16 @@
                     "homepage": "https://www.drupal.org/user/202205"
                 },
                 {
+                    "name": "Deciphered",
+                    "homepage": "https://www.drupal.org/user/103796"
+                },
+                {
                     "name": "ebeyrent",
                     "homepage": "https://www.drupal.org/user/23897"
+                },
+                {
+                    "name": "Grevil",
+                    "homepage": "https://www.drupal.org/user/3668491"
                 },
                 {
                     "name": "mqanneh",
@@ -12147,17 +12204,17 @@
         },
         {
             "name": "drupal/spammaster",
-            "version": "1.83.0",
+            "version": "1.84.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/spammaster.git",
-                "reference": "8.x-1.83"
+                "reference": "8.x-1.84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/spammaster-8.x-1.83.zip",
-                "reference": "8.x-1.83",
-                "shasum": "cf73271f99a9aed7f2c76d7309adca655df6f3a1"
+                "url": "https://ftp.drupal.org/files/projects/spammaster-8.x-1.84.zip",
+                "reference": "8.x-1.84",
+                "shasum": "b19d71f2ba069aeb65c4d67542aacd05fe84087f"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10"
@@ -12165,8 +12222,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.83",
-                    "datestamp": "1674987266",
+                    "version": "8.x-1.84",
+                    "datestamp": "1675943333",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -12295,17 +12352,17 @@
         },
         {
             "name": "drupal/super_login",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/super_login.git",
-                "reference": "2.0.0"
+                "reference": "2.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/super_login-2.0.0.zip",
-                "reference": "2.0.0",
-                "shasum": "8ca6d81c64778594ebe51576772614053adf05ee"
+                "url": "https://ftp.drupal.org/files/projects/super_login-2.1.0.zip",
+                "reference": "2.1.0",
+                "shasum": "3ddadde16c8db93b7295d1084f1d96794a37ec92"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10"
@@ -12313,8 +12370,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0",
-                    "datestamp": "1656936315",
+                    "version": "2.1.0",
+                    "datestamp": "1675864014",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
