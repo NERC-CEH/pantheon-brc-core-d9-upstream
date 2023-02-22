@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1ae4422e3fa12e4f0637d8d3d418184c",
+    "content-hash": "113676396ccd159ae8e8cca2e1fe08f8",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -7537,17 +7537,17 @@
         },
         {
             "name": "drupal/fontawesome",
-            "version": "2.24.0",
+            "version": "2.25.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/fontawesome.git",
-                "reference": "8.x-2.24"
+                "reference": "8.x-2.25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/fontawesome-8.x-2.24.zip",
-                "reference": "8.x-2.24",
-                "shasum": "a705e1181c056118ad39cf2fc6f63b62e300cc72"
+                "url": "https://ftp.drupal.org/files/projects/fontawesome-8.x-2.25.zip",
+                "reference": "8.x-2.25",
+                "shasum": "67f92e961b35c91b1520565669515525b2223cfb"
             },
             "require": {
                 "drupal/core": "^9.4 || ^10"
@@ -7555,8 +7555,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.24",
-                    "datestamp": "1666211201",
+                    "version": "8.x-2.25",
+                    "datestamp": "1676999823",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8090,17 +8090,17 @@
         },
         {
             "name": "drupal/hierarchy_manager",
-            "version": "3.3.0",
+            "version": "3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/hierarchy_manager.git",
-                "reference": "3.3.0"
+                "reference": "3.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/hierarchy_manager-3.3.0.zip",
-                "reference": "3.3.0",
-                "shasum": "0cb220954e5d5952709e7fe578149c32ffcf4dd0"
+                "url": "https://ftp.drupal.org/files/projects/hierarchy_manager-3.3.1.zip",
+                "reference": "3.3.1",
+                "shasum": "c3f96a34cf407184abe95fbff2fba3d2df93118d"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10"
@@ -8108,8 +8108,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.3.0",
-                    "datestamp": "1673081668",
+                    "version": "3.3.1",
+                    "datestamp": "1676944210",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9595,26 +9595,26 @@
         },
         {
             "name": "drupal/linked_field",
-            "version": "1.3.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/linked_field.git",
-                "reference": "8.x-1.3"
+                "reference": "8.x-1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/linked_field-8.x-1.3.zip",
-                "reference": "8.x-1.3",
-                "shasum": "0350c415eba6ff63d9fc8f3a162564dd4c2142e2"
+                "url": "https://ftp.drupal.org/files/projects/linked_field-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "4d989c7a8c4c149c8b90a3ba45da6dd8bd7cc51e"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8.8 || ^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.3",
-                    "datestamp": "1583855735",
+                    "version": "8.x-1.4",
+                    "datestamp": "1676645682",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9627,8 +9627,8 @@
             ],
             "authors": [
                 {
-                    "name": "hubdrop",
-                    "homepage": "https://www.drupal.org/user/2750597"
+                    "name": "jcnventura",
+                    "homepage": "https://www.drupal.org/user/122464"
                 },
                 {
                     "name": "yannickoo",
@@ -10524,26 +10524,26 @@
         },
         {
             "name": "drupal/override_node_options",
-            "version": "2.6.0",
+            "version": "2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/override_node_options.git",
-                "reference": "8.x-2.6"
+                "reference": "8.x-2.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/override_node_options-8.x-2.6.zip",
-                "reference": "8.x-2.6",
-                "shasum": "bb164546d4d40e183a92173e44e7fd75cffdee38"
+                "url": "https://ftp.drupal.org/files/projects/override_node_options-8.x-2.7.zip",
+                "reference": "8.x-2.7",
+                "shasum": "2354c6164b5a5fcfec0b36be73606ae3f6869a97"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.6",
-                    "datestamp": "1606950754",
+                    "version": "8.x-2.7",
+                    "datestamp": "1676800639",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -13098,29 +13098,29 @@
         },
         {
             "name": "drupal/user_registrationpassword",
-            "version": "2.0.0-alpha1",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/user_registrationpassword.git",
-                "reference": "2.0.0-alpha1"
+                "reference": "2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/user_registrationpassword-2.0.0-alpha1.zip",
-                "reference": "2.0.0-alpha1",
-                "shasum": "1a6b17664613c5ef5197f424da7f1f137aafb528"
+                "url": "https://ftp.drupal.org/files/projects/user_registrationpassword-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "ba33dacc0f1e5ee310a973f821090f7bf48a7f4c"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9"
+                "drupal/core": "^9.2 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0-alpha1",
-                    "datestamp": "1648560862",
+                    "version": "2.0.0",
+                    "datestamp": "1676877573",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -13130,26 +13130,30 @@
             ],
             "authors": [
                 {
-                    "name": "Rob C",
-                    "homepage": "https://www.drupal.org/user/313382"
-                },
-                {
-                    "name": "VladimirAus",
-                    "homepage": "https://www.drupal.org/user/673120"
-                },
-                {
                     "name": "intrafusion",
                     "homepage": "https://www.drupal.org/user/424800"
                 },
                 {
                     "name": "jide",
                     "homepage": "https://www.drupal.org/user/146088"
+                },
+                {
+                    "name": "Rob C",
+                    "homepage": "https://www.drupal.org/user/313382"
+                },
+                {
+                    "name": "VladimirAus",
+                    "homepage": "https://www.drupal.org/user/673120"
                 }
             ],
-            "description": "Let users register with a password on the registration form when verification mail is required.",
+            "description": "Customize the destination that a user is redirected to after logging in or logged out.",
             "homepage": "https://www.drupal.org/project/user_registrationpassword",
+            "keywords": [
+                "Drupal"
+            ],
             "support": {
-                "source": "https://git.drupalcode.org/project/user_registrationpassword"
+                "source": "http://cgit.drupalcode.org/user_registrationpassword",
+                "issues": "http://drupal.org/project/issues/user_registrationpassword"
             }
         },
         {
@@ -14531,26 +14535,26 @@
         },
         {
             "name": "drupal/weight",
-            "version": "3.3.0",
+            "version": "3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/weight.git",
-                "reference": "8.x-3.3"
+                "reference": "8.x-3.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/weight-8.x-3.3.zip",
-                "reference": "8.x-3.3",
-                "shasum": "b225d54d4a8ce409ca1a899c6de41806eb1348e3"
+                "url": "https://ftp.drupal.org/files/projects/weight-8.x-3.4.zip",
+                "reference": "8.x-3.4",
+                "shasum": "d53f3df1643993e87e2265953d8aea43b7cc041a"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8.8 || ^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.3",
-                    "datestamp": "1615219112",
+                    "version": "8.x-3.4",
+                    "datestamp": "1676997696",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -14563,8 +14567,12 @@
             ],
             "authors": [
                 {
-                    "name": "Harry Slaughter",
-                    "homepage": "https://www.drupal.org/user/28233"
+                    "name": "heddn",
+                    "homepage": "https://www.drupal.org/user/1463982"
+                },
+                {
+                    "name": "kevinquillen",
+                    "homepage": "https://www.drupal.org/user/317279"
                 },
                 {
                     "name": "NancyDru",
@@ -14575,34 +14583,18 @@
                     "homepage": "https://www.drupal.org/user/3580850"
                 },
                 {
-                    "name": "Shreya Shetty",
-                    "homepage": "https://www.drupal.org/user/2943029"
-                },
-                {
-                    "name": "davisben",
-                    "homepage": "https://www.drupal.org/user/1204214"
-                },
-                {
-                    "name": "deviantintegral",
-                    "homepage": "https://www.drupal.org/user/71291"
-                },
-                {
-                    "name": "jjeff",
-                    "homepage": "https://www.drupal.org/user/17190"
-                },
-                {
-                    "name": "kevinquillen",
-                    "homepage": "https://www.drupal.org/user/317279"
-                },
-                {
-                    "name": "ziomizar",
-                    "homepage": "https://www.drupal.org/user/814348"
+                    "name": "VladimirAus",
+                    "homepage": "https://www.drupal.org/user/673120"
                 }
             ],
             "description": "Allows arbitrary ordering of entities.",
             "homepage": "https://www.drupal.org/project/weight",
+            "keywords": [
+                "Drupal"
+            ],
             "support": {
-                "source": "https://git.drupalcode.org/project/weight"
+                "source": "http://cgit.drupalcode.org/weight",
+                "issues": "https://www.drupal.org/project/issues/weight"
             }
         },
         {
@@ -21025,9 +21017,9 @@
         "drupal/commerce_claim_gift_aid": 5,
         "drupal/fixed_text_link_formatter": 20,
         "drupal/lang_dropdown": 10,
+        "drupal/markup": 10,
         "drupal/quicktabs": 15,
-        "drupal/roleassign": 10,
-        "drupal/user_registrationpassword": 15
+        "drupal/roleassign": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,
