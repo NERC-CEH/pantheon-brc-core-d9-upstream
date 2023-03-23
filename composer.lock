@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9c6f0a2ddb5c80330bf350a38cbba579",
+    "content-hash": "dd6156ba61604828996ed6a1d1c8dcd8",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -3267,17 +3267,17 @@
         },
         {
             "name": "drupal/bootstrap4",
-            "version": "3.0.1",
+            "version": "3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/bootstrap4.git",
-                "reference": "3.0.1"
+                "reference": "3.0.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap4-3.0.1.zip",
-                "reference": "3.0.1",
-                "shasum": "100bed1708044ae7e28ac0b9fb8082a9fb6e7a15"
+                "url": "https://ftp.drupal.org/files/projects/bootstrap4-3.0.4.zip",
+                "reference": "3.0.4",
+                "shasum": "acb6ee50bdd49b2bbddc6b05384614144c155500"
             },
             "require": {
                 "drupal/core": "^9.4 || ^10"
@@ -3285,8 +3285,8 @@
             "type": "drupal-theme",
             "extra": {
                 "drupal": {
-                    "version": "3.0.1",
-                    "datestamp": "1677068271",
+                    "version": "3.0.4",
+                    "datestamp": "1679446354",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9843,30 +9843,31 @@
         },
         {
             "name": "drupal/mailchimp",
-            "version": "2.0.2",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/mailchimp.git",
-                "reference": "2.0.2"
+                "reference": "2.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/mailchimp-2.0.2.zip",
-                "reference": "2.0.2",
-                "shasum": "21117bb5181e0421ce7f40c98f3a39a886893cc4"
+                "url": "https://ftp.drupal.org/files/projects/mailchimp-2.2.0.zip",
+                "reference": "2.2.0",
+                "shasum": "b2ec0ff5e6d4c764cf6843d4ab8995ac844c8d04"
             },
             "require": {
-                "drupal/core": "^8.7.7 || ^9",
-                "thinkshout/mailchimp-api-php": "^2.0"
+                "drupal/core": "^8.7.7 || ^9 || ^10",
+                "thinkshout/mailchimp-api-php": "3.0.0-rc4"
             },
             "require-dev": {
+                "drupal/mailchimp_events": "*",
                 "drupal/mailchimp_lists": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.2",
-                    "datestamp": "1615931525",
+                    "version": "2.2.0",
+                    "datestamp": "1678752673",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -11064,17 +11065,17 @@
         },
         {
             "name": "drupal/quicktabs",
-            "version": "3.0.0-alpha6",
+            "version": "3.0.0-alpha7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/quicktabs.git",
-                "reference": "8.x-3.0-alpha6"
+                "reference": "8.x-3.0-alpha7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/quicktabs-8.x-3.0-alpha6.zip",
-                "reference": "8.x-3.0-alpha6",
-                "shasum": "683925faec775ce3779bd875468785f0ca9a4622"
+                "url": "https://ftp.drupal.org/files/projects/quicktabs-8.x-3.0-alpha7.zip",
+                "reference": "8.x-3.0-alpha7",
+                "shasum": "96eb2614a791f924c5aea5922e5d46091d151752"
             },
             "require": {
                 "drupal/core": "^9 || ^10",
@@ -11088,8 +11089,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.0-alpha6",
-                    "datestamp": "1678211253",
+                    "version": "8.x-3.0-alpha7",
+                    "datestamp": "1679423302",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -11554,40 +11555,52 @@
         },
         {
             "name": "drupal/roleassign",
-            "version": "1.0.0-beta1",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/roleassign.git",
-                "reference": "8.x-1.0-beta1"
+                "reference": "2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/roleassign-8.x-1.0-beta1.zip",
-                "reference": "8.x-1.0-beta1",
-                "shasum": "54848544164fdd7abcdb21b192eaf9788dc2da6d"
+                "url": "https://ftp.drupal.org/files/projects/roleassign-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "4af751d0e1c40464ad94d872809ed5d9db5d6989"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^9.1 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-beta1",
-                    "datestamp": "1582204691",
+                    "version": "2.0.0",
+                    "datestamp": "1679080156",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
+                    "name": "joseph.olstad",
+                    "homepage": "https://www.drupal.org/user/1321830"
+                },
+                {
+                    "name": "nord102",
+                    "homepage": "https://www.drupal.org/user/3471419"
+                },
+                {
                     "name": "salvis",
                     "homepage": "https://www.drupal.org/user/82964"
+                },
+                {
+                    "name": "svendecabooter",
+                    "homepage": "https://www.drupal.org/user/35369"
                 }
             ],
             "description": "Allows site administrators to further delegate the task of managing user''s roles.",
@@ -12305,17 +12318,17 @@
         },
         {
             "name": "drupal/spammaster",
-            "version": "1.84.0",
+            "version": "1.86.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/spammaster.git",
-                "reference": "8.x-1.84"
+                "reference": "8.x-1.86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/spammaster-8.x-1.84.zip",
-                "reference": "8.x-1.84",
-                "shasum": "b19d71f2ba069aeb65c4d67542aacd05fe84087f"
+                "url": "https://ftp.drupal.org/files/projects/spammaster-8.x-1.86.zip",
+                "reference": "8.x-1.86",
+                "shasum": "7ca832d6984692bf9bcbb7543a8c45f2b303cf98"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10"
@@ -12323,8 +12336,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.84",
-                    "datestamp": "1675943333",
+                    "version": "8.x-1.86",
+                    "datestamp": "1679125254",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -12692,27 +12705,26 @@
         },
         {
             "name": "drupal/theme_switcher",
-            "version": "1.2.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/theme_switcher.git",
-                "reference": "8.x-1.2"
+                "reference": "2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/theme_switcher-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "d9ac27a941e50d45067e1e3b087e7eb8709f904a"
+                "url": "https://ftp.drupal.org/files/projects/theme_switcher-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "969d0d6784d0551db915bac43f04ac999de802ab"
             },
             "require": {
-                "drupal/core": "^8.5 || ^9",
-                "php": ">=7.1"
+                "drupal/core": "^8.9 || ^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.2",
-                    "datestamp": "1624695689",
+                    "version": "2.0.0",
+                    "datestamp": "1679338745",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -12721,24 +12733,26 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
-                    "name": "Adrián Marín",
-                    "homepage": "https://www.drupal.org/user/3529039",
-                    "email": "amarincolas@gmail.com"
+                    "name": "amarincolas",
+                    "homepage": "https://www.drupal.org/user/3529039"
+                },
+                {
+                    "name": "Anybody",
+                    "homepage": "https://www.drupal.org/user/291091"
                 },
                 {
                     "name": "mkalkbrenner",
                     "homepage": "https://www.drupal.org/user/124705"
                 }
             ],
-            "description": "Creates Theme Switcher Rules within a Drupal installation.",
+            "description": "Switches active themes on specific conditions.",
             "homepage": "https://www.drupal.org/project/theme_switcher",
             "support": {
-                "source": "http://cgit.drupalcode.org/theme_switcher",
-                "issues": "http://drupal.org/project/issues/theme_switcher"
+                "source": "https://git.drupalcode.org/project/theme_switcher"
             }
         },
         {
@@ -13859,17 +13873,17 @@
         },
         {
             "name": "drupal/views_data_export",
-            "version": "1.2.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_data_export.git",
-                "reference": "8.x-1.2"
+                "reference": "8.x-1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_data_export-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "168c0d3de19f2182f2c1bc16066498342015970e"
+                "url": "https://ftp.drupal.org/files/projects/views_data_export-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "a8a5483e13787f2bb3eb66d9b0f19d96c0d8d7c1"
             },
             "require": {
                 "drupal/core": "^9 || ^10",
@@ -13882,8 +13896,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.2",
-                    "datestamp": "1665515238",
+                    "version": "8.x-1.3",
+                    "datestamp": "1679072666",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -20722,24 +20736,24 @@
         },
         {
             "name": "thinkshout/mailchimp-api-php",
-            "version": "v2.1.3",
+            "version": "3.0.0-rc4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thinkshout/mailchimp-api-php.git",
-                "reference": "b402bd67308974cae6186b386957d910cd808f0d"
+                "reference": "761703c4f69bebf6fb4b6cea61ba8c78064ba849"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thinkshout/mailchimp-api-php/zipball/b402bd67308974cae6186b386957d910cd808f0d",
-                "reference": "b402bd67308974cae6186b386957d910cd808f0d",
+                "url": "https://api.github.com/repos/thinkshout/mailchimp-api-php/zipball/761703c4f69bebf6fb4b6cea61ba8c78064ba849",
+                "reference": "761703c4f69bebf6fb4b6cea61ba8c78064ba849",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/guzzle": "^6.2.1|^7.0.0",
+                "guzzlehttp/guzzle": "^6.5.8|^7.4.5",
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.2.2"
+                "phpunit/phpunit": "^6.2.2|^7.0|^8.0|^9.0"
             },
             "type": "library",
             "autoload": {
@@ -20760,9 +20774,9 @@
             ],
             "support": {
                 "issues": "https://github.com/thinkshout/mailchimp-api-php/issues",
-                "source": "https://github.com/thinkshout/mailchimp-api-php/tree/v2.1.3"
+                "source": "https://github.com/thinkshout/mailchimp-api-php/tree/v3.0.0-rc4"
             },
-            "time": "2021-12-29T19:57:45+00:00"
+            "time": "2023-02-25T07:14:07+00:00"
         },
         {
             "name": "twig/twig",
@@ -21184,8 +21198,7 @@
         "drupal/commerce_claim_gift_aid": 5,
         "drupal/fixed_text_link_formatter": 20,
         "drupal/lang_dropdown": 10,
-        "drupal/markup": 10,
-        "drupal/roleassign": 10
+        "drupal/markup": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,
