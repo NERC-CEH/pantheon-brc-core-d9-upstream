@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5f558fcb0e8cd6f9dbd87d14136949a0",
+    "content-hash": "8c5937101190cb44beca6b009e503692",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -2228,6 +2228,53 @@
             }
         },
         {
+            "name": "drupal/adaptivetheme",
+            "version": "5.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/adaptivetheme.git",
+                "reference": "8.x-5.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/adaptivetheme-8.x-5.1.zip",
+                "reference": "8.x-5.1",
+                "shasum": "22de075c38bc594ffb94b42ec7ff966a3056297e"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-5.1",
+                    "datestamp": "1643902636",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Jeff Burnz",
+                    "homepage": "https://www.drupal.org/user/61393"
+                },
+                {
+                    "name": "mattbloomfield",
+                    "homepage": "https://www.drupal.org/user/3620586"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/adaptivetheme",
+            "support": {
+                "source": "https://git.drupalcode.org/project/adaptivetheme"
+            }
+        },
+        {
             "name": "drupal/address",
             "version": "1.11.0",
             "source": {
@@ -2724,6 +2771,54 @@
             "homepage": "https://www.drupal.org/project/api_proxy",
             "support": {
                 "source": "https://git.drupalcode.org/project/api_proxy"
+            }
+        },
+        {
+            "name": "drupal/at_tool",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/at_tool.git",
+                "reference": "2.0.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/at_tool-2.0.3.zip",
+                "reference": "2.0.3",
+                "shasum": "a7e15fe72e8a165a60865a15cca362e3b4e2fdc5"
+            },
+            "require": {
+                "drupal/adaptivetheme": "^5.0",
+                "drupal/core": "^9.3 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.3",
+                    "datestamp": "1643915557",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Matt",
+                    "homepage": "http://adaptivethemes.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Tools to support Adaptivetheme 8.x and sub-themes, includes the AT Theme Generator.",
+            "homepage": "https://www.drupal.org/project/at_tool",
+            "support": {
+                "source": "http://git.drupal.org/project/at_tool.git",
+                "issues": "https://www.drupal.org/project/issues/at_tool",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
             }
         },
         {
@@ -3321,6 +3416,78 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/bootstrap4",
                 "issues": "https://www.drupal.org/project/issues/bootstrap4"
+            }
+        },
+        {
+            "name": "drupal/bootstrap_horizontal_tabs",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/bootstrap_horizontal_tabs.git",
+                "reference": "2.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/bootstrap_horizontal_tabs-2.0.2.zip",
+                "reference": "2.0.2",
+                "shasum": "83258e2535b5d7649fb1e013dd5bce255694adec"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.2",
+                    "datestamp": "1675728374",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "gravelpot",
+                    "homepage": "https://www.drupal.org/user/748208"
+                },
+                {
+                    "name": "Jeff Cardwell",
+                    "homepage": "https://www.drupal.org/user/2913129"
+                },
+                {
+                    "name": "lreynaga",
+                    "homepage": "https://www.drupal.org/user/3400232"
+                },
+                {
+                    "name": "mark_fullmer",
+                    "homepage": "https://www.drupal.org/user/2612816"
+                },
+                {
+                    "name": "mmarler",
+                    "homepage": "https://www.drupal.org/user/500192"
+                },
+                {
+                    "name": "ricksta",
+                    "homepage": "https://www.drupal.org/user/311042"
+                },
+                {
+                    "name": "texas_tater",
+                    "homepage": "https://www.drupal.org/user/753614"
+                },
+                {
+                    "name": "utexas",
+                    "homepage": "https://www.drupal.org/user/3716409"
+                }
+            ],
+            "description": "Provides a custom field type displayed as horizontal tabs",
+            "homepage": "https://www.drupal.org/project/bootstrap_horizontal_tabs",
+            "support": {
+                "source": "https://git.drupalcode.org/project/bootstrap_horizontal_tabs"
             }
         },
         {
@@ -5218,6 +5385,54 @@
             }
         },
         {
+            "name": "drupal/config_delete",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/config_delete.git",
+                "reference": "2.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/config_delete-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "396475ad2a24c0e7ff690eb7d29e117a2b897cb8"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0",
+                    "datestamp": "1682487051",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Goran Nikolovski",
+                    "homepage": "https://gorannikolovski.com",
+                    "email": "goran@gorannikolovski.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Delete configuration items from the UI.",
+            "homepage": "https://www.drupal.org/project/config_delete",
+            "support": {
+                "source": "https://git.drupalcode.org/project/config_delete",
+                "issues": "https://www.drupal.org/project/issues/config_delete",
+                "email": "goran@gorannikolovski.com"
+            }
+        },
+        {
             "name": "drupal/consumers",
             "version": "1.17.0",
             "source": {
@@ -5324,6 +5539,57 @@
             "homepage": "https://www.drupal.org/project/contact_storage",
             "support": {
                 "source": "https://git.drupalcode.org/project/contact_storage"
+            }
+        },
+        {
+            "name": "drupal/content_access",
+            "version": "2.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/content_access.git",
+                "reference": "2.0.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/content_access-2.0.0-alpha1.zip",
+                "reference": "2.0.0-alpha1",
+                "shasum": "d2d7c2b767aa195f2dbc04ea7c40cbc4cd553d90"
+            },
+            "require": {
+                "drupal/core": "^9.4 || ^10"
+            },
+            "require-dev": {
+                "drupal/acl": "~1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0-alpha1",
+                    "datestamp": "1682509160",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "fago",
+                    "homepage": "https://www.drupal.org/user/16747"
+                },
+                {
+                    "name": "gisle",
+                    "homepage": "https://www.drupal.org/user/409554"
+                }
+            ],
+            "description": "Provides flexible content access control.",
+            "homepage": "https://drupal.org/project/content_access",
+            "support": {
+                "source": "https://git.drupalcode.org/project/content_access"
             }
         },
         {
@@ -6217,17 +6483,17 @@
         },
         {
             "name": "drupal/draggableviews",
-            "version": "2.1.2",
+            "version": "2.1.3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/draggableviews.git",
-                "reference": "2.1.2"
+                "reference": "2.1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/draggableviews-2.1.2.zip",
-                "reference": "2.1.2",
-                "shasum": "ddd7861271937182a22afeb2cedcb59bf9646bdf"
+                "url": "https://ftp.drupal.org/files/projects/draggableviews-2.1.3.zip",
+                "reference": "2.1.3",
+                "shasum": "d22af995f543ab9dfb1c8eeaaa79bdf3ef233879"
             },
             "require": {
                 "drupal/core": "^9 || ^10"
@@ -6238,8 +6504,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.2",
-                    "datestamp": "1677865524",
+                    "version": "2.1.3",
+                    "datestamp": "1682439050",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6460,6 +6726,51 @@
             }
         },
         {
+            "name": "drupal/editor_file",
+            "version": "1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/editor_file.git",
+                "reference": "8.x-1.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/editor_file-8.x-1.7.zip",
+                "reference": "8.x-1.7",
+                "shasum": "ec9cf94322dfa0ff0d3c237a34eebacb398ab13b"
+            },
+            "require": {
+                "drupal/ckeditor": "*",
+                "drupal/core": "^9.4 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.7",
+                    "datestamp": "1671450425",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "DuaelFr",
+                    "homepage": "https://www.drupal.org/user/931394"
+                }
+            ],
+            "description": "Allow users to link uploaded files in the text Editor.",
+            "homepage": "https://www.drupal.org/project/editor_file",
+            "support": {
+                "source": "https://git.drupalcode.org/project/editor_file"
+            }
+        },
+        {
             "name": "drupal/embed",
             "version": "1.6.0",
             "source": {
@@ -6590,6 +6901,76 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/entity",
                 "issues": "https://www.drupal.org/project/issues/entity"
+            }
+        },
+        {
+            "name": "drupal/entity_clone",
+            "version": "2.0.0-beta3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/entity_clone.git",
+                "reference": "2.0.0-beta3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/entity_clone-2.0.0-beta3.zip",
+                "reference": "2.0.0-beta3",
+                "shasum": "099180f6f3767d2e18da5d8e2e87f2a7ce55b041"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10"
+            },
+            "require-dev": {
+                "drupal/entity_browser": "2.x-dev",
+                "drupal/entity_usage": "2.x-dev",
+                "drupal/paragraphs": "^1.0",
+                "drupal/search_api": "~1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0-beta3",
+                    "datestamp": "1682322779",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "colan",
+                    "homepage": "https://www.drupal.org/user/58704"
+                },
+                {
+                    "name": "joevagyok",
+                    "homepage": "https://www.drupal.org/user/2876343"
+                },
+                {
+                    "name": "NickDickinsonWilde",
+                    "homepage": "https://www.drupal.org/user/3094661"
+                },
+                {
+                    "name": "Rajeshreeputra",
+                    "homepage": "https://www.drupal.org/user/3418561"
+                },
+                {
+                    "name": "Upchuk",
+                    "homepage": "https://www.drupal.org/user/1885838"
+                },
+                {
+                    "name": "vpeltot",
+                    "homepage": "https://www.drupal.org/user/1361586"
+                }
+            ],
+            "description": "Add a clone action for all entities.",
+            "homepage": "https://drupal.org/project/entity_clone",
+            "support": {
+                "source": "https://git.drupalcode.org/project/entity_clone"
             }
         },
         {
@@ -7541,6 +7922,66 @@
             }
         },
         {
+            "name": "drupal/filefield_sources",
+            "version": "1.0.0-alpha5",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/filefield_sources.git",
+                "reference": "8.x-1.0-alpha5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/filefield_sources-8.x-1.0-alpha5.zip",
+                "reference": "8.x-1.0-alpha5",
+                "shasum": "e2438610bf829a82c6415f88f708b2dc73d91c49"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "require-dev": {
+                "drupal/imce": "^2.3"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-alpha5",
+                    "datestamp": "1642555269",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Nate Lampton (quicksketch)",
+                    "homepage": "https://www.drupal.org/u/quicksketch",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Andrey Khromyshev (profak)",
+                    "homepage": "https://www.drupal.org/u/profak",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "David Valdez (gnuget)",
+                    "homepage": "https://www.drupal.org/u/gnuget",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Extends File fields to allow referencing of existing files, remote files, and server files.",
+            "homepage": "https://www.drupal.org/project/filefield_sources",
+            "support": {
+                "source": "https://git.drupalcode.org/project/filefield_sources",
+                "issues": "https://www.drupal.org/project/issues/filefield_sources",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
             "name": "drupal/fixed_text_link_formatter",
             "version": "dev-1.x",
             "source": {
@@ -7916,7 +8357,7 @@
         },
         {
             "name": "drupal/gnode",
-            "version": "3.0.0",
+            "version": "3.0.1",
             "require": {
                 "drupal/core": "^9.5 || ^10",
                 "drupal/group": "*"
@@ -7924,8 +8365,8 @@
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "3.0.0",
-                    "datestamp": "1679663297",
+                    "version": "3.0.1",
+                    "datestamp": "1682085992",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8029,17 +8470,17 @@
         },
         {
             "name": "drupal/group",
-            "version": "3.0.0",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/group.git",
-                "reference": "3.0.0"
+                "reference": "3.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/group-3.0.0.zip",
-                "reference": "3.0.0",
-                "shasum": "53d7f1fb475e1c58301b30ccf7ad4f41828e2c06"
+                "url": "https://ftp.drupal.org/files/projects/group-3.0.1.zip",
+                "reference": "3.0.1",
+                "shasum": "cfdba82755062c218719e0f2e6bbcda5becb9bdd"
             },
             "require": {
                 "drupal/core": "^9.5 || ^10",
@@ -8049,8 +8490,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.0.0",
-                    "datestamp": "1679663297",
+                    "version": "3.0.1",
+                    "datestamp": "1682085992",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8501,17 +8942,17 @@
         },
         {
             "name": "drupal/insert",
-            "version": "2.0.0-beta3",
+            "version": "2.0.0-beta4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/insert.git",
-                "reference": "8.x-2.0-beta3"
+                "reference": "8.x-2.0-beta4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/insert-8.x-2.0-beta3.zip",
-                "reference": "8.x-2.0-beta3",
-                "shasum": "bb03f0cc8eda55a48c8e688a83c0523c250654c4"
+                "url": "https://ftp.drupal.org/files/projects/insert-8.x-2.0-beta4.zip",
+                "reference": "8.x-2.0-beta4",
+                "shasum": "1756869ab09f11a5789c22bedea7f833c04abe2c"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -8522,8 +8963,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.0-beta3",
-                    "datestamp": "1641051127",
+                    "version": "8.x-2.0-beta4",
+                    "datestamp": "1682516948",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -10579,26 +11020,26 @@
         },
         {
             "name": "drupal/notify",
-            "version": "2.0.0-alpha1",
+            "version": "2.0.0-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/notify.git",
-                "reference": "2.0.0-alpha1"
+                "reference": "2.0.0-alpha2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/notify-2.0.0-alpha1.zip",
-                "reference": "2.0.0-alpha1",
-                "shasum": "a75e4ba8f3fd72b178fe568dca1349b72e3240b0"
+                "url": "https://ftp.drupal.org/files/projects/notify-2.0.0-alpha2.zip",
+                "reference": "2.0.0-alpha2",
+                "shasum": "4e00300c0e1de72268f6f7f60a046438c9946574"
             },
             "require": {
-                "drupal/core": "^9"
+                "drupal/core": "^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0-alpha1",
-                    "datestamp": "1659627306",
+                    "version": "2.0.0-alpha2",
+                    "datestamp": "1682525982",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -10857,6 +11298,70 @@
             }
         },
         {
+            "name": "drupal/pdf",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/pdf.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/pdf-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "4ee049fc712f433e2a4f48aeaeb54351512ed2cc"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1607548097",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "alextataurov",
+                    "homepage": "https://www.drupal.org/user/957718"
+                },
+                {
+                    "name": "axelm",
+                    "homepage": "https://www.drupal.org/user/1065700"
+                },
+                {
+                    "name": "DanielFbrg",
+                    "homepage": "https://www.drupal.org/user/884704"
+                },
+                {
+                    "name": "JMOmandown",
+                    "homepage": "https://www.drupal.org/user/1844552"
+                },
+                {
+                    "name": "ram4nd",
+                    "homepage": "https://www.drupal.org/user/601534"
+                },
+                {
+                    "name": "shenzhuxi",
+                    "homepage": "https://www.drupal.org/user/193802"
+                }
+            ],
+            "description": "Display PDF file in Drupal without external readers and plugins.",
+            "homepage": "https://www.drupal.org/project/pdf",
+            "support": {
+                "source": "https://git.drupalcode.org/project/pdf"
+            }
+        },
+        {
             "name": "drupal/permission_spreadsheet",
             "version": "2.0.0",
             "source": {
@@ -11029,6 +11534,70 @@
             "homepage": "https://drupal.org/project/profile",
             "support": {
                 "source": "https://git.drupalcode.org/project/profile"
+            }
+        },
+        {
+            "name": "drupal/publishcontent",
+            "version": "1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/publishcontent.git",
+                "reference": "8.x-1.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/publishcontent-8.x-1.6.zip",
+                "reference": "8.x-1.6",
+                "shasum": "e0bd1fad771dcb327bea05b8daa0426f9285401e"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.6",
+                    "datestamp": "1674143563",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "AaronBauman",
+                    "homepage": "https://www.drupal.org/user/384578"
+                },
+                {
+                    "name": "jacobroufa",
+                    "homepage": "https://www.drupal.org/user/168080"
+                },
+                {
+                    "name": "johnennew",
+                    "homepage": "https://www.drupal.org/user/1150042"
+                },
+                {
+                    "name": "malaussene",
+                    "homepage": "https://www.drupal.org/user/79249"
+                },
+                {
+                    "name": "rodrigoaguilera",
+                    "homepage": "https://www.drupal.org/user/408170"
+                },
+                {
+                    "name": "Simon Georges",
+                    "homepage": "https://www.drupal.org/user/172312"
+                }
+            ],
+            "description": "Adds a 'Publish' or 'Unpublish' link on the node edit/view pages, and a 'Publish Link' field if the Views module is enabled.",
+            "homepage": "https://www.drupal.org/project/publishcontent",
+            "support": {
+                "source": "https://git.drupalcode.org/project/publishcontent"
             }
         },
         {
@@ -12910,27 +13479,27 @@
         },
         {
             "name": "drupal/tmgmt_transifex",
-            "version": "2.0.6",
+            "version": "2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/tmgmt_transifex.git",
-                "reference": "2.0.6"
+                "reference": "2.0.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/tmgmt_transifex-2.0.6.zip",
-                "reference": "2.0.6",
-                "shasum": "04dd55fe5d394f02e9fa07c9674e8a8075a68dfc"
+                "url": "https://ftp.drupal.org/files/projects/tmgmt_transifex-2.0.7.zip",
+                "reference": "2.0.7",
+                "shasum": "fb73b76d788d9a5b052c2570beb18491ff692f91"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9",
+                "drupal/core": "^8.8 || ^9 || ^10",
                 "drupal/tmgmt": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.6",
-                    "datestamp": "1680521920",
+                    "version": "2.0.7",
+                    "datestamp": "1682340883",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -12957,6 +13526,10 @@
                 {
                     "name": "kgeo",
                     "homepage": "https://www.drupal.org/user/3726293"
+                },
+                {
+                    "name": "nina.elefth",
+                    "homepage": "https://www.drupal.org/user/3760538"
                 },
                 {
                     "name": "transifex",
@@ -21242,6 +21815,8 @@
         "drupal/advancedqueue": 5,
         "drupal/calendar": 15,
         "drupal/commerce_claim_gift_aid": 5,
+        "drupal/content_access": 15,
+        "drupal/filefield_sources": 15,
         "drupal/fixed_text_link_formatter": 20,
         "drupal/lang_dropdown": 10,
         "drupal/markup": 10
