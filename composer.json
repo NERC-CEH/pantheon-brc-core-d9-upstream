@@ -182,6 +182,7 @@
         "drupal/search_api": "^1.29",
         "drupal/search_api_autocomplete": "^1.7",
         "drupal/seckit": "^2.0",
+        "drupal/serial": "1.0-alpha2",
         "drupal/show_email": "^1.1",
         "drupal/shs": "2.0-rc4",
         "drupal/simple_pass_reset": "^1.1",
