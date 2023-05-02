@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f04a6f7dccb0df7c06eaec437e60a568",
+    "content-hash": "048be7c85b99d1abe489ddde356132ae",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -2505,17 +2505,17 @@
         },
         {
             "name": "drupal/admin_toolbar",
-            "version": "3.3.0",
+            "version": "3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/admin_toolbar.git",
-                "reference": "3.3.0"
+                "reference": "3.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/admin_toolbar-3.3.0.zip",
-                "reference": "3.3.0",
-                "shasum": "8e61fba9c9d83a94a844cff96d00871878a7eb98"
+                "url": "https://ftp.drupal.org/files/projects/admin_toolbar-3.3.1.zip",
+                "reference": "3.3.1",
+                "shasum": "e1fabe5d1521b73bc07aa3dd37b770c7e895780c"
             },
             "require": {
                 "drupal/core": "^9.2 || ^10"
@@ -2526,8 +2526,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.3.0",
-                    "datestamp": "1669567837",
+                    "version": "3.3.1",
+                    "datestamp": "1682689348",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -13017,17 +13017,17 @@
         },
         {
             "name": "drupal/spammaster",
-            "version": "1.87.0",
+            "version": "1.88.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/spammaster.git",
-                "reference": "8.x-1.87"
+                "reference": "8.x-1.88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/spammaster-8.x-1.87.zip",
-                "reference": "8.x-1.87",
-                "shasum": "ac8b3244632658a616fc013463f3c7acad562dda"
+                "url": "https://ftp.drupal.org/files/projects/spammaster-8.x-1.88.zip",
+                "reference": "8.x-1.88",
+                "shasum": "0367e4a2f0d29fa48448dc2c2605a2d5e65fa283"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10"
@@ -13035,8 +13035,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.87",
-                    "datestamp": "1681814633",
+                    "version": "8.x-1.88",
+                    "datestamp": "1682753684",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
