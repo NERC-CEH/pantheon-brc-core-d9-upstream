@@ -3,6 +3,7 @@
 namespace Drupal\simple_oauth\HttpMiddleware;
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 /**
@@ -49,7 +50,7 @@ class BasicAuthSwap implements HttpKernelInterface {
    * @return \Symfony\Component\HttpFoundation\Response
    *   A Response instance
    */
-  public function handle(Request $request, $type = self::MASTER_REQUEST, $catch = TRUE) {
+  public function handle(Request $request, $type = self::MAIN_REQUEST, $catch = true): Response {
     if (
       strpos($request->getPathInfo(), '/oauth/token') !== FALSE &&
       $request->headers->has('PHP_AUTH_USER') &&

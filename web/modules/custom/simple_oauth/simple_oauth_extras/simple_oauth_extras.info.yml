@@ -2,13 +2,13 @@ name: Simple OAuth Extras (Deprecated)
 type: module
 description: Deprecated. All functionality has been moved to simple_oauth.
 core: 8.x
-core_version_requirement: '^8 || ^9'
+core_version_requirement: '^8 || ^9 || ^10'
 package: Authentication
 dependencies:
   - simple_oauth:simple_oauth
 hidden: true
 
-# Information added by Drupal.org packaging script on 2022-01-05
-version: '5.0.6'
+# Information added by Drupal.org packaging script on 2022-12-13
+version: '5.2.3'
 project: 'simple_oauth'
-datestamp: 1641363849
+datestamp: 1670908050

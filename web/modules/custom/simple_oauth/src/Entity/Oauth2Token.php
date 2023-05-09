@@ -19,6 +19,7 @@ use Drupal\user\EntityOwnerTrait;
  *   label = @Translation("OAuth2 token"),
  *   bundle_label = @Translation("Token type"),
  *   handlers = {
+ *     "storage_schema" = "Drupal\simple_oauth\Entity\Oauth2TokenStorageSchema",
  *     "list_builder" = "Drupal\simple_oauth\Oauth2TokenListBuilder",
  *     "form" = {
  *       "delete" = "Drupal\simple_oauth\Entity\Form\Oauth2TokenDeleteForm",
@@ -27,6 +28,9 @@ use Drupal\user\EntityOwnerTrait;
  *   },
  *   base_table = "oauth2_token",
  *   admin_permission = "administer simple_oauth entities",
+ *   field_indexes = {
+ *     "value"
+ *   },
  *   entity_keys = {
  *     "id" = "id",
  *     "label" = "value",

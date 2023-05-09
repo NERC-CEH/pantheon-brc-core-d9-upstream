@@ -13,7 +13,7 @@ interface Oauth2GrantInterface extends PluginInspectionInterface, ContainerFacto
   /**
    * Gets the grant object.
    *
-   * @return League\OAuth2\Server\Grant\GrantTypeInterface
+   * @return \League\OAuth2\Server\Grant\GrantTypeInterface
    *   The grant type.
    */
   public function getGrantType();

@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\simple_oauth\Entities\AccessTokenEntity;
+use Drupal\user\Entity\User;
 /**
  * @file
  * Hooks specific to the Simple OAuth module.
@@ -21,9 +23,9 @@ use Drupal\user\UserInterface;
  *
  * @see \Drupal\simple_oauth\Entities\AccessTokenEntity::convertToJWT()
  */
-function hook_simple_oauth_private_claims_alter(&$private_claims, \Drupal\simple_oauth\Entities\AccessTokenEntity $access_token_entity) {
+function hook_simple_oauth_private_claims_alter(&$private_claims, AccessTokenEntity $access_token_entity) {
   $user_id = $access_token_entity->getUserIdentifier();
-  $user = \Drupal\user\Entity\User::load($user_id);
+  $user = User::load($user_id);
   $private_claims = [
     'mail' => $user->getEmail(),
     'username' => $user->getAccountName(),
