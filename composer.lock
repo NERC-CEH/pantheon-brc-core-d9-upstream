@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1c43a32971def1548fbfc2a0b47847dd",
+    "content-hash": "ba31399c68b75060ce0cfc1e0c1c2895",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -4263,17 +4263,17 @@
         },
         {
             "name": "drupal/collapsiblock",
-            "version": "4.0.1",
+            "version": "4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/collapsiblock.git",
-                "reference": "4.0.1"
+                "reference": "4.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/collapsiblock-4.0.1.zip",
-                "reference": "4.0.1",
-                "shasum": "1e2d7bc28c2ae079b349b38f3517ed91ac3f9e64"
+                "url": "https://ftp.drupal.org/files/projects/collapsiblock-4.0.2.zip",
+                "reference": "4.0.2",
+                "shasum": "61a5244a4a8944398977653ae88073711ae801d9"
             },
             "require": {
                 "drupal/core": "^9.2 || ^10"
@@ -4281,8 +4281,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.0.1",
-                    "datestamp": "1681642840",
+                    "version": "4.0.2",
+                    "datestamp": "1683500945",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5543,17 +5543,17 @@
         },
         {
             "name": "drupal/content_access",
-            "version": "2.0.0-alpha1",
+            "version": "2.0.0-rc1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/content_access.git",
-                "reference": "2.0.0-alpha1"
+                "reference": "2.0.0-rc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/content_access-2.0.0-alpha1.zip",
-                "reference": "2.0.0-alpha1",
-                "shasum": "d2d7c2b767aa195f2dbc04ea7c40cbc4cd553d90"
+                "url": "https://ftp.drupal.org/files/projects/content_access-2.0.0-rc1.zip",
+                "reference": "2.0.0-rc1",
+                "shasum": "8bdd51e086a43f71be75cbe9b9670c002c650b64"
             },
             "require": {
                 "drupal/core": "^9.4 || ^10"
@@ -5564,8 +5564,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0-alpha1",
-                    "datestamp": "1682509160",
+                    "version": "2.0.0-rc1",
+                    "datestamp": "1683474263",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -15363,6 +15363,49 @@
             }
         },
         {
+            "name": "drupal/x_frame_options",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/x_frame_options.git",
+                "reference": "8.x-1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/x_frame_options-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "164b3be83f420e3ad0772da048e37a8010aa5c39"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.3",
+                    "datestamp": "1677434970",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "efrainh",
+                    "homepage": "https://www.drupal.org/user/2827899"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/x_frame_options",
+            "support": {
+                "source": "https://git.drupalcode.org/project/x_frame_options"
+            }
+        },
+        {
             "name": "drush/drush",
             "version": "10.6.2",
             "source": {
@@ -21872,7 +21915,6 @@
         "drupal/advancedqueue": 5,
         "drupal/calendar": 15,
         "drupal/commerce_claim_gift_aid": 5,
-        "drupal/content_access": 15,
         "drupal/filefield_sources": 15,
         "drupal/fixed_text_link_formatter": 20,
         "drupal/lang_dropdown": 10,
