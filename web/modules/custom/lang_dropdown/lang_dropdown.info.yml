@@ -1,0 +1,13 @@
+name: 'Language Switcher Dropdown'
+type: module
+description: 'Provides a dropdown select to switch between available languages.'
+package: Multilingual
+core_version_requirement: ^9.3 || ^10
+dependencies:
+  - drupal:language
+configure: block.admin_display
+
+# Information added by Drupal.org packaging script on 2023-03-16
+version: '8.x-2.0+6-dev'
+project: 'lang_dropdown'
+datestamp: 1678955601

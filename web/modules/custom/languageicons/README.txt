@@ -1,35 +1,56 @@
-Language Icons
-http://drupal.org/project/languageicons
-=======================================
+CONTENTS OF THIS FILE
+---------------------
+
+* Introduction
+* Requirements
+* Installation
+* Configuration
+* Maintainers
 
 
-DESCRIPTION
------------
+INTRODUCTION
+------------
+
 This module provides icons for language links, both for the Language switcher
 block and (optionally) for node links.
+
 It is a spin-off from Internationalization (i18n) package.
+
+The default icons provided are PNG images with a fixed height of 12 pixels
+and a variable width per the official dimension of the respective flag.
+However this module can handle other image types and sizes too.
+
+* For a full description of the module, visit the project page:
+  https://www.drupal.org/project/languageicons
+
+* To submit bug reports and feature suggestions, or to track changes:
+  https://www.drupal.org/project/issues/languageicons
 
 
 REQUIREMENTS
 ------------
-Drupal 7.x
 
-For a fully enabled multilingual site, the Internationalization (i18n) package
-is recommended. See http://drupal.org/project/i18n 
+This module requires Drupal 8 or higher.
 
 
-INSTALLING
-----------
-1. To install the module copy the 'languageicons' folder to your
-   sites/all/modules directory.
+INSTALLATION
+------------
 
-2. Go to admin/build/modules. Enable the module.
-Read more about installing modules at http://drupal.org/node/70151
+1. Install the module with Composer:
+    ```
+    $ composer require drupal/languageicons
+    ```
+
+2. Go to admin/extend. Install the module.
+
+See [Installing modules](https://www.drupal.org/node/1897420) for further
+information.
 
 
-CONFIGURING AND USING
----------------------
-1. Go to admin/structure/block
+CONFIGURATION
+-------------
+
+1. Configuring the 'Language switcher' block, Go to admin/structure/block.
 
 2. Ensure that 'Language switcher' block is associated with a visible region. If
    unsure, move the 'Language switcher' block to 'Sidebar first' region.
@@ -39,23 +60,16 @@ CONFIGURING AND USING
 4. To preview simply view any appropriate page. If successful you will see a
    flag on the left side of each language link.
 
-There are some configuration options at admin/config/regional/language/icons.
-You can place flags before or after the language link or choose to only display
-the language flag without the language name (pick "Replace link" under icon
-placement to do so). There are some other options so make sure to check it out.
+5. There are some configuration options at admin/config/regional/language/icons.
+   You can place flags before or after the language link or choose to only
+   display the language flag without the language name (pick "Replace link"
+   under icon placement to do so). There are some other options so make sure to
+   check it out.
 
 
-CONTRIBUTING. REPORTING ISSUE. REQUESTING SUPPORT. REQUESTING NEW FEATURE.
---------------------------------------------------------------------------
-1. Go to the module issue queue at
-   http://drupal.org/project/issues/languageicons?status=All&categories=All
-2. Click on CREATE A NEW ISSUE link.
-3. Fill out the form.
-4. To get a status report on your request go to
-   http://drupal.org/project/issues/user
+MAINTAINERS
+-----------
 
-
-UPGRADING
----------
-Read more at http://drupal.org/node/250790
-
+Current maintainers:
+* Pieter Frenssen (pfrenssen) (https://www.drupal.org/u/pfrenssen)
+* Freso (https://www.drupal.org/u/freso)

@@ -5,12 +5,14 @@
  * Install, uninstall, schema and update hooks for Language Icons.
  */
 
+declare(strict_types = 1);
+
 /**
  * Implements hook_install().
  */
 function languageicons_install() {
   // Use our supplied set of icons by default.
-  $path = drupal_get_path('module', 'languageicons') . '/flags/*.png';
+  $path = \Drupal::service('extension.list.module')->getPath('languageicons') . '/flags/*.png';
   \Drupal::configFactory()
     ->getEditable('languageicons.settings')
     ->set('path', $path)
