@@ -4,7 +4,7 @@ namespace Drupal\simple_oauth\Plugin;
 
 use Defuse\Crypto\Core;
 use Drupal\Component\Plugin\Exception\PluginNotFoundException;
-use Drupal\consumers\Entity\ConsumerInterface;
+use Drupal\consumers\Entity\Consumer;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Config\ImmutableConfig;
 use Drupal\Core\File\FileSystemInterface;
@@ -133,7 +133,7 @@ class Oauth2GrantManager extends DefaultPluginManager implements Oauth2GrantMana
   /**
    * {@inheritdoc}
    */
-  public function getAuthorizationServer($grant_type, ConsumerInterface $client = NULL) {
+  public function getAuthorizationServer($grant_type, Consumer $client = NULL) {
     try {
       /** @var \Drupal\simple_oauth\Plugin\Oauth2GrantInterface $plugin */
       $plugin = $this->createInstance($grant_type);

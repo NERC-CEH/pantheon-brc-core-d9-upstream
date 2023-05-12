@@ -2,7 +2,6 @@
 
 namespace Drupal\simple_oauth\Authentication;
 
-use Drupal\consumers\Entity\ConsumerInterface;
 use Drupal\user\UserInterface;
 
 /**
@@ -21,9 +20,9 @@ interface TokenAuthUserInterface extends \IteratorAggregate, UserInterface {
   /**
    * Get the activated consumer.
    *
-   * @return \Drupal\consumers\Entity\ConsumerInterface
+   * @return \Drupal\consumers\Entity\Consumer
    *   The activated consumer after authentication.
    */
-  public function getConsumer(): ConsumerInterface;
+  public function getConsumer();
 
 }

@@ -2,7 +2,7 @@
 
 namespace Drupal\simple_oauth\Plugin;
 
-use Drupal\consumers\Entity\ConsumerInterface;
+use Drupal\consumers\Entity\Consumer;
 
 interface Oauth2GrantManagerInterface {
 
@@ -11,7 +11,7 @@ interface Oauth2GrantManagerInterface {
    *
    * @param string $grant_type
    *   The grant type used as plugin ID.
-   * @param \Drupal\consumers\Entity\ConsumerInterface|null $client
+   * @param \Drupal\consumers\Entity\Consumer|null $client
    *   The consumer entity. May be NULL for BC.
    *
    * @throws \League\OAuth2\Server\Exception\OAuthServerException
@@ -20,6 +20,6 @@ interface Oauth2GrantManagerInterface {
    * @return \League\OAuth2\Server\AuthorizationServer
    *   The authorization server.
    */
-  public function getAuthorizationServer($grant_type, ConsumerInterface $client = NULL);
+  public function getAuthorizationServer($grant_type, Consumer $client = NULL);
 
 }

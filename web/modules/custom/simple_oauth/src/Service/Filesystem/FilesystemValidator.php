@@ -2,7 +2,6 @@
 
 namespace Drupal\simple_oauth\Service\Filesystem;
 
-use Drupal\Core\StreamWrapper\PublicStream;
 use Drupal\simple_oauth\Service\Exception\FilesystemValidationException;
 use Drupal\simple_oauth\Service\Exception\ExtensionNotLoadedException;
 
@@ -72,25 +71,6 @@ class FilesystemValidator {
       if (!$this->fileSystemChecker->isWritable($path)) {
         throw new FilesystemValidationException(
           strtr('Path "@path" is not writable.', ['@path' => $path])
-        );
-      }
-    }
-  }
-
-  /**
-   * Validate that {@var $paths} are not the file public path.
-   *
-   * @param array $paths
-   *   List of URIs.
-   *
-   * @throws \Drupal\simple_oauth\Service\Exception\FilesystemValidationException
-   */
-  public function validateNotFilePublicPath($paths) {
-    $file_public_path = PublicStream::basePath();
-    foreach ($paths as $path) {
-      if ($file_public_path === $path) {
-        throw new FilesystemValidationException(
-          strtr('Path "@path" cannot be the file public path.', ['@path' => $path])
         );
       }
     }

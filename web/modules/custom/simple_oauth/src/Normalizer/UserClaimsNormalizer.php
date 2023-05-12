@@ -83,10 +83,10 @@ class UserClaimsNormalizer extends NormalizerBase implements NormalizerInterface
    *   The claims key/values.
    */
   private function getClaimsFromAccount(AccountInterface $account) {
-    /** @var \Drupal\simple_oauth\Authentication\TokenAuthUserInterface $profile_url */
     $profile_url = $account->toUrl('canonical', ['absolute' => TRUE])
       ->toString();
     $claim_values = [
+      'sub' => $account->id(),
       'name' => $account->getDisplayName(),
       'preferred_username' => $account->getAccountName(),
       'email' => $account->getEmail(),

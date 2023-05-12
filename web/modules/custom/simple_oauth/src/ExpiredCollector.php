@@ -6,7 +6,7 @@ use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\Query\QueryException;
 use Drupal\Core\Session\AccountInterface;
-use Drupal\consumers\Entity\ConsumerInterface;
+use Drupal\consumers\Entity\Consumer;
 
 /**
  * Service in charge of deleting or expiring tokens that cannot be used anymore.
@@ -61,7 +61,6 @@ class ExpiredCollector {
    */
   public function collect($limit = 0) {
     $query = $this->tokenStorage->getQuery();
-    $query->accessCheck();
     $query->condition('expire', $this->dateTime->getRequestTime(), '<');
     // If limit available.
     if (!empty($limit)) {
@@ -84,7 +83,6 @@ class ExpiredCollector {
    */
   public function collectForAccount(AccountInterface $account) {
     $query = $this->tokenStorage->getQuery();
-    $query->accessCheck();
     $query->condition('auth_user_id', $account->id());
     $query->condition('bundle', 'refresh_token', '!=');
     $entity_ids = $query->execute();
@@ -117,15 +115,14 @@ class ExpiredCollector {
   /**
    * Collect all the tokens associated a particular client.
    *
-   * @param \Drupal\consumers\Entity\ConsumerInterface $client
+   * @param \Drupal\consumers\Entity\Consumer $client
    *   The account.
    *
    * @return \Drupal\simple_oauth\Entity\Oauth2TokenInterface[]
    *   The tokens.
    */
-  public function collectForClient(ConsumerInterface $client) {
+  public function collectForClient(Consumer $client) {
     $query = $this->tokenStorage->getQuery();
-    $query->accessCheck();
     $query->condition('client', $client->id());
     if (!$entity_ids = $query->execute()) {
       return [];

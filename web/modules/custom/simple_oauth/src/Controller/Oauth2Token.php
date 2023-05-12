@@ -7,7 +7,6 @@ use Drupal\simple_oauth\Plugin\Oauth2GrantManagerInterface;
 use GuzzleHttp\Psr7\Response;
 use League\OAuth2\Server\AuthorizationServer;
 use League\OAuth2\Server\Exception\OAuthServerException;
-use League\OAuth2\Server\Repositories\ClientRepositoryInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -19,21 +18,13 @@ class Oauth2Token extends ControllerBase {
   protected $grantManager;
 
   /**
-   * @var \League\OAuth2\Server\Repositories\ClientRepositoryInterface
-   */
-  protected $clientRepository;
-
-  /**
    * Oauth2Token constructor.
    *
    * @param \Drupal\simple_oauth\Plugin\Oauth2GrantManagerInterface $grant_manager
    *   The grant manager.
-   * @param \League\OAuth2\Server\Repositories\ClientRepositoryInterface $client_repository
-   *   The client repository service.
    */
-  public function __construct(Oauth2GrantManagerInterface $grant_manager, ClientRepositoryInterface $client_repository) {
+  public function __construct(Oauth2GrantManagerInterface $grant_manager) {
     $this->grantManager = $grant_manager;
-    $this->clientRepository = $client_repository;
   }
 
   /**
@@ -41,8 +32,7 @@ class Oauth2Token extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('plugin.manager.oauth2_grant.processor'),
-      $container->get('simple_oauth.repositories.client')
+      $container->get('plugin.manager.oauth2_grant.processor')
     );
   }
 
@@ -53,19 +43,23 @@ class Oauth2Token extends ControllerBase {
     // Extract the grant type from the request body.
     $body = $request->getParsedBody();
     $grant_type_id = !empty($body['grant_type']) ? $body['grant_type'] : 'implicit';
-    $consumer_entity = NULL;
+    $client_drupal_entity = NULL;
     if (!empty($body['client_id'])) {
-      $client_drupal_entity = $this->clientRepository
-        ->getClientEntity($body['client_id']);
-      if (empty($client_drupal_entity)) {
-        return OAuthServerException::invalidClient($request)->generateHttpResponse(new Response());
+      $consumer_storage = $this->entityTypeManager()->getStorage('consumer');
+      $client_drupal_entities = $consumer_storage
+        ->loadByProperties([
+          'uuid' => $body['client_id'],
+        ]);
+      if (empty($client_drupal_entities)) {
+        return OAuthServerException::invalidClient($request)
+          ->generateHttpResponse(new Response());
       }
-      $consumer_entity = $client_drupal_entity->getDrupalEntity();
+      $client_drupal_entity = reset($client_drupal_entities);
     }
     // Get the auth server object from that uses the League library.
     try {
       // Respond to the incoming request and fill in the response.
-      $auth_server = $this->grantManager->getAuthorizationServer($grant_type_id, $consumer_entity);
+      $auth_server = $this->grantManager->getAuthorizationServer($grant_type_id, $client_drupal_entity);
       $response = $this->handleToken($request, $auth_server);
     }
     catch (OAuthServerException $exception) {

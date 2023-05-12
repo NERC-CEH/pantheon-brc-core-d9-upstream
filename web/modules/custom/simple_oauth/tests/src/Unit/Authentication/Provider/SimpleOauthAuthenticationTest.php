@@ -2,13 +2,10 @@
 
 namespace Drupal\Tests\simple_oauth\Unit\Authentication\Provider;
 
-use Drupal\Core\Authentication\AuthenticationProviderInterface;
-use Prophecy\PhpUnit\ProphecyTrait;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\PageCache\RequestPolicyInterface;
 use Drupal\simple_oauth\Authentication\Provider\SimpleOauthAuthenticationProvider;
 use Drupal\simple_oauth\PageCache\DisallowSimpleOauthRequests;
-use Drupal\simple_oauth\PageCache\SimpleOauthRequestPolicyInterface;
 use Drupal\simple_oauth\Server\ResourceServerInterface;
 use Drupal\Tests\UnitTestCase;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,25 +16,23 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class SimpleOauthAuthenticationTest extends UnitTestCase {
 
-  use ProphecyTrait;
   /**
    * The authentication provider.
    *
-   * @var \Drupal\Core\Authentication\AuthenticationProviderInterface
+   * @var \Drupal\simple_oauth\Authentication\Provider\SimpleOauthAuthenticationProvider
    */
-  protected AuthenticationProviderInterface $provider;
-
+  protected $provider;
   /**
    * The OAuth page cache request policy.
    *
    * @var \Drupal\simple_oauth\PageCache\SimpleOauthRequestPolicyInterface
    */
-  protected SimpleOauthRequestPolicyInterface $oauthPageCacheRequestPolicy;
+  protected $oauthPageCacheRequestPolicy;
 
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     $resource_server = $this->prophesize(ResourceServerInterface::class);
@@ -55,7 +50,7 @@ class SimpleOauthAuthenticationTest extends UnitTestCase {
    *
    * @dataProvider hasTokenValueProvider
    */
-  public function testHasTokenValue(?string $authorization, bool $has_token): void {
+  public function testHasTokenValue($authorization, $has_token) {
     $request = new Request();
 
     if ($authorization !== NULL) {
@@ -69,11 +64,8 @@ class SimpleOauthAuthenticationTest extends UnitTestCase {
     );
   }
 
-  /**
-   * Data provider for ::testHasTokenValue.
-   */
-  public function hasTokenValueProvider(): array {
-    $token = $this->randomMachineName();
+  public function hasTokenValueProvider() {
+    $token = $this->getRandomGenerator()->name();
     $data = [];
 
     // 1. Authentication header.

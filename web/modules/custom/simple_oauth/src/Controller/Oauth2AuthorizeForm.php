@@ -10,7 +10,6 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\simple_oauth\KnownClientsRepositoryInterface;
 use Drupal\simple_oauth\Plugin\Oauth2GrantManagerInterface;
 use League\OAuth2\Server\Exception\OAuthServerException;
-use League\OAuth2\Server\Repositories\ClientRepositoryInterface;
 use Symfony\Bridge\PsrHttpMessage\HttpFoundationFactoryInterface;
 use Symfony\Bridge\PsrHttpMessage\HttpMessageFactoryInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -70,12 +69,6 @@ class Oauth2AuthorizeForm extends FormBase {
   protected $knownClientRepository;
 
   /**
-   * @var \League\OAuth2\Server\Repositories\ClientRepositoryInterface
-   */
-  protected $clientRepository;
-
-
-  /**
    * Oauth2AuthorizeForm constructor.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
@@ -90,17 +83,14 @@ class Oauth2AuthorizeForm extends FormBase {
    *   The config factory.
    * @param \Drupal\simple_oauth\KnownClientsRepositoryInterface $known_clients_repository
    *   The known client repository service.
-   * @param \League\OAuth2\Server\Repositories\ClientRepositoryInterface $client_repository
-   *   The client repository service.
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager, HttpMessageFactoryInterface $message_factory, HttpFoundationFactoryInterface $foundation_factory, Oauth2GrantManagerInterface $grant_manager, ConfigFactoryInterface $config_factory, KnownClientsRepositoryInterface $known_clients_repository, ClientRepositoryInterface $client_repository) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, HttpMessageFactoryInterface $message_factory, HttpFoundationFactoryInterface $foundation_factory, Oauth2GrantManagerInterface $grant_manager, ConfigFactoryInterface $config_factory, KnownClientsRepositoryInterface $known_clients_repository) {
     $this->entityTypeManager = $entity_type_manager;
     $this->messageFactory = $message_factory;
     $this->foundationFactory = $foundation_factory;
     $this->grantManager = $grant_manager;
     $this->configFactory = $config_factory;
     $this->knownClientRepository = $known_clients_repository;
-    $this->clientRepository = $client_repository;
   }
 
   /**
@@ -113,8 +103,7 @@ class Oauth2AuthorizeForm extends FormBase {
       $container->get('psr7.http_foundation_factory'),
       $container->get('plugin.manager.oauth2_grant.processor'),
       $container->get('config.factory'),
-      $container->get('simple_oauth.known_clients'),
-      $container->get('simple_oauth.repositories.client')
+      $container->get('simple_oauth.known_clients')
     );
   }
 
@@ -154,17 +143,20 @@ class Oauth2AuthorizeForm extends FormBase {
     else {
       $grant_type = NULL;
     }
-    $client_id = $request->get('client_id');
-    $client_drupal_entity = $this->clientRepository
-      ->getClientEntity($client_id);
-    if (empty($client_drupal_entity)) {
+    $client_uuid = $request->get('client_id');
+    $consumer_storage = $this->entityTypeManager->getStorage('consumer');
+    $client_drupal_entities = $consumer_storage
+      ->loadByProperties([
+        'uuid' => $client_uuid,
+      ]);
+    if (empty($client_drupal_entities)) {
       $server_request = $this->messageFactory->createRequest($request);
       throw OAuthServerException::invalidClient($server_request);
     }
-    $consumer_entity = $client_drupal_entity->getDrupalEntity();
+    $client_drupal_entity = reset($client_drupal_entities);
     $this->server = $this
       ->grantManager
-      ->getAuthorizationServer($grant_type, $consumer_entity);
+      ->getAuthorizationServer($grant_type, $client_drupal_entity);
 
     // Transform the HTTP foundation request object into a PSR-7 object. The
     // OAuth library expects a PSR-7 request.
@@ -183,7 +175,7 @@ class Oauth2AuthorizeForm extends FormBase {
 
     $cacheablity_metadata = new CacheableMetadata();
 
-    $form['client'] = $manager->getViewBuilder('consumer')->view($consumer_entity);
+    $form['client'] = $manager->getViewBuilder('consumer')->view($client_drupal_entity);
     $form['scopes'] = [
       '#title' => $this->t('Permissions'),
       '#theme' => 'item_list',
@@ -191,7 +183,7 @@ class Oauth2AuthorizeForm extends FormBase {
     ];
 
     $client_roles = [];
-    foreach ($consumer_entity->get('roles') as $role_item) {
+    foreach ($client_drupal_entity->get('roles') as $role_item) {
       $client_roles[$role_item->target_id] = $role_item->entity;
     }
 
@@ -215,7 +207,7 @@ class Oauth2AuthorizeForm extends FormBase {
       '#type' => 'hidden',
       '#value' => $request->get('redirect_uri') ?
       $request->get('redirect_uri') :
-      $consumer_entity->get('redirect')->value,
+      $client_drupal_entity->get('redirect')->value,
     ];
     $form['submit'] = [
       '#type' => 'submit',

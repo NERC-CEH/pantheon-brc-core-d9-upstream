@@ -2,7 +2,6 @@
 
 namespace Drupal\simple_oauth\Service;
 
-use Drupal\Component\FileSecurity\FileSecurity;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\simple_oauth\Service\Filesystem\FileSystemChecker;
 use Drupal\simple_oauth\Service\Filesystem\FilesystemValidator;
@@ -69,10 +68,6 @@ class KeyGeneratorService {
     $this->validator->validateOpensslExtensionExist('openssl');
     $this->validator->validateAreDirs([$dir_path]);
     $this->validator->validateAreWritable([$dir_path]);
-    $this->validator->validateNotFilePublicPath([$dir_path]);
-
-    FileSecurity::writeHtaccess($dir_path);
-    FileSecurity::writeWebConfig($dir_path);
 
     // Create Keys array.
     $keys = KeyGenerator::generateKeys();

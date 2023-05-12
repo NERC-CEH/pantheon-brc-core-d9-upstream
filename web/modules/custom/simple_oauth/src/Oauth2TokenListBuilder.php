@@ -43,8 +43,8 @@ class Oauth2TokenListBuilder extends EntityListBuilder {
     if (($client = $entity->get('client')) && $client->entity) {
       $row['client'] = $client->entity->toLink($client->entity->label(), 'edit-form');
     }
+    /** @var \Drupal\Core\Field\EntityReferenceFieldItemListInterface $scopes */
     if ($scopes = $entity->get('scopes')) {
-      /** @var \Drupal\Core\Field\EntityReferenceFieldItemListInterface $scopes */
       $row['scopes'] = implode(', ', array_map(function (RoleInterface $role) {
         return $role->label();
       }, $scopes->referencedEntities()));

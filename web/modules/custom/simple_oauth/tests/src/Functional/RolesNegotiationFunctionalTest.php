@@ -8,8 +8,6 @@ use Drupal\Core\Url;
 use Drupal\Tests\BrowserTestBase;
 use Drupal\user\Entity\Role;
 use Drupal\user\RoleInterface;
-use Drupal\user\UserInterface;
-use GuzzleHttp\ClientInterface;
 
 /**
  * Tests for the roles negotiation.
@@ -29,7 +27,7 @@ class RolesNegotiationFunctionalTest extends BrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  protected static $modules = [
+  public static $modules = [
     'node',
     'serialization',
     'simple_oauth',
@@ -43,47 +41,48 @@ class RolesNegotiationFunctionalTest extends BrowserTestBase {
    *
    * @var \Drupal\Core\Url
    */
-  protected Url $url;
+  protected $url;
 
   /**
    * The URL for the token test.
    *
    * @var \Drupal\Core\Url
    */
-  protected Url $tokenTestUrl;
+  protected $tokenTestUrl;
 
   /**
    * The client entity.
    *
    * @var \Drupal\consumers\Entity\Consumer
    */
-  protected Consumer $client;
+  protected $client;
 
   /**
    * The user entity.
    *
    * @var \Drupal\user\UserInterface
    */
-  protected UserInterface $user;
+  protected $user;
+
 
   /**
    * The HTTP client.
    *
    * @var \GuzzleHttp\ClientInterface
    */
-  protected ClientInterface $httpClient;
+  protected $httpClient;
 
   /**
    * The client secret.
    *
    * @var string
    */
-  protected string $clientSecret;
+  protected $clientSecret;
 
   /**
    * {@inheritdoc}
    */
-  public function setUp(): void {
+  public function setUp() {
     parent::setUp();
     $this->htmlOutputEnabled = FALSE;
     $this->tokenTestUrl = Url::fromRoute('oauth2_token.user_debug');
@@ -92,7 +91,7 @@ class RolesNegotiationFunctionalTest extends BrowserTestBase {
     // Set up a HTTP client that accepts relative URLs.
     $this->httpClient = $this->container->get('http_client_factory')
       ->fromOptions(['base_uri' => $this->baseUrl]);
-    $this->clientSecret = $this->randomString();
+    $this->clientSecret = $this->getRandomGenerator()->string();
     // Create a role 'foo' and add two permissions to it.
     $role = Role::create([
       'id' => 'foo',
@@ -130,9 +129,8 @@ class RolesNegotiationFunctionalTest extends BrowserTestBase {
     // Create a Consumer.
     $this->client = Consumer::create([
       'owner_id' => 1,
-      'client_id' => $this->randomString(),
       'user_id' => $this->user->id(),
-      'label' => $this->randomMachineName(),
+      'label' => $this->getRandomGenerator()->name(),
       'secret' => $this->clientSecret,
       'confidential' => TRUE,
       'roles' => [['target_id' => 'oof']],
@@ -145,7 +143,7 @@ class RolesNegotiationFunctionalTest extends BrowserTestBase {
   /**
    * Test access to own published node with missing role on User entity.
    */
-  public function testRequestWithRoleRemovedFromUser(): void {
+  public function testRequestWithRoleRemovedFromUser() {
     $access_token = $this->getAccessToken(['foo', 'bar']);
 
     // Get detailed information about the authenticated user.
@@ -205,7 +203,7 @@ class RolesNegotiationFunctionalTest extends BrowserTestBase {
   /**
    * Test access to own unpublished node but with the role removed from client.
    */
-  public function testRequestWithRoleRemovedFromClient(): void {
+  public function testRequestWithRoleRemovedFromClient() {
     $access_token = $this->getAccessToken(['oof']);
 
     // Get detailed information about the authenticated user.
@@ -262,7 +260,7 @@ class RolesNegotiationFunctionalTest extends BrowserTestBase {
   /**
    * Test access to own unpublished node but with missing scope.
    */
-  public function testRequestWithMissingScope(): void {
+  public function testRequestWithMissingScope() {
     $access_token = $this->getAccessToken();
 
     $response = $this->get(
@@ -286,13 +284,13 @@ class RolesNegotiationFunctionalTest extends BrowserTestBase {
    * @param array $scopes
    *   The scopes.
    *
-   * @return null|string
+   * @return string
    *   The access token.
    */
-  private function getAccessToken(array $scopes = []): ?string {
+  private function getAccessToken(array $scopes = []) {
     $valid_payload = [
       'grant_type' => 'client_credentials',
-      'client_id' => $this->client->getClientId(),
+      'client_id' => $this->client->uuid(),
       'client_secret' => $this->clientSecret,
     ];
     if (!empty($scopes)) {
@@ -301,7 +299,9 @@ class RolesNegotiationFunctionalTest extends BrowserTestBase {
     $response = $this->post($this->url, $valid_payload);
     $parsed_response = Json::decode((string) $response->getBody());
 
-    return $parsed_response['access_token'] ?? NULL;
+    return isset($parsed_response['access_token'])
+      ? $parsed_response['access_token']
+      : NULL;
   }
 
 }

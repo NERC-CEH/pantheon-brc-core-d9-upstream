@@ -2,7 +2,6 @@
 
 namespace Drupal\simple_oauth\Authentication;
 
-use Drupal\consumers\Entity\ConsumerInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Session\AccountInterface;
@@ -35,7 +34,7 @@ class TokenAuthUser implements TokenAuthUserInterface {
   /**
    * The activated consumer instance.
    *
-   * @var \Drupal\consumers\Entity\ConsumerInterface
+   * @var \Drupal\consumers\Entity\Consumer
    */
   protected $consumer;
 
@@ -72,7 +71,7 @@ class TokenAuthUser implements TokenAuthUserInterface {
   /**
    * {@inheritdoc}
    */
-  public function getConsumer(): ConsumerInterface {
+  public function getConsumer() {
     return $this->consumer;
   }
 
@@ -315,7 +314,7 @@ class TokenAuthUser implements TokenAuthUserInterface {
    * {@inheritdoc}
    */
   public function urlInfo($rel = 'canonical', array $options = []) {
-    return $this->subject->toUrl($rel, $options);
+    return $this->subject->urlInfo($rel, $options);
   }
 
   /**
@@ -329,7 +328,7 @@ class TokenAuthUser implements TokenAuthUserInterface {
    * {@inheritdoc}
    */
   public function link($text = NULL, $rel = 'canonical', array $options = []) {
-    return $this->subject->toLink($text, $rel, $options)->toString();
+    return $this->subject->link($text, $rel, $options);
   }
 
   /**
@@ -846,7 +845,7 @@ class TokenAuthUser implements TokenAuthUserInterface {
   /**
    * {@inheritdoc}
    */
-  public function getIterator(): \Traversable {
+  public function getIterator() {
     throw new \Exception('Invalid use of getIterator in token authentication.');
   }
 

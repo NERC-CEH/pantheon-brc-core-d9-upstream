@@ -8,7 +8,6 @@
 use Drupal\Core\Config\FileStorage;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
-use Drupal\simple_oauth\Entity\Oauth2TokenStorageSchema;
 
 /**
  * Define the default batch size.
@@ -54,7 +53,7 @@ function simple_oauth_update_8403() {
 function simple_oauth_update_8404() {
   $use_implicit = \Drupal::config('simple_oauth_extras.settings')->get('use_implicit');
   if ($use_implicit === NULL) {
-    $config_path = \Drupal::service('extension.list.module')->getPath('simple_oauth') . '/config/install';
+    $config_path = drupal_get_path('module', 'simple_oauth') . '/config/install';
     // Because of custom config_path, we don't call service here.
     $source = new FileStorage($config_path);
     $config_default = $source->read('simple_oauth.settings');
@@ -94,7 +93,6 @@ function simple_oauth_update_8404() {
   ];
   $entity_definition_update_manager = \Drupal::entityDefinitionUpdateManager();
   foreach ($field_names as $field_name) {
-    /** @var \Drupal\Core\Field\BaseFieldDefinition $field_definition */
     $field_definition = $entity_definition_update_manager->getFieldStorageDefinition($field_name, 'consumer');
     // If simple_oauth_extras was installed, we need at least to update field provider.
     if ($field_definition && $deleted) {
@@ -117,26 +115,4 @@ function simple_oauth_update_8501(&$sandbox) {
     ->getEditable('simple_oauth.settings');
   $config->set('disable_openid_connect', FALSE);
   $config->save();
-}
-
-/**
- * Add indexes to oauth2_token value field.
- */
-function simple_oauth_update_8502() {
-  $entity_type_manager = \Drupal::entityTypeManager();
-  $definition_update_manager = \Drupal::entityDefinitionUpdateManager();
-
-  $entity_type = $entity_type_manager->getDefinition('oauth2_token')
-    ->setHandlerClass('storage_schema', Oauth2TokenStorageSchema::class);
-  // Regenerate entity type indexes.
-  $definition_update_manager->updateEntityType($entity_type);
-}
-
-/**
- * Resolve mismatched field definition for oauth2_token.
- */
-function simple_oauth_update_8503() {
-  $definition_update_manager = \Drupal::entityDefinitionUpdateManager();
-  $field_storage_definition = $definition_update_manager->getFieldStorageDefinition('value', 'oauth2_token');
-  $definition_update_manager->updateFieldStorageDefinition($field_storage_definition);
 }

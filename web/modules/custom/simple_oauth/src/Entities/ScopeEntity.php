@@ -18,16 +18,9 @@ class ScopeEntity implements ScopeEntityNameInterface {
   protected $name;
 
   /**
-   * The role associated to the scope.
-   *
-   * @var \Drupal\user\RoleInterface
-   */
-  protected $role;
-
-  /**
    * Construct a ScopeEntity instance.
    *
-   * @param \Drupal\user\RoleInterface $role
+   * @param \Drupal\User\RoleInterface $role
    *   The role associated to the scope.
    */
   public function __construct(RoleInterface $role) {
@@ -40,7 +33,6 @@ class ScopeEntity implements ScopeEntityNameInterface {
   /**
    * {@inheritdoc}
    */
-  #[\ReturnTypeWillChange]
   public function jsonSerialize() {
     return $this->getIdentifier();
   }

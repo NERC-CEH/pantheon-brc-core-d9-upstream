@@ -4,10 +4,9 @@ namespace Drupal\Tests\simple_oauth\Functional;
 
 use Drupal\Core\Url;
 use GuzzleHttp\RequestOptions;
-use Psr\Http\Message\ResponseInterface;
 
 /**
- * Request helper trait.
+ *
  */
 trait RequestHelperTrait {
 
@@ -16,6 +15,8 @@ trait RequestHelperTrait {
    *
    * The base methods do not provide a non-form submission POST method.
    *
+   * @see https://www.drupal.org/project/drupal/issues/2908589#comment-12258839
+   *
    * @param \Drupal\Core\Url $url
    *   The URL.
    * @param array $data
@@ -23,14 +24,10 @@ trait RequestHelperTrait {
    * @param array $options
    *   Optional options to pass to client.
    *
-   * @see https://www.drupal.org/project/drupal/issues/2908589#comment-12258839
-   *
    * @return \Psr\Http\Message\ResponseInterface
    *   The response.
-   *
-   * @throws \GuzzleHttp\Exception\GuzzleException
    */
-  protected function post(Url $url, array $data, array $options = []): ResponseInterface {
+  protected function post(Url $url, array $data, array $options = []) {
     $post_url = $this->getAbsoluteUrl($url->toString());
     $session = $this->getSession();
     $session->setCookie('SIMPLETEST_USER_AGENT', drupal_generate_test_ua($this->databasePrefix));
@@ -44,14 +41,11 @@ trait RequestHelperTrait {
    * GET a resource, with options.
    *
    * @param \Drupal\Core\Url $url
-   *   The url object to perform get request on.
    * @param array $options
-   *   The request options.
    *
-   * @return \Psr\Http\Message\ResponseInterface
-   *   Returns the response.
+   * @return mixed
    */
-  protected function get(Url $url, array $options = []): ResponseInterface {
+  protected function get(Url $url, $options = []) {
     $options += [
       RequestOptions::HTTP_ERRORS => FALSE,
     ];
