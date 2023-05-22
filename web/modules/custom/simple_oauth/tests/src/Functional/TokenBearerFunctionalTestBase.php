@@ -25,7 +25,7 @@ abstract class TokenBearerFunctionalTestBase extends BrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  public static $modules = [
+  protected static $modules = [
     'image',
     'node',
     'serialization',
@@ -39,12 +39,12 @@ abstract class TokenBearerFunctionalTestBase extends BrowserTestBase {
    *
    * @var \Drupal\Core\Url
    */
-  protected $url;
+  protected Url $url;
 
   /**
    * The client.
    *
-   * @var \Drupal\consumers\Entity\Consumer
+   * @var \Drupal\consumers\Entity\ConsumerInterface
    */
   protected $client;
 
@@ -60,7 +60,7 @@ abstract class TokenBearerFunctionalTestBase extends BrowserTestBase {
    *
    * @var string
    */
-  protected $clientSecret;
+  protected string $clientSecret;
 
   /**
    * The HTTP client to make requests.
@@ -91,7 +91,7 @@ abstract class TokenBearerFunctionalTestBase extends BrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     $this->url = Url::fromRoute('oauth2_token.token');
@@ -101,7 +101,7 @@ abstract class TokenBearerFunctionalTestBase extends BrowserTestBase {
       ->fromOptions(['base_uri' => $this->baseUrl]);
 
     $client_role = Role::create([
-      'id' => $this->getRandomGenerator()->name(8, TRUE),
+      'id' => $this->randomMachineName(),
       'label' => $this->getRandomGenerator()->word(5),
       'is_admin' => FALSE,
     ]);
@@ -110,7 +110,7 @@ abstract class TokenBearerFunctionalTestBase extends BrowserTestBase {
     $this->additionalRoles = [];
     for ($i = 0; $i < mt_rand(1, 3); $i++) {
       $role = Role::create([
-        'id' => $this->getRandomGenerator()->name(8, TRUE),
+        'id' => $this->randomMachineName(),
         'label' => $this->getRandomGenerator()->word(5),
         'is_admin' => FALSE,
       ]);
@@ -118,11 +118,12 @@ abstract class TokenBearerFunctionalTestBase extends BrowserTestBase {
       $this->additionalRoles[] = $role;
     }
 
-    $this->clientSecret = $this->getRandomGenerator()->string();
+    $this->clientSecret = $this->randomString();
 
     $this->client = Consumer::create([
       'owner_id' => '',
-      'label' => $this->getRandomGenerator()->name(),
+      'label' => $this->randomMachineName(),
+      'client_id' => $this->randomString(),
       'secret' => $this->clientSecret,
       'confidential' => TRUE,
       'third_party' => TRUE,
@@ -163,7 +164,7 @@ abstract class TokenBearerFunctionalTestBase extends BrowserTestBase {
    * @return array
    *   An array representing the response of "/oauth/token".
    */
-  protected function assertValidTokenResponse(ResponseInterface $response, $has_refresh = FALSE) {
+  protected function assertValidTokenResponse(ResponseInterface $response, bool $has_refresh = FALSE): array {
     $this->assertEquals(200, $response->getStatusCode());
     $parsed_response = Json::decode((string) $response->getBody());
     $this->assertSame('Bearer', $parsed_response['token_type']);

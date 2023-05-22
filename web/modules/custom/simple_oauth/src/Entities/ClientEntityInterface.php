@@ -17,7 +17,7 @@ interface ClientEntityInterface extends LeagueClientEntityInterface {
   /**
    * Returns the associated Drupal entity.
    *
-   * @return \Drupal\consumers\Entity\Consumer
+   * @return \Drupal\consumers\Entity\ConsumerInterface
    *   The Drupal entity.
    */
   public function getDrupalEntity();

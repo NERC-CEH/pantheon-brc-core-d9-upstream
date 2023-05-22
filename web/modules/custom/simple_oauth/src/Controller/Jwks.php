@@ -67,7 +67,7 @@ class Jwks implements ContainerInjectionInterface {
     if ($this->config->get('disable_openid_connect')) {
       throw new NotFoundHttpException('Not Found');
     }
-    return JsonResponse::create((new JwksEntity())->getKeys());
+    return new JsonResponse((new JwksEntity())->getKeys());
   }
 
 }

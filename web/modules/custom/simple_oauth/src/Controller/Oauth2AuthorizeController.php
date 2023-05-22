@@ -15,6 +15,7 @@ use GuzzleHttp\Psr7\Response;
 use League\OAuth2\Server\AuthorizationServer;
 use League\OAuth2\Server\Entities\ScopeEntityInterface;
 use League\OAuth2\Server\Exception\OAuthServerException;
+use League\OAuth2\Server\Repositories\ClientRepositoryInterface;
 use League\OAuth2\Server\RequestTypes\AuthorizationRequest;
 use Symfony\Bridge\PsrHttpMessage\HttpMessageFactoryInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -55,6 +56,11 @@ class Oauth2AuthorizeController extends ControllerBase {
   protected $knownClientRepository;
 
   /**
+   * @var \League\OAuth2\Server\Repositories\ClientRepositoryInterface
+   */
+  protected $clientRepository;
+
+  /**
    * Oauth2AuthorizeController construct.
    *
    * @param \Symfony\Bridge\PsrHttpMessage\HttpMessageFactoryInterface $message_factory
@@ -65,17 +71,21 @@ class Oauth2AuthorizeController extends ControllerBase {
    *   The config factory.
    * @param \Drupal\simple_oauth\KnownClientsRepositoryInterface $known_clients_repository
    *   The known client repository service.
+   * @param \League\OAuth2\Server\Repositories\ClientRepositoryInterface $client_repository
+   *   The client repository service.
    */
   public function __construct(
     HttpMessageFactoryInterface $message_factory,
     Oauth2GrantManagerInterface $grant_manager,
     ConfigFactoryInterface $config_factory,
-    KnownClientsRepositoryInterface $known_clients_repository
+    KnownClientsRepositoryInterface $known_clients_repository,
+    ClientRepositoryInterface $client_repository
   ) {
     $this->messageFactory = $message_factory;
     $this->grantManager = $grant_manager;
     $this->configFactory = $config_factory;
     $this->knownClientRepository = $known_clients_repository;
+    $this->clientRepository = $client_repository;
   }
 
   /**
@@ -86,7 +96,8 @@ class Oauth2AuthorizeController extends ControllerBase {
       $container->get('psr7.http_message_factory'),
       $container->get('plugin.manager.oauth2_grant.processor'),
       $container->get('config.factory'),
-      $container->get('simple_oauth.known_clients')
+      $container->get('simple_oauth.known_clients'),
+      $container->get('simple_oauth.repositories.client')
     );
   }
 
@@ -102,24 +113,21 @@ class Oauth2AuthorizeController extends ControllerBase {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   public function authorize(Request $request) {
-    $client_uuid = $request->get('client_id');
+    $client_id = $request->get('client_id');
     $server_request = $this->messageFactory->createRequest($request);
-    if (empty($client_uuid)) {
+    if (empty($client_id)) {
       return OAuthServerException::invalidClient($server_request)
         ->generateHttpResponse(new Response());
     }
-    $consumer_storage = $this->entityTypeManager()->getStorage('consumer');
-    $client_drupal_entities = $consumer_storage
-      ->loadByProperties([
-        'uuid' => $client_uuid,
-      ]);
-    if (empty($client_drupal_entities)) {
+    $client_drupal_entity = $this->clientRepository
+      ->getClientEntity($client_id);
+    if (empty($client_drupal_entity)) {
       return OAuthServerException::invalidClient($server_request)
         ->generateHttpResponse(new Response());
     }
 
-    $client_drupal_entity = reset($client_drupal_entities);
-    $is_third_party = $client_drupal_entity->get('third_party')->value;
+    $consumer_entity = $client_drupal_entity->getDrupalEntity();
+    $is_third_party = $consumer_entity->get('third_party')->value;
 
     $scopes = [];
     if ($request->query->get('scope')) {
@@ -137,9 +145,9 @@ class Oauth2AuthorizeController extends ControllerBase {
         'query' => ['destination' => $destination->toString()],
       ]);
       // Client ID and secret may be passed as Basic Auth. Copy the headers.
-      return RedirectResponse::create($url->toString(), 302, $request->headers->all());
+      return new RedirectResponse($url->toString(), 302, $request->headers->all());
     }
-    elseif (!$is_third_party || $this->isKnownClient($client_uuid, $scopes)) {
+    elseif (!$is_third_party || $this->isKnownClient($client_id, $scopes)) {
       // Login user may skip the grant step if the client is not third party or
       // known.
       if ($request->get('response_type') == 'code') {
@@ -152,14 +160,14 @@ class Oauth2AuthorizeController extends ControllerBase {
         $grant_type = NULL;
       }
       try {
-        $server = $this->grantManager->getAuthorizationServer($grant_type, $client_drupal_entity);
+        $server = $this->grantManager->getAuthorizationServer($grant_type, $consumer_entity);
         $ps7_request = $server_request;
         $auth_request = $server->validateAuthorizationRequest($ps7_request);
       }
       catch (OAuthServerException $exception) {
         $this->messenger()->addError($this->t('Fatal error. Unable to get the authorization server.'));
         watchdog_exception('simple_oauth', $exception);
-        return RedirectResponse::create(Url::fromRoute('<front>')->toString());
+        return new RedirectResponse(Url::fromRoute('<front>')->toString());
       }
       if ($auth_request) {
         $can_grant_codes = $this->currentUser()
@@ -230,7 +238,7 @@ class Oauth2AuthorizeController extends ControllerBase {
     }
 
     // Get the location and return a secure redirect response.
-    return TrustedRedirectResponse::create(
+    return new TrustedRedirectResponse(
       $response->getHeaderLine('location'),
       $response->getStatusCode(),
       $response->getHeaders()
@@ -240,19 +248,19 @@ class Oauth2AuthorizeController extends ControllerBase {
   /**
    * Whether the client with the given scopes is known and already authorized.
    *
-   * @param string $client_uuid
-   *   The client UUID.
+   * @param string $client_id
+   *   The client ID.
    * @param string[] $scopes
    *   The list of scopes.
    *
    * @return bool
    *   TRUE if the client is authorized, FALSE otherwise.
    */
-  protected function isKnownClient($client_uuid, array $scopes) {
+  protected function isKnownClient($client_id, array $scopes) {
     if (!$this->configFactory->get('simple_oauth.settings')->get('remember_clients')) {
       return FALSE;
     }
-    return $this->knownClientRepository->isAuthorized($this->currentUser()->id(), $client_uuid, $scopes);
+    return $this->knownClientRepository->isAuthorized($this->currentUser()->id(), $client_id, $scopes);
   }
 
 }

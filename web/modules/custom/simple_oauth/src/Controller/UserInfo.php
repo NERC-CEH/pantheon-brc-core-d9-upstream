@@ -89,7 +89,7 @@ class UserInfo implements ContainerInjectionInterface {
     $user_entity->setIdentifier($identifier);
     $data = $this->serializer
       ->normalize($user_entity, 'json', [$identifier => $this->user]);
-    return JsonResponse::create($data);
+    return new JsonResponse($data);
   }
 
 }

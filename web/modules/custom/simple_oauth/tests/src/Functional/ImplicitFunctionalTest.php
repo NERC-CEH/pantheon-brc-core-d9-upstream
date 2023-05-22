@@ -18,24 +18,24 @@ class ImplicitFunctionalTest extends TokenBearerFunctionalTestBase {
    *
    * @var \Drupal\Core\Url
    */
-  protected $authorizeUrl;
+  protected Url $authorizeUrl;
 
   /**
    * The redirect URI.
    *
    * @var string
    */
-  protected $redirectUri;
+  protected string $redirectUri;
 
   /**
    * {@inheritdoc}
    */
-  public static $modules = ['simple_oauth_test'];
+  protected static $modules = ['simple_oauth_test'];
 
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
     $this->redirectUri = Url::fromRoute('oauth2_token.test_token', [], [
       'absolute' => TRUE,
@@ -51,10 +51,10 @@ class ImplicitFunctionalTest extends TokenBearerFunctionalTestBase {
   /**
    * Test the valid Implicit grant.
    */
-  public function testImplicitGrant() {
+  public function testImplicitGrant(): void {
     $valid_params = [
       'response_type' => 'token',
-      'client_id' => $this->client->uuid(),
+      'client_id' => $this->client->getClientId(),
       'client_secret' => $this->clientSecret,
     ];
     // 1. Anonymous request invites the user to log in.
@@ -83,11 +83,12 @@ class ImplicitFunctionalTest extends TokenBearerFunctionalTestBase {
     $assert_session->titleEquals('Grant Access to Client | Drupal');
     $assert_session->buttonExists('Grant');
     $assert_session->responseContains('Permissions');
-
-    // 3. Grant access by submitting the form and get the token back.
-    $this->drupalPostForm($this->authorizeUrl, [], 'Grant', [
+    $this->drupalGet($this->authorizeUrl, [
       'query' => $valid_params,
     ]);
+
+    // 3. Grant access by submitting the form and get the token back.
+    $this->submitForm([], 'Grant');
     $assert_session = $this->assertSession();
     $assert_session->statusCodeEquals(200);
     $assert_session->addressMatches('/\/oauth\/test#access_token=.*&token_type=Bearer&expires_in=\d*/');
@@ -96,12 +97,12 @@ class ImplicitFunctionalTest extends TokenBearerFunctionalTestBase {
   /**
    * Test the valid Implicit grant if the client is non 3rd party.
    */
-  public function testValidClientImplicitGrant() {
+  public function testValidClientImplicitGrant(): void {
     $this->client->set('third_party', FALSE);
     $this->client->save();
     $valid_params = [
       'response_type' => 'token',
-      'client_id' => $this->client->uuid(),
+      'client_id' => $this->client->getClientId(),
       'client_secret' => $this->clientSecret,
     ];
     // 1. Anonymous request invites the user to log in.

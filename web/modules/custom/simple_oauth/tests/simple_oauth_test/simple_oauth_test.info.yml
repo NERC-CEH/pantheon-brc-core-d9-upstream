@@ -1,13 +1,12 @@
 name: Simple OAuth Test
 type: module
 description: Test module for Simple OAuth
-core_version_requirement: '^8 || ^9'
 package: Testing
 hidden: true
 dependencies:
   - simple_oauth
 
-# Information added by Drupal.org packaging script on 2022-01-05
-version: '5.0.6'
+# Information added by Drupal.org packaging script on 2022-12-13
+version: '5.2.3'
 project: 'simple_oauth'
-datestamp: 1641363849
+datestamp: 1670908050

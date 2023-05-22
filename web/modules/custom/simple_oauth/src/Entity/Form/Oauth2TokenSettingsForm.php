@@ -124,8 +124,8 @@ class Oauth2TokenSettingsForm extends ConfigFormBase {
     ];
     $form['authorization_code_expiration'] = [
       '#type' => 'number',
-      '#title' => t('Authorization code expiration time'),
-      '#description' => t('The default value, in seconds, to be used as expiration time when creating new authorization codes. If you are not sure about this value, use the same value as above for <em>Access token expiration time</em>.'),
+      '#title' => $this->t('Authorization code expiration time'),
+      '#description' => $this->t('The default value, in seconds, to be used as expiration time when creating new authorization codes. If you are not sure about this value, use the same value as above for <em>Access token expiration time</em>.'),
       '#default_value' => \Drupal::config('simple_oauth.settings')
         ->get('authorization_code_expiration'),
       '#weight' => 0,
@@ -203,8 +203,8 @@ class Oauth2TokenSettingsForm extends ConfigFormBase {
     }
     $form['use_implicit'] = [
       '#type' => 'checkbox',
-      '#title' => t('Enable the implicit grant?'),
-      '#description' => t('The implicit grant has the potential to be used in an insecure way. Only enable this if you understand the risks. See https://tools.ietf.org/html/rfc6819#section-4.4.2 for more information.'),
+      '#title' => $this->t('Enable the implicit grant?'),
+      '#description' => $this->t('The implicit grant has the potential to be used in an insecure way. Only enable this if you understand the risks. See https://tools.ietf.org/html/rfc6819#section-4.4.2 for more information.'),
       '#default_value' => \Drupal::config('simple_oauth.settings')->get('use_implicit'),
     ];
 
