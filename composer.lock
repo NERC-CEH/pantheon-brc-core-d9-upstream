@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "70f554871613d645874c94e263c35dd6",
+    "content-hash": "acf2eea64a88f2cc437371b558285611",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -4527,17 +4527,17 @@
         },
         {
             "name": "drupal/commerce",
-            "version": "2.35.0",
+            "version": "2.36.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/commerce.git",
-                "reference": "8.x-2.35"
+                "reference": "8.x-2.36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/commerce-8.x-2.35.zip",
-                "reference": "8.x-2.35",
-                "shasum": "9fbd1a55aec630c5a7aa2c395f7d7efb127ad716"
+                "url": "https://ftp.drupal.org/files/projects/commerce-8.x-2.36.zip",
+                "reference": "8.x-2.36",
+                "shasum": "4114db573120036d5075c027e3bb9a61d3bdb582"
             },
             "require": {
                 "commerceguys/intl": "^2.0.2",
@@ -4573,8 +4573,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.35",
-                    "datestamp": "1680276957",
+                    "version": "8.x-2.36",
+                    "datestamp": "1685624434",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4615,7 +4615,7 @@
         },
         {
             "name": "drupal/commerce_cart",
-            "version": "2.35.0",
+            "version": "2.36.0",
             "require": {
                 "drupal/commerce": "*",
                 "drupal/commerce_order": "*",
@@ -4625,8 +4625,8 @@
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.35",
-                    "datestamp": "1680276957",
+                    "version": "8.x-2.36",
+                    "datestamp": "1685624434",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4721,7 +4721,7 @@
         },
         {
             "name": "drupal/commerce_number_pattern",
-            "version": "2.35.0",
+            "version": "2.36.0",
             "require": {
                 "drupal/commerce": "*",
                 "drupal/commerce_store": "*",
@@ -4730,8 +4730,8 @@
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.35",
-                    "datestamp": "1680276957",
+                    "version": "8.x-2.36",
+                    "datestamp": "1685624434",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4772,7 +4772,7 @@
         },
         {
             "name": "drupal/commerce_order",
-            "version": "2.35.0",
+            "version": "2.36.0",
             "require": {
                 "drupal/commerce": "*",
                 "drupal/commerce_number_pattern": "*",
@@ -4786,8 +4786,8 @@
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.35",
-                    "datestamp": "1680276957",
+                    "version": "8.x-2.36",
+                    "datestamp": "1685624434",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4828,7 +4828,7 @@
         },
         {
             "name": "drupal/commerce_payment",
-            "version": "2.35.0",
+            "version": "2.36.0",
             "require": {
                 "drupal/commerce": "*",
                 "drupal/commerce_order": "*",
@@ -4838,8 +4838,8 @@
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.35",
-                    "datestamp": "1680276957",
+                    "version": "8.x-2.36",
+                    "datestamp": "1685624434",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4939,7 +4939,7 @@
         },
         {
             "name": "drupal/commerce_price",
-            "version": "2.35.0",
+            "version": "2.36.0",
             "require": {
                 "drupal/commerce": "*",
                 "drupal/core": "^9.3 || ^10"
@@ -4947,8 +4947,8 @@
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.35",
-                    "datestamp": "1680276957",
+                    "version": "8.x-2.36",
+                    "datestamp": "1685624434",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4989,7 +4989,7 @@
         },
         {
             "name": "drupal/commerce_product",
-            "version": "2.35.0",
+            "version": "2.36.0",
             "require": {
                 "drupal/commerce": "*",
                 "drupal/commerce_price": "*",
@@ -4999,8 +4999,8 @@
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.35",
-                    "datestamp": "1680276957",
+                    "version": "8.x-2.36",
+                    "datestamp": "1685624434",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5246,7 +5246,7 @@
         },
         {
             "name": "drupal/commerce_store",
-            "version": "2.35.0",
+            "version": "2.36.0",
             "require": {
                 "drupal/commerce": "*",
                 "drupal/commerce_price": "*",
@@ -5255,8 +5255,8 @@
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.35",
-                    "datestamp": "1680276957",
+                    "version": "8.x-2.36",
+                    "datestamp": "1685624434",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5297,7 +5297,7 @@
         },
         {
             "name": "drupal/commerce_tax",
-            "version": "2.35.0",
+            "version": "2.36.0",
             "require": {
                 "drupal/commerce": "*",
                 "drupal/commerce_order": "*",
@@ -5307,8 +5307,8 @@
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.35",
-                    "datestamp": "1680276957",
+                    "version": "8.x-2.36",
+                    "datestamp": "1685624434",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
