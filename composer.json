@@ -15,6 +15,33 @@
         {
             "type": "path",
             "url": "upstream-config"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "enyo/dropzone",
+                "version": "5.7.1",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/enyo/dropzone/archive/v5.7.1.zip",
+                    "type": "zip"
+                }
+            }
+        },
+		{
+            "type": "package",
+            "package": {
+                "name": "fonticonpicker/fonticonpicker",
+                "version": "v3.1.1",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/fontIconPicker/fontIconPicker/releases/download/v3.1.1/fontIconPicker.zip",
+                    "type": "zip"
+                },
+                "require": {
+                  "composer/installers": "~1.0"
+                }
+            }
         }
     ],
     "require": {
@@ -88,6 +115,7 @@
         "drupal/disable_user_login_and_registration": "^1.1",
         "drupal/domain_registration": "^1.8",
         "drupal/draggableviews": "^2.1",
+        "drupal/dropzonejs": "^2.8",
         "drupal/ds": "^3.15",
         "drupal/easy_install": "^10.5",
         "drupal/editor_advanced_link": "^2.1",
@@ -95,7 +123,7 @@
         "drupal/embed": "^1.6",
         "drupal/entity": "^1.4",
         "drupal/entity_clone": "2.0-beta3",
-        "drupal/entity_embed": "^1.3",
+        "drupal/entity_embed": "^1.4",
         "drupal/entity_legal": "3.0-beta5",
         "drupal/entity_print": "^2.11",
         "drupal/entity_reference_revisions": "^1.10",
@@ -111,6 +139,7 @@
         "drupal/field_permissions": "^1.2",
         "drupal/filefield_sources": "^1.0@alpha",
         "drupal/fixed_text_link_formatter": "1.x-dev",
+        "drupal/font_iconpicker": "^1.0",
         "drupal/fontawesome": "^2.25",
         "drupal/fontawesome_menu_icons": "^2.0",
         "drupal/forum_access": "1.0-beta1",
@@ -150,6 +179,7 @@
         "drupal/mailsystem": "^4.4",
         "drupal/markup": "^2.0@beta",
         "drupal/masquerade": "2.0-rc1",
+        "drupal/media_bulk_upload": "^3.0",
         "drupal/media_library_form_element": "^2.0",
         "drupal/media_library_theme_reset": "^1.5",
         "drupal/menu_breadcrumb": "^1.16",
@@ -188,10 +218,10 @@
         "drupal/simple_pass_reset": "^1.1",
         "drupal/simple_sitemap": "^4.1",
         "drupal/sitemap": "2.0-beta4",
-        "drupal/smart_trim": "^2.0",
+        "drupal/smart_trim": "^2.1",
         "drupal/smtp": "^1.2",
         "drupal/social_media_links": "^2.9",
-        "drupal/spammaster": "^1.90",
+        "drupal/spammaster": "^1.91",
         "drupal/state_machine": "^1.8",
         "drupal/super_login": "^2.1",
         "drupal/superfish": "^1.4",
@@ -232,6 +262,8 @@
         "drupal/weight": "^3.4",
         "drupal/x_frame_options": "^1.3",
         "drush/drush": "^10",
+        "enyo/dropzone": "^5.7",
+        "fonticonpicker/fonticonpicker": "^3.1",
         "lcobucci/jwt": "4.3",
         "league/csv": "^9.8",
         "league/event": "2.2",
