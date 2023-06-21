@@ -227,6 +227,7 @@
         "drupal/super_login": "^2.1",
         "drupal/superfish": "^1.4",
         "drupal/synonyms": "^2.1",
+        "drupal/taxonomy_entity_index": "^1.14",
         "drupal/taxonomy_manager": "^2.0",
         "drupal/theme_switcher": "^2.0",
         "drupal/tmgmt": "^1.15",
