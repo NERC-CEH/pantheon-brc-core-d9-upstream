@@ -122,7 +122,7 @@
         "drupal/editor_file": "^1.7",
         "drupal/embed": "^1.6",
         "drupal/entity": "^1.4",
-        "drupal/entity_clone": "2.0-beta3",
+        "drupal/entity_clone": "2.0-beta4",
         "drupal/entity_embed": "^1.4",
         "drupal/entity_legal": "3.0-beta5",
         "drupal/entity_print": "^2.12",
