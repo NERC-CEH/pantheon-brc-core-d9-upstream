@@ -61,7 +61,7 @@
         "drupal/auto_entitylabel": "^3.0",
         "drupal/autofloat": "^1.2",
         "drupal/backup_migrate": "^5.0",
-        "drupal/bibcite": "^3.0@beta",
+        "drupal/bibcite": "2.0-beta3",
         "drupal/bibcite_authors": "^1.0",
         "drupal/block_class": "^2.0",
         "drupal/blog": "^3.1",
