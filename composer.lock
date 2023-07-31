@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f2dbaef969b3249836822d5c96c38df8",
+    "content-hash": "d70125e599ca088c50944d0f7d864869",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -2202,26 +2202,26 @@
         },
         {
             "name": "drupal/acl",
-            "version": "1.0.0-beta1",
+            "version": "1.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/acl.git",
-                "reference": "8.x-1.0-beta1"
+                "reference": "8.x-1.0-beta2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/acl-8.x-1.0-beta1.zip",
-                "reference": "8.x-1.0-beta1",
-                "shasum": "fd81759a217ba1ae5f45284a41cf85b5043d94f2"
+                "url": "https://ftp.drupal.org/files/projects/acl-8.x-1.0-beta2.zip",
+                "reference": "8.x-1.0-beta2",
+                "shasum": "2b19bf3f78c2f00a641b37b2f04d6356e9b4a116"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9"
+                "drupal/core": "^8 || ^9"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-beta1",
-                    "datestamp": "1613732677",
+                    "version": "8.x-1.0-beta2",
+                    "datestamp": "1690499716",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -3520,17 +3520,17 @@
         },
         {
             "name": "drupal/bootstrap_layout_builder",
-            "version": "2.1.1",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/bootstrap_layout_builder.git",
-                "reference": "2.1.1"
+                "reference": "2.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap_layout_builder-2.1.1.zip",
-                "reference": "2.1.1",
-                "shasum": "5b7e18fa8553328b259dff6e8db88ef4fa66dcb7"
+                "url": "https://ftp.drupal.org/files/projects/bootstrap_layout_builder-2.1.2.zip",
+                "reference": "2.1.2",
+                "shasum": "c0000f57f9b218fd43b893f3311de73911020ced"
             },
             "require": {
                 "drupal/bootstrap_styles": "^1.1",
@@ -3539,8 +3539,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.1",
-                    "datestamp": "1673978910",
+                    "version": "2.1.2",
+                    "datestamp": "1690460409",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3559,6 +3559,10 @@
                 {
                     "name": "mahmoud-zayed",
                     "homepage": "https://www.drupal.org/user/2947001"
+                },
+                {
+                    "name": "Rajab Natshah",
+                    "homepage": "https://www.drupal.org/user/1414312"
                 }
             ],
             "description": "Add Bootstrap Grid support to Layout Builder module.",
@@ -3684,17 +3688,17 @@
         },
         {
             "name": "drupal/bootstrap_styles",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/bootstrap_styles.git",
-                "reference": "1.1.0"
+                "reference": "1.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap_styles-1.1.0.zip",
-                "reference": "1.1.0",
-                "shasum": "e064cc4a74678f2d88f01400b6152645f0b9d8d2"
+                "url": "https://ftp.drupal.org/files/projects/bootstrap_styles-1.1.1.zip",
+                "reference": "1.1.1",
+                "shasum": "1f554dac1896adf890e2732228ea107ff5fc764e"
             },
             "require": {
                 "drupal/core": "^9.3 || ^10",
@@ -3704,8 +3708,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.1.0",
-                    "datestamp": "1673698874",
+                    "version": "1.1.1",
+                    "datestamp": "1690453875",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3724,6 +3728,10 @@
                 {
                     "name": "mahmoud-zayed",
                     "homepage": "https://www.drupal.org/user/2947001"
+                },
+                {
+                    "name": "Rajab Natshah",
+                    "homepage": "https://www.drupal.org/user/1414312"
                 }
             ],
             "description": "Add a plugins builder and a collection of reusable plugins to the Layout Builder module.",
@@ -8347,21 +8355,21 @@
         },
         {
             "name": "drupal/forum_access",
-            "version": "1.0.0-beta1",
+            "version": "1.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/forum_access.git",
-                "reference": "8.x-1.0-beta1"
+                "reference": "8.x-1.0-beta2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/forum_access-8.x-1.0-beta1.zip",
-                "reference": "8.x-1.0-beta1",
-                "shasum": "44ac8ae061dd5e9e03acbef83f86137c48b7e729"
+                "url": "https://ftp.drupal.org/files/projects/forum_access-8.x-1.0-beta2.zip",
+                "reference": "8.x-1.0-beta2",
+                "shasum": "3fea4c3bfe3755b1f81a8db629f5df19e9605059"
             },
             "require": {
-                "drupal/acl": "^1.0@beta",
-                "drupal/core": "^8.8 || ^9 || ^10"
+                "drupal/acl": "^1.0-beta2",
+                "drupal/core": "^8.8 || ^9"
             },
             "require-dev": {
                 "drupal/migrate_plus": "*"
@@ -8369,8 +8377,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-beta1",
-                    "datestamp": "1665400292",
+                    "version": "8.x-1.0-beta2",
+                    "datestamp": "1690578091",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -10733,26 +10741,26 @@
         },
         {
             "name": "drupal/masquerade",
-            "version": "2.0.0-rc1",
+            "version": "2.0.0-rc2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/masquerade.git",
-                "reference": "8.x-2.0-rc1"
+                "reference": "8.x-2.0-rc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/masquerade-8.x-2.0-rc1.zip",
-                "reference": "8.x-2.0-rc1",
-                "shasum": "9a800f80cdc4535019dab2d093286c7262a846bf"
+                "url": "https://ftp.drupal.org/files/projects/masquerade-8.x-2.0-rc2.zip",
+                "reference": "8.x-2.0-rc2",
+                "shasum": "7e3a5a26d4682913e4f38da6375b9cfcd307ebbf"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9 || ^10"
+                "drupal/core": "^9.2 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.0-rc1",
-                    "datestamp": "1661364139",
+                    "version": "8.x-2.0-rc2",
+                    "datestamp": "1690409136",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
