@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d70125e599ca088c50944d0f7d864869",
+    "content-hash": "7d9b1016dd59dd4789aebbb608e1b7d4",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -3813,19 +3813,19 @@
         },
         {
             "name": "drupal/calendar_datetime",
-            "version": "1.0.0-alpha4",
+            "version": "1.0.0-beta1",
             "require": {
                 "drupal/calendar": "^1",
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^9.4 || ^10"
             },
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-alpha4",
-                    "datestamp": "1621960842",
+                    "version": "8.x-1.0-beta1",
+                    "datestamp": "1691500976",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 }
             },

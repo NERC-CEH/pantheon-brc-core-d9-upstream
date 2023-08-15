@@ -73,6 +73,7 @@
         "drupal/bootstrap_quicktabs": "1.0-alpha4",
         "drupal/bootstrap_styles": "^1.1",
         "drupal/calendar": "^1.0@alpha",
+        "drupal/calendar_datetime": "1.0-beta1",
         "drupal/captcha": "^1.10",
         "drupal/chosen": "^4.0",
         "drupal/chosen_lib": "^4.0",
