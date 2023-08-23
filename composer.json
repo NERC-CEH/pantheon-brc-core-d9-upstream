@@ -216,6 +216,7 @@
         "drupal/serial": "2.0-beta2",
         "drupal/show_email": "^1.1",
         "drupal/shs": "2.0-rc4",
+        "drupal/similarterms": "^1.6",
         "drupal/simple_pass_reset": "^1.1",
         "drupal/simple_sitemap": "^4.1",
         "drupal/sitemap": "2.0-beta4",
