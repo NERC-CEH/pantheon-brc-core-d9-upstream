@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3c15c4a01bad3566b2392e84e3437d1",
+    "content-hash": "403d8a5d62358274b57ee6b05f922e73",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -2202,17 +2202,17 @@
         },
         {
             "name": "drupal/acl",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/acl.git",
-                "reference": "8.x-1.0"
+                "reference": "8.x-1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/acl-8.x-1.0.zip",
-                "reference": "8.x-1.0",
-                "shasum": "fe7946a7d541c7af8744c3848db114b2909cdd44"
+                "url": "https://ftp.drupal.org/files/projects/acl-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "a6069d51716401e1a3d0528701256ab723db727c"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -2220,8 +2220,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0",
-                    "datestamp": "1692814957",
+                    "version": "8.x-1.1",
+                    "datestamp": "1695568151",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2230,7 +2230,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -3761,17 +3761,17 @@
         },
         {
             "name": "drupal/bootstrap_styles",
-            "version": "1.1.3",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/bootstrap_styles.git",
-                "reference": "1.1.3"
+                "reference": "1.1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap_styles-1.1.3.zip",
-                "reference": "1.1.3",
-                "shasum": "23e661c171e607047eb856253337081bb7b9c834"
+                "url": "https://ftp.drupal.org/files/projects/bootstrap_styles-1.1.5.zip",
+                "reference": "1.1.5",
+                "shasum": "30b06da7e84424d404ad8fb5575dda634f80757e"
             },
             "require": {
                 "drupal/core": "^9.3 || ^10",
@@ -3781,8 +3781,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.1.3",
-                    "datestamp": "1695037727",
+                    "version": "1.1.5",
+                    "datestamp": "1695835243",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -15042,26 +15042,26 @@
         },
         {
             "name": "drupal/views_autosubmit",
-            "version": "1.5.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_autosubmit.git",
-                "reference": "8.x-1.5"
+                "reference": "8.x-1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_autosubmit-8.x-1.5.zip",
-                "reference": "8.x-1.5",
-                "shasum": "189518246948b72b06a01fbcdde3b598ced9f261"
+                "url": "https://ftp.drupal.org/files/projects/views_autosubmit-8.x-1.6.zip",
+                "reference": "8.x-1.6",
+                "shasum": "f7b520e59721ab32f3e40ff8defe99d804e939e2"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10"
+                "drupal/core": "^8.8 || ^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.5",
-                    "datestamp": "1675353561",
+                    "version": "8.x-1.6",
+                    "datestamp": "1695586179",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -15449,6 +15449,60 @@
             "homepage": "https://www.drupal.org/project/views_data_export",
             "support": {
                 "source": "https://git.drupalcode.org/project/views_data_export"
+            }
+        },
+        {
+            "name": "drupal/views_entity_form_field",
+            "version": "1.0.0-beta10",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/views_entity_form_field.git",
+                "reference": "8.x-1.0-beta10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/views_entity_form_field-8.x-1.0-beta10.zip",
+                "reference": "8.x-1.0-beta10",
+                "shasum": "d8437110e3956fb5d0e9d4be1a95b09fff6b12bd"
+            },
+            "require": {
+                "drupal/core": "^9.4 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-beta10",
+                    "datestamp": "1687364966",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Garrett Rathbone",
+                    "homepage": "https://www.drupal.org/u/grathbone",
+                    "email": "garrett.rathbone@gmail.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "grathbone",
+                    "homepage": "https://www.drupal.org/user/3218105"
+                }
+            ],
+            "description": "Add entity form field widgets to a view.",
+            "homepage": "https://www.drupal.org/project/views_entity_form_field",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/views_entity_form_field",
+                "issues": "https://www.drupal.org/project/issues/views_entity_form_field"
             }
         },
         {
