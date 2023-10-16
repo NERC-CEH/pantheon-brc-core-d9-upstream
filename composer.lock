@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "403d8a5d62358274b57ee6b05f922e73",
+    "content-hash": "88082a84582f90d9f402d47b05c8660a",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -2527,17 +2527,17 @@
         },
         {
             "name": "drupal/admin_toolbar",
-            "version": "3.4.1",
+            "version": "3.4.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/admin_toolbar.git",
-                "reference": "3.4.1"
+                "reference": "3.4.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/admin_toolbar-3.4.1.zip",
-                "reference": "3.4.1",
-                "shasum": "bcb15ab40016becdb3ac8f21d7d1a721f48f3577"
+                "url": "https://ftp.drupal.org/files/projects/admin_toolbar-3.4.2.zip",
+                "reference": "3.4.2",
+                "shasum": "f5a008e5c73f5a11c6c8067c0ea6ebb76aa33854"
             },
             "require": {
                 "drupal/core": "^9.2 || ^10"
@@ -2548,8 +2548,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.4.1",
-                    "datestamp": "1684944156",
+                    "version": "3.4.2",
+                    "datestamp": "1696006195",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8233,17 +8233,17 @@
         },
         {
             "name": "drupal/flexible_permissions",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/flexible_permissions.git",
-                "reference": "1.0.0"
+                "reference": "1.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/flexible_permissions-1.0.0.zip",
-                "reference": "1.0.0",
-                "shasum": "a48740d2edcb04bb0d750c5d5c41ce8fb9acc332"
+                "url": "https://ftp.drupal.org/files/projects/flexible_permissions-1.1.0.zip",
+                "reference": "1.1.0",
+                "shasum": "cfda615388131e96a5cf3fce1f24b1c220f91fce"
             },
             "require": {
                 "drupal/core": "^9.5 || ^10",
@@ -8252,8 +8252,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.0",
-                    "datestamp": "1679575763",
+                    "version": "1.1.0",
+                    "datestamp": "1697027409",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8606,7 +8606,7 @@
         },
         {
             "name": "drupal/gnode",
-            "version": "3.2.0",
+            "version": "3.2.1",
             "require": {
                 "drupal/core": "^9.5 || ^10",
                 "drupal/group": "*"
@@ -8614,8 +8614,8 @@
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "3.2.0",
-                    "datestamp": "1692969097",
+                    "version": "3.2.1",
+                    "datestamp": "1697204379",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8715,17 +8715,17 @@
         },
         {
             "name": "drupal/group",
-            "version": "3.2.0",
+            "version": "3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/group.git",
-                "reference": "3.2.0"
+                "reference": "3.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/group-3.2.0.zip",
-                "reference": "3.2.0",
-                "shasum": "c2dd71b3a1735a5eea821a14716c972b027f713d"
+                "url": "https://ftp.drupal.org/files/projects/group-3.2.1.zip",
+                "reference": "3.2.1",
+                "shasum": "7774014794ad8cc39b1e22737e48cdbdd60513db"
             },
             "require": {
                 "drupal/core": "^9.5 || ^10",
@@ -8735,8 +8735,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.2.0",
-                    "datestamp": "1692969097",
+                    "version": "3.2.1",
+                    "datestamp": "1697204379",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -11524,17 +11524,17 @@
         },
         {
             "name": "drupal/notify",
-            "version": "2.0.0-alpha2",
+            "version": "2.0.0-alpha3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/notify.git",
-                "reference": "2.0.0-alpha2"
+                "reference": "2.0.0-alpha3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/notify-2.0.0-alpha2.zip",
-                "reference": "2.0.0-alpha2",
-                "shasum": "4e00300c0e1de72268f6f7f60a046438c9946574"
+                "url": "https://ftp.drupal.org/files/projects/notify-2.0.0-alpha3.zip",
+                "reference": "2.0.0-alpha3",
+                "shasum": "0797ddd001cd6622feac7c793c0dcecf92545c16"
             },
             "require": {
                 "drupal/core": "^9 || ^10"
@@ -11542,8 +11542,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0-alpha2",
-                    "datestamp": "1682525982",
+                    "version": "2.0.0-alpha3",
+                    "datestamp": "1697046588",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -11679,17 +11679,17 @@
         },
         {
             "name": "drupal/pathauto",
-            "version": "1.11.0",
+            "version": "1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/pathauto.git",
-                "reference": "8.x-1.11"
+                "reference": "8.x-1.12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/pathauto-8.x-1.11.zip",
-                "reference": "8.x-1.11",
-                "shasum": "a006fe9e6046a9833711a1ae56aa4752e65bcdc8"
+                "url": "https://ftp.drupal.org/files/projects/pathauto-8.x-1.12.zip",
+                "reference": "8.x-1.12",
+                "shasum": "b7b6432e315e38e59a7c6cc117134326c580de4c"
             },
             "require": {
                 "drupal/core": "^9.3 || ^10",
@@ -11702,8 +11702,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.11",
-                    "datestamp": "1660129564",
+                    "version": "8.x-1.12",
+                    "datestamp": "1696776683",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -12111,26 +12111,26 @@
         },
         {
             "name": "drupal/quick_node_block",
-            "version": "1.3.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/quick_node_block.git",
-                "reference": "8.x-1.3"
+                "reference": "8.x-1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/quick_node_block-8.x-1.3.zip",
-                "reference": "8.x-1.3",
-                "shasum": "8ac55c0cd378e3d341c7b84a3a475f4ecd23514f"
+                "url": "https://ftp.drupal.org/files/projects/quick_node_block-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "e9f8ba5263e4f059f035641e6b7b3a3d7a597248"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8 || ^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.3",
-                    "datestamp": "1617822621",
+                    "version": "8.x-1.4",
+                    "datestamp": "1697197504",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -12772,27 +12772,27 @@
         },
         {
             "name": "drupal/rules",
-            "version": "3.0.0-alpha7",
+            "version": "3.0.0-alpha8",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/rules.git",
-                "reference": "8.x-3.0-alpha7"
+                "reference": "8.x-3.0-alpha8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/rules-8.x-3.0-alpha7.zip",
-                "reference": "8.x-3.0-alpha7",
-                "shasum": "6803aeaecea21cd64301a72b209d5db2f57f92b4"
+                "url": "https://ftp.drupal.org/files/projects/rules-8.x-3.0-alpha8.zip",
+                "reference": "8.x-3.0-alpha8",
+                "shasum": "22a44298b98000697efd86a29a8df1c0ce0bf44f"
             },
             "require": {
-                "drupal/core": "^8.8.2 || ^9",
+                "drupal/core": "^9.1 || ^10",
                 "drupal/typed_data": "^1.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.0-alpha7",
-                    "datestamp": "1638768619",
+                    "version": "8.x-3.0-alpha8",
+                    "datestamp": "1696376270",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -12831,17 +12831,17 @@
         },
         {
             "name": "drupal/search_api",
-            "version": "1.29.0",
+            "version": "1.30.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/search_api.git",
-                "reference": "8.x-1.29"
+                "reference": "8.x-1.30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.29.zip",
-                "reference": "8.x-1.29",
-                "shasum": "4663abbcfe5dfc159ee0886fc6c437e998fc0653"
+                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.30.zip",
+                "reference": "8.x-1.30",
+                "shasum": "25bd2cfab6a6332c595fbc8be1c4cfff33a85ce8"
             },
             "require": {
                 "drupal/core": "^9.3 || ^10.0"
@@ -12862,8 +12862,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.29",
-                    "datestamp": "1679910252",
+                    "version": "8.x-1.30",
+                    "datestamp": "1697366291",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -12871,7 +12871,7 @@
                 },
                 "drush": {
                     "services": {
-                        "drush.services.yml": "^9 || ^10"
+                        "drush.services.yml": "^9 || ^10 || ^11"
                     }
                 }
             },
@@ -12903,17 +12903,17 @@
         },
         {
             "name": "drupal/search_api_autocomplete",
-            "version": "1.7.0",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/search_api_autocomplete.git",
-                "reference": "8.x-1.7"
+                "reference": "8.x-1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api_autocomplete-8.x-1.7.zip",
-                "reference": "8.x-1.7",
-                "shasum": "9be80f9187252adbb265402276e9bdce6a5698cd"
+                "url": "https://ftp.drupal.org/files/projects/search_api_autocomplete-8.x-1.8.zip",
+                "reference": "8.x-1.8",
+                "shasum": "80f75774776cee193624fe5731906e35bff160f6"
             },
             "require": {
                 "drupal/core": "^9.2 || ^10",
@@ -12925,8 +12925,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.7",
-                    "datestamp": "1664975494",
+                    "version": "8.x-1.8",
+                    "datestamp": "1697366383",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -13237,26 +13237,26 @@
         },
         {
             "name": "drupal/simple_pass_reset",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/simple_pass_reset.git",
-                "reference": "8.x-1.1"
+                "reference": "8.x-1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/simple_pass_reset-8.x-1.1.zip",
-                "reference": "8.x-1.1",
-                "shasum": "5ea62df46971ebba6db6eb7e0218180942ae9dd6"
+                "url": "https://ftp.drupal.org/files/projects/simple_pass_reset-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "a023aff70b08ec0a18950205be772eed4a5039b5"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8 || ^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.1",
-                    "datestamp": "1596365432",
+                    "version": "8.x-1.2",
+                    "datestamp": "1696008562",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -13279,6 +13279,10 @@
                 {
                     "name": "rszrama",
                     "homepage": "https://www.drupal.org/user/49344"
+                },
+                {
+                    "name": "tim-diels",
+                    "homepage": "https://www.drupal.org/user/2915097"
                 }
             ],
             "description": "When resetting a password, skip the unnecessary and confusing one-time login form.",
@@ -13796,27 +13800,27 @@
         },
         {
             "name": "drupal/superfish",
-            "version": "1.6.0",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/superfish.git",
-                "reference": "8.x-1.6"
+                "reference": "8.x-1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/superfish-8.x-1.6.zip",
-                "reference": "8.x-1.6",
-                "shasum": "5c3d2e88e64ce9b0c44ea0e55a5c3ec2e6bda430"
+                "url": "https://ftp.drupal.org/files/projects/superfish-8.x-1.7.zip",
+                "reference": "8.x-1.7",
+                "shasum": "76168fb2c576113380e4867a2e823eb67ba74b9f"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10",
-                "mehrpadin/superfish": "~2"
+                "lobsterr/drupal-superfish": "~2"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.6",
-                    "datestamp": "1690322107",
+                    "version": "8.x-1.7",
+                    "datestamp": "1696891393",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -13844,8 +13848,9 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "NickDickinsonWilde",
-                    "homepage": "https://www.drupal.org/user/3094661"
+                    "name": "Andrei Ivnitskii",
+                    "homepage": "https://www.drupal.org/u/ivnish",
+                    "role": "Maintainer"
                 }
             ],
             "description": "Adds jQuery Superfish plugin to menu blocks.",
@@ -14981,17 +14986,17 @@
         },
         {
             "name": "drupal/views_autocomplete_filters",
-            "version": "1.4.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_autocomplete_filters.git",
-                "reference": "8.x-1.4"
+                "reference": "8.x-1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_autocomplete_filters-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "f65d5c6d25df802968c514836ea8edd22ba063a1"
+                "url": "https://ftp.drupal.org/files/projects/views_autocomplete_filters-8.x-1.6.zip",
+                "reference": "8.x-1.6",
+                "shasum": "43a2de203ef7a4fdd3116394e97c7a6e23a97055"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10"
@@ -14999,8 +15004,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1677771862",
+                    "version": "8.x-1.6",
+                    "datestamp": "1696855914",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -15849,17 +15854,17 @@
         },
         {
             "name": "drupal/webform",
-            "version": "6.1.5",
+            "version": "6.1.7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/webform.git",
-                "reference": "6.1.5"
+                "reference": "6.1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform-6.1.5.zip",
-                "reference": "6.1.5",
-                "shasum": "a6d3f10b377add2db2823134b819d443f7a88f86"
+                "url": "https://ftp.drupal.org/files/projects/webform-6.1.7.zip",
+                "reference": "6.1.7",
+                "shasum": "6eee721871ec6588fb3f3607165576ad1714a766"
             },
             "require": {
                 "drupal/core": "^9.3"
@@ -15907,8 +15912,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "6.1.5",
-                    "datestamp": "1686599078",
+                    "version": "6.1.7",
+                    "datestamp": "1696976671",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -15959,20 +15964,20 @@
         },
         {
             "name": "drupal/webform_analysis",
-            "version": "1.0.0-beta8",
+            "version": "1.0.0-beta10",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/webform_analysis.git",
-                "reference": "8.x-1.0-beta8"
+                "reference": "8.x-1.0-beta10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform_analysis-8.x-1.0-beta8.zip",
-                "reference": "8.x-1.0-beta8",
-                "shasum": "b342a88b890058ea8a81807a1528cf2d31ea053f"
+                "url": "https://ftp.drupal.org/files/projects/webform_analysis-8.x-1.0-beta10.zip",
+                "reference": "8.x-1.0-beta10",
+                "shasum": "89db65f24b4cb9e6dc5cdc7f5dedea1e4d4d5d15"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9",
+                "drupal/core": "^8.8 || ^9 ||^10",
                 "drupal/webform": "*"
             },
             "require-dev": {
@@ -15982,8 +15987,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-beta8",
-                    "datestamp": "1643355378",
+                    "version": "8.x-1.0-beta10",
+                    "datestamp": "1696752502",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -17986,6 +17991,49 @@
             "time": "2021-06-28T04:27:21+00:00"
         },
         {
+            "name": "lobsterr/drupal-superfish",
+            "version": "2.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LOBsTerr/drupal-superfish.git",
+                "reference": "a2c677d0e4b09b455792db45f37cde8f5e45e2f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LOBsTerr/drupal-superfish/zipball/a2c677d0e4b09b455792db45f37cde8f5e45e2f6",
+                "reference": "a2c677d0e4b09b455792db45f37cde8f5e45e2f6",
+                "shasum": ""
+            },
+            "type": "drupal-library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nikolay Lobachev",
+                    "homepage": "https://www.drupal.org/u/lobsterr",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "mehrpadin",
+                    "homepage": "https://www.drupal.org/u/mehrpadin",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Superfish library for the Drupal Superfish module.",
+            "homepage": "https://github.com/LOBsTerr/drupal-superfish",
+            "keywords": [
+                "jquery",
+                "plugin"
+            ],
+            "support": {
+                "issues": "https://github.com/LOBsTerr/drupal-superfish/issues",
+                "source": "https://github.com/LOBsTerr/drupal-superfish"
+            },
+            "time": "2023-10-10T22:20:13+00:00"
+        },
+        {
             "name": "longwave/laminas-diactoros",
             "version": "2.14.2",
             "source": {
@@ -18337,36 +18385,6 @@
                 "source": "https://github.com/Masterminds/html5-php/tree/2.7.6"
             },
             "time": "2022-08-18T16:18:26+00:00"
-        },
-        {
-            "name": "mehrpadin/superfish",
-            "version": "2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mehrpadin/Superfish-for-Drupal.git",
-                "reference": "80a0a484b727e9fbe6b0ee609f80e10e5e158683"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mehrpadin/Superfish-for-Drupal/zipball/80a0a484b727e9fbe6b0ee609f80e10e5e158683",
-                "reference": "80a0a484b727e9fbe6b0ee609f80e10e5e158683",
-                "shasum": ""
-            },
-            "type": "drupal-library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Superfish library for the Drupal Superfish module.",
-            "homepage": "https://github.com/mehrpadin/Superfish-for-Drupal",
-            "keywords": [
-                "jquery",
-                "plugin"
-            ],
-            "support": {
-                "source": "https://github.com/mehrpadin/Superfish-for-Drupal/tree/2.x"
-            },
-            "time": "2017-05-30T13:00:18+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
@@ -23217,5 +23235,5 @@
     "platform-overrides": {
         "php": "8.1"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

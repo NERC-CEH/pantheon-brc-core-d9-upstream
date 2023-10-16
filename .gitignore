@@ -67,7 +67,6 @@ web/sites/*/services*.yml
 /web/themes/composer/
 /web/profiles/composer/
 #/web/libraries/
-/web/libraries/superfish
 /web/libraries/jquery-ui-touch-punch
 /web/private/scripts/quicksilver
 
