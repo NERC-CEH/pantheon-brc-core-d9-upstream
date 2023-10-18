@@ -204,6 +204,7 @@
         "drupal/quick_node_block": "^1.4",
         "drupal/quick_node_clone": "^1.16",
         "drupal/quicktabs": "3.0-alpha7",
+        "drupal/r4032login": "^2.2",
         "drupal/range": "^1.5",
         "drupal/recaptcha": "^3.2",
         "drupal/redirect": "^1.9",
